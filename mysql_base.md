@@ -120,3 +120,8 @@ use information_schema;
   select concat(round(sum(DATA_LENGTH/1024/1024), 2), 'MB') as data from TABLES where table_schema='forexpert' and table_name='member';
 
 
+# 创建触发器
+```sql
+create trigger general_entry_menu after insert on d_menu
+    for each row insert into d_rules_list(`rule_name`, `params`, `annotation`) values('menu', CONCAT('id=', NEW.id), NEW.name);
+```
