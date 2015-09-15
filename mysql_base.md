@@ -125,3 +125,7 @@ use information_schema;
 create trigger general_entry_menu after insert on d_menu
     for each row insert into d_rules_list(`rule_name`, `params`, `annotation`) values('menu', CONCAT('id=', NEW.id), NEW.name);
 ```
+# 删除触发器
+```sql
+drop trigger general_entry_menu
+```
