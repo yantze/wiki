@@ -16,3 +16,23 @@ InnoDB:记录锁，只会锁定当前操作的行，写频繁的应用中用Inno
 
 ## 事务在关系型数据库中非常重要的一个特性
 InnoDB支持但MyIsam不支持。
+
+# mysql 的编码
+/etc/my.conf
+[client]
+default-character-set=utf8
+
+[mysql]
+default-character-set=utf8
+
+
+[mysqld]
+default-character-set = utf8
+collation-server = utf8_general_ci
+init-connect='SET NAMES utf8'
+character-set-server = utf8
+
+client ===
+set character_set_client = utf8;
+set character_set_connection = utf8;
+set character_set_results = utf8;
