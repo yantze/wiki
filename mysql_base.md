@@ -66,6 +66,7 @@ chmod -R 770 /var/lib/mysql
 service mysqld start
 mysql
 SET PASSWORD FOR 'root'@'localhost' = PASSWORD('secret_password');
+ set password=password('123');
 
 
 
@@ -129,3 +130,6 @@ create trigger general_entry_menu after insert on d_menu
 ```sql
 drop trigger general_entry_menu
 ```
+
+# 指导手册
+《网易MySQL》这本不错，讲得很实战化。

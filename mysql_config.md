@@ -36,3 +36,15 @@ client ===
 set character_set_client = utf8;
 set character_set_connection = utf8;
 set character_set_results = utf8;
+
+# add binlog
+`/etc/my.cnf`
+```
+log-bin=/data/mysql/mysql-bin
+expire_logs_days=7
+```
+恢复指定时间
+/usr/local/mysql/bin/mysqlbinlog -uroot -p -D mysql-bin.000044  \
+--start-datetime="2014-02-11 03:00:00" \
+--stop-datetime="2014-02-14 20:00:00" > ~/binlogbk/recover-head.sql
+

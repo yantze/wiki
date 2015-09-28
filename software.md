@@ -16,6 +16,9 @@ Key             Action  Notes
 Ctrl+a c        new window   
 Ctrl+a n        next window I bind F12 to this
 Ctrl+a p        previous window I bind F11 to this
+Ctrl+a tab      Move to next region  
+Ctrl+a :remove  remove region   Ctrl+a X is the same
+
 Ctrl+a "        select window from list I have window list in the status line
 Ctrl+a Ctrl+a   previous window viewed   
          
@@ -23,8 +26,6 @@ Ctrl+a S        split terminal horizontally into regions    Ctrl+a c to create n
 Ctrl+a |        split terminal vertically into regions  Requires screen >= 4.1
 Ctrl+a :resize  resize region    
 Ctrl+a :fit fit screen size to new terminal size    Ctrl+a F is the same. Do after resizing xterm
-Ctrl+a :remove  remove region   Ctrl+a X is the same
-Ctrl+a tab      Move to next region  
 
 Ctrl+a d        detach screen from terminal Start screen with -r option to reattach
 Ctrl+a A        set window title     
@@ -38,6 +39,5 @@ Ctrl+a ?        show key bindings/command names Note unbound commands only in ma
 Ctrl+a :        goto screen command prompt  up shows last command entered
 
 alias proj="cd /data/web/data.jinfuzi.net/"
- 14
- 15 alias wget="wget --no-check-certificate"
- 16 alias pyftp="sudo ~yantze/.bin/_pyftp"
+alias wget="wget --no-check-certificate"
+alias pyftp="sudo ~yantze/.bin/_pyftp"
