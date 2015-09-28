@@ -32,6 +32,16 @@ create database phplampDB;
 ## 刷新系统权限表
 mysql>flush privileges;
 
+改密码另外一个方法：
+#chown mysql /var/lib/mysql
+chgrp -R mysql /var/lib/mysql
+chmod -R 770 /var/lib/mysql
+service mysqld start
+mysql
+SET PASSWORD FOR 'root'@'localhost' = PASSWORD('secret_password');
+set password=password('123');
+
+
 # 忘记 root 密码：
 如果你忘记了 MySQL 的 root 用户的口令，你可以用下列过程恢复它。
 通过发送一个 kill （不是 kill -9)到 mysqld 服务器来关闭 mysqld 服务器。 pid 被保存在一个.pid 文件中，通常在 MySQL数据库目录中（你必须是一个UNIX root用户或运行服务器的相同用户做这个）：
@@ -48,10 +58,11 @@ kill `cat /mysql-data-directory/hostname.pid`
 
 
 
-数据库字符集设置
+# 数据库字符集设置
 mysql配置文件/etc/my.cnf中加入default-character-set=utf8
 
 初始化后：
+```
 To start mysqld at boot time you have to copy
 support-files/mysql.server to the right place for your system
 
@@ -65,17 +76,8 @@ cd /usr ; /usr/bin/mysqld_safe &
 
 You can test the MySQL daemon with mysql-test-run.pl
 cd mysql-test ; perl mysql-test-run.pl
-
+```
 via:http://www.2cto.com/database/201207/141878.html
-
-改密码另外一个方法：
-#chown mysql /var/lib/mysql
-chgrp -R mysql /var/lib/mysql
-chmod -R 770 /var/lib/mysql
-service mysqld start
-mysql
-SET PASSWORD FOR 'root'@'localhost' = PASSWORD('secret_password');
- set password=password('123');
 
 
 
