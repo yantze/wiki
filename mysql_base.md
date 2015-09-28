@@ -58,7 +58,7 @@ kill `cat /mysql-data-directory/hostname.pid`
 
 
 
-# 数据库字符集设置[^1]
+# 数据库字符集设置
 mysql配置文件/etc/my.cnf中加入default-character-set=utf8
 
 初始化后：
@@ -77,6 +77,7 @@ cd /usr ; /usr/bin/mysqld_safe &
 You can test the MySQL daemon with mysql-test-run.pl
 cd mysql-test ; perl mysql-test-run.pl
 ```
+http://www.2cto.com/database/201207/141878.html
 
 
 
@@ -143,5 +144,3 @@ drop trigger general_entry_menu
 
 # 指导手册
 《网易MySQL》这本不错，讲得很实战化。
-
-[^1]: 来自 http://www.2cto.com/database/201207/141878.html
