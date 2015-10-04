@@ -1,5 +1,30 @@
 # bash 基础语法
 
+变量
+var_name=var_value
+var_name1="bef $name aft"
+var_name2="bef${name}aft"
+
+字符串
+```bash
+str="this is a string."
+echo ${str:0:4}     # ${str:start_index:length}是截图字符串的子串
+echo ${str:5:2}
+ 
+# 从原串中去掉匹配的子串，返回留下的子串。
+echo ${str#*is}     # #*is 标识从开头开始找，直到最近的is
+echo ${str##*is}    # ##*is 表示从头开始找，直到最远is
+ 
+echo ${str%is*}     # %*is 表示从尾部开始找直到最近的is
+echo ${str%%is*}    # %%*is 表示从尾部开始找直到最远的is
+```
+
+比较
+```bash
+[ "$str" = "my name is tim" ]
+```
+
+
 结构控制
 if … then 语句
 ```
@@ -29,13 +54,11 @@ then
 elif [ test_command ]
 then
     commands
-.
-.
-.
 else (Optional)
     commands
 fi
 ```
+
 for … in 语句
 ```
 for loop_variable in argument_list
@@ -69,13 +92,29 @@ match_2)
 match_3)
     commands_to_execute_for_3
     ;;
-.
-.
-.
 *)  (Optional - any other value)
     commands_to_execute_for_no_match
     ;;
 esac
+```
+> 条件判断放在[]中，注意[]内部首位要各空一个空格。条件判断后面要紧跟一个分号，then才能放在同一行，如果没有分号，则then需要换行。
+
+循环
+```bash
+for x in one two three four
+do
+    echo number $x
+done
+ 
+for myfile in ./*
+do
+    echo "$myfile"
+done
+ 
+while [ condition ]
+do
+    statements
+done
 ```
 
 特定参数变量
@@ -152,3 +191,5 @@ test -c /dev/hda ; echo $? # 将打印 1 表示 test 命令的返回值为 1, /d
 [ -w /etc/passwd ]; echo $? # 查看对当前用户而言, passwd 文件是否可写
 
 ```
+
+[more](http://www.ibm.com/developerworks/cn/linux/shell/bash/bash-2/index.html)
