@@ -1,9 +1,11 @@
 # bash 基础语法
 
 变量
+```bash
 var_name=var_value
 var_name1="bef $name aft"
 var_name2="bef${name}aft"
+```
 
 字符串
 ```bash
