@@ -137,8 +137,7 @@ int1 ­le int2 如果 int1 小于等于 int2,则返回真
 int1 ­gt int2 如果 int1 大于 int2,则返回真
 int1 ­ge int2 如果 int1 大于等于 int2,则返回真
 x=1 ; [ $x -eq 1 ]; echo $? # 将打印 0 表示变量 x 的值等于数字 1
-x=a ; [ $x -eq "1" ] # shell 打印错误信息 bash: [: a: integer
-expression expected
+x=a ; [ $x -eq "1" ] # shell 打印错误信息 bash: [: a: integer expression expected
 ```
 字符串比较
 ```
@@ -169,10 +168,8 @@ name="zqf"; [ $name = "zqf" ] ; echo $? # 打印 0 表示变量 name 的值和�
 ­u pathname 当由 pathname 指定的文件或目录存在并且设置了 SUID 位时返回真
 ­w pathname 当由 pathname 指定的文件或目录存在并且可写时返回真
 ­x pathname 当由 pathname 指定的文件或目录存在并且可执行时返回真
-­O pathname 当由 pathname 存在并且被当前进程的有效用户 id 的用户拥有时返回真(字母
-O 大写)
-­G pathname 当由 pathname 存在并且属于当前进程的有效用户 id 的用户的用户组时返回
-真
+­O pathname 当由 pathname 存在并且被当前进程的有效用户 id 的用户拥有时返回真(字母 O 大写)
+­G pathname 当由 pathname 存在并且属于当前进程的有效用户 id 的用户的用户组时返回真
 file1 ­nt file2 file1 比 file2 新时返回真，修改时间更新
 file1 ­ot file2 file1 比 file2 旧时返回真，修改时间更旧
 ```
