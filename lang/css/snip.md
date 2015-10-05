@@ -1,18 +1,29 @@
+字体
+```css
+font-family: Georgia, "Times New Roman", 'Helvetica Neue', 'Hiragino Sans GB', 'WenQuanYi Micro Hei', YaHei", "微软雅黑", STXihei, "华文细黑", serif;
+font: 100%/1.5 "Segoe UI", "Century Gothic", Arial, "Microsoft YaHei",Sans-Serif;
+```
+
+颜色
+```css
+rgb:232 230 229 #e8e635  白色  // 当背景色很不错  
+```
+
 兼容主流浏览器的渐变
 ```css
 #main
 {
     height:512px;
-            text-align: center;
-            line-height: 80px;
-            margin-bottom: 10px;
-            color: White;
-            font-size: 20px;
-            filter: progid:DXImageTransform.Microsoft.Gradient(startColorStr='#FF0000',endColorStr='#F9F900',gradientType='0');
-            background: -moz-linear-gradient(top, #FF0000, #F9F900);
-            background: -o-linear-gradient(top,#FF0000, #F9F900);
-            background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FF0000), to(#F9F900));
-            background: -ms-linear-gradient(top, #FF000, #F9F900);
+    text-align: center;
+    line-height: 80px;
+    margin-bottom: 10px;
+    color: White;
+    font-size: 20px;
+    filter: progid:DXImageTransform.Microsoft.Gradient(startColorStr='#FF0000',endColorStr='#F9F900',gradientType='0');
+    background: -moz-linear-gradient(top, #FF0000, #F9F900);
+    background: -o-linear-gradient(top,#FF0000, #F9F900);
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FF0000), to(#F9F900));
+    background: -ms-linear-gradient(top, #FF000, #F9F900);
 }
 ```
 
@@ -30,7 +41,7 @@ html {
 
 Measurement Values
 | Unit  | Description |
-|:-----:| ----------- |
+| ----- | ----------- |
 | % | percentage |
 | in | inch |
 | cm | centimeter |
