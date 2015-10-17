@@ -191,4 +191,5 @@ test -c /dev/hda ; echo $? # 将打印 1 表示 test 命令的返回值为 1, /d
 
 ```
 
+更多的用法在 `man bash`
 [more](http://www.ibm.com/developerworks/cn/linux/shell/bash/bash-2/index.html)
