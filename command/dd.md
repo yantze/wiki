@@ -162,18 +162,27 @@ dd if=/dev/cdrom of=/root/cd.iso
 
 2.2.增加Swap分区文件大小
 
-dd if=/dev/zero of=/swapfile bs=1024 count=262144
+### 内存不够,外加添加虚拟内存方法
+g++: internal compiler error: Killed (program cc1plus)
+Please submit a full bug report,
+ 
+主要原因大体上是因为内存不足,有点坑 临时使用交换分区来解决吧
+ 
+sudo dd if=/dev/zero of=/swapfile bs=1024 count=262144
 创建一个足够大的文件（此处为256M）
-
-
-mkswap /swapfile
+sudo mkswap /swapfile
 把这个文件变成swap文件
-
-
-swapon /swapfile
+sudo swapon /swapfile
 启用这个swap文件
 
+After compiling, you may wish to
 
+Code:
+sudo swapoff /swapfile
+sudo rm /swapfile
+
+
+And:
 /swapfile swap swap defaults 0 0
 在每次开机的时候自动加载swap文件, 需要在 /etc/fstab 文件中增加一行
 

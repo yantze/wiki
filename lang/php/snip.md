@@ -65,3 +65,15 @@ curl_setopt($ch, CURLOPT_REFERER, $url);
 curl_setopt($ch, CURLOPT_URL, $url);  
 //这是你想用PHP取回的URL地址。你也可以在用curl_init()函数初始化时设置这个选项  
 ```
+
+
+
+判断 IE 浏览器
+```
+if(preg_match('/(?i)msie [5-8]/',$_SERVER['HTTP_USER_AGENT'])) {
+    // if IE<=8
+    var_dump('ddd');
+
+    exit;
+}
+```

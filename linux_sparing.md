@@ -22,22 +22,6 @@ iconv -f shift-jis -t utf-8 file1.cue >  file2.cue
 ###
 ps -ef/ c column means the cpu utilization, please RTFM
 
-###内存不够,外加添加虚拟内存方法
-g++: internal compiler error: Killed (program cc1plus)
-Please submit a full bug report,
- 
-主要原因大体上是因为内存不足,有点坑 临时使用交换分区来解决吧
- 
-sudo dd if=/dev/zero of=/swapfile bs=64M count=16
-sudo mkswap /swapfile
-sudo swapon /swapfile
-
-After compiling, you may wish to
-
-Code:
-sudo swapoff /swapfile
-sudo rm /swapfile
-
 # linux找出两个文件中相同的行(diff相反)
 grep -f file.a file.b
 
