@@ -17,3 +17,8 @@ systemctl restart NetworkManager
 # cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 ```
 
+## repo
+
+install remi repository
+
+http://www.unixmen.com/install-remi-repository-rhel-centos-scientific-linux-76-x5-x-fedora-201918/

@@ -1,10 +1,14 @@
 MySQL基本命令
 
 #初始化修改该密码
+```
 mysql -uroot ~~~~
+```
 
 #进入MySQL管理，用yum mysql mysql-devel
+```
 mysql -uroot -p
+```
 
 列出数据库：show databases;
 选择数据库：use databaseName;
@@ -15,6 +19,7 @@ mysql -uroot -p
 增加多个字段：alter table tabelName add column fieldName1 dateType,add columns fieldName2 dateType;
 
 # 创建用户
+```
 insert into mysql.user(Host,User,Password) values("localhost","phplamp",password("1234"));
 或者 CREATE USER 'yantze'@'%' IDENTIFIED BY 'zxcvbn';
 如果远程访问不了，可能是防火墙的问题
@@ -23,16 +28,27 @@ grant all privileges on yaf.* to yaf@localhost identified by '1234';
 grant all privileges on `yaf`.* to `yaf`@'%' with grant option;
 grant all on *.* to yaf;
 grant all privileges on *.* to 'root'@'%' identified by '1234' with grant option;
-## 删除用户
+```
+删除用户
+```
 DELETE FROM user WHERE User="phplamp" and Host="localhost";
-# 修改用户密码
+```
+修改用户密码
+```
 update mysql.user set password=password('新密码') where User="phplamp" and Host="localhost";
-## 创建数据库：
+```
+
+创建数据库：
+```
 create database phplampDB;
-## 刷新系统权限表
+```
+刷新系统权限表
+```
 mysql>flush privileges;
+```
 
 改密码另外一个方法：
+```
 #chown mysql /var/lib/mysql
 chgrp -R mysql /var/lib/mysql
 chmod -R 770 /var/lib/mysql
@@ -40,15 +56,17 @@ service mysqld start
 mysql
 SET PASSWORD FOR 'root'@'localhost' = PASSWORD('secret_password');
 set password=password('123');
+```
 
 
-# 忘记 root 密码：
-如果你忘记了 MySQL 的 root 用户的口令，你可以用下列过程恢复它。
+忘记 root 密码：
+>如果你忘记了 MySQL 的 root 用户的口令，你可以用下列过程恢复它。
 通过发送一个 kill （不是 kill -9)到 mysqld 服务器来关闭 mysqld 服务器。 pid 被保存在一个.pid 文件中，通常在 MySQL数据库目录中（你必须是一个UNIX root用户或运行服务器的相同用户做这个）：
+
 ```
 kill `cat /mysql-data-directory/hostname.pid`
 ```
-使用--skip-grant-tables 选项重启 mysqld。
+使用--skip-grant-tables 选项重启 mysqld
 用 mysql -h hostname mysql连接 mysqld服务器并且用一条 GRANT命令改变口令 。
 你也可以用 mysqladmin -h hostname -u user password 'new password'进行。
 用 mysqladmin -h hostname flush-privileges 或用 SQL 命令 FLUSH PRIVILEGES 来装载权限表.

@@ -78,6 +78,8 @@ more detail:http://seisman.info/python-pyenv.html
 sudo rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org
 sudo rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rpm
 ```
+# Remi repo
+http://blog.remirepo.net/pages/Config-en
 
 #镜像网站
 http://mirror-status.centos.org/

@@ -4,4 +4,6 @@
 再添加 LoadModule rewrite_module modules/mod_rewrite.so 到对应的位置
 
 在http.conf中设置php.ini的值，用
+```
 # php_value xdebug.remote_autostart 1
+```

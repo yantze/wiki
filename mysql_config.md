@@ -1,11 +1,26 @@
+# 显示 所有变量
+```
+SHOW VARIABLES
+show global variables like '%slow%';
+SET GLOBAL LOG_SLOW_QUERIES = ON;
+SET GLOBAL SLOW_QUERY_LOG = ON;
+set @@global.log_slow_queries=1;
+```
+
 # 一句话执行SQL
+```
 mysql -e "statement1; statement2"  dbname -u username -p password
+```
 
 # 可以压缩导出的文档
+```
 mysqldump -uraiuds -p radius | gzip -9 >sql.gz
+```
 
 # 备份数据库到本地
+```
 ssh user@host 'mysqldump -uuser -ppassword database' > /path/to/save/mysql_backup.sql
+```
 
 # MyISAM和InnoDB区别
 ## 在锁表上的区别
@@ -18,6 +33,7 @@ InnoDB:记录锁，只会锁定当前操作的行，写频繁的应用中用Inno
 InnoDB支持但MyIsam不支持。
 
 # mysql 的编码
+```
 /etc/my.conf
 [client]
 default-character-set=utf8
@@ -36,6 +52,7 @@ client ===
 set character_set_client = utf8;
 set character_set_connection = utf8;
 set character_set_results = utf8;
+```
 
 # add binlog
 `/etc/my.cnf`
@@ -44,7 +61,9 @@ log-bin=/data/mysql/mysql-bin
 expire_logs_days=7
 ```
 恢复指定时间
+```
 /usr/local/mysql/bin/mysqlbinlog -uroot -p -D mysql-bin.000044  \
 --start-datetime="2014-02-11 03:00:00" \
 --stop-datetime="2014-02-14 20:00:00" > ~/binlogbk/recover-head.sql
+```
 
