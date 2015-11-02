@@ -343,6 +343,7 @@ rm !(*.php) // 删除当前目录下不是扩展名php的文件。
 vimdiff
 vimdiff =(gcc -march=native -Q --help=target) =(gcc -march=core2 -Q --help=target) #比较两个非文件不同
 diff =(typeset) =(set) #也是可以比较的，但是不够vimdiff详细
+sdiff # diff的垂直展示
 
 sshfs
 sshfs -o allow_other root@192.168.9.109:/opt /opt/s109 #挂载(如配上ssh key可完全自动化)

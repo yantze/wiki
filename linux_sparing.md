@@ -46,3 +46,9 @@ extundelete  /dev/sdc1  --restore-all
 [root@cloud1 mnt]# extundelete  --after 1379146740 --before 1379150555 --restore-all /dev/sdc1
 
 【如何找回一个误删除、但还在被进程打开的文件？】 到/proc目录下找打开这个文件的pid下的fd目录，然后ls -l /proc/<pid>/fd/ 你会看到哪个fd是link到了这个被误删除的文件，然后：cp /proc/<pid>/fd/<fd> ~/myfile.txt 。这个方法对于一些执行中的shell脚本同样有效。
+
+
+生成 core dump
+gcore PID
+https://github.com/zendtech/ZendOptimizerPlus/issues/176
+https://ma.ttias.be/generate-php-core-dumps-segfaults-php-fpm/
