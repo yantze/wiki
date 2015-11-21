@@ -141,15 +141,18 @@ http://yanhaijing.com/git/2014/11/01/my-git-note/
 
 ##submodule
 if display error detach master,use below commands
+```
 git checkout HEAD
 git push
 git checkout master
 git pull
-get thing done
+```
 
 ## move master to origin/master
+```
 git checkout master
 git rebase origin/master
+```
 
 
 # git-extras

@@ -1,4 +1,6 @@
 ###firewall
+good guide:
+[firewalld](http://www.certdepot.net/rhel7-get-started-firewalld/)
 
 ####open a port permanent
     firewall-cmd --zone=dmz --add-port=2888/tcp --permanent
@@ -14,6 +16,10 @@ list add firewall rules:
 
 firewall-cmd --set-default-zone=<zone>:
     firewall-cmd --zone=<zone> --query-port=80/tcp
+
+trust source
+firewall-cmd --permanent --zone=trusted --add-source=192.168.2.0/24
+firewall-cmd --zone=trusted --list-sources
 
 ##advance
 To know if Firewalld is running, root user

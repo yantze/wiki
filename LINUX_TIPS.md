@@ -345,6 +345,11 @@ vimdiff =(gcc -march=native -Q --help=target) =(gcc -march=core2 -Q --help=targe
 diff =(typeset) =(set) #也是可以比较的，但是不够vimdiff详细
 sdiff # diff的垂直展示
 
+xargs
+echo 'a.json' | > newfile.txt
+echo 'a.json' | xargs cat
+echo 'a.json' | cat
+
 sshfs
 sshfs -o allow_other root@192.168.9.109:/opt /opt/s109 #挂载(如配上ssh key可完全自动化)
 添加allow_other是因为执行这条命令的人可能需要其它人使用，所以添加这个参数后就可以用用其它的用户了
@@ -505,3 +510,6 @@ echo '1+1' | bc
 /var/log/secure       – 认证日志。
 /var/log/wtmp or wtmp – 登录日志。
 /var/log/yum.log      – Yum 日志。
+
+/usr unix shared resources
+/opt editable text configuration
