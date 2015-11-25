@@ -25,10 +25,18 @@ var p = function(o) {
     return pub;
 }
 
-// if add '()' to end,such as function(o){}(),
-// just get a single instance, equals `var c = new p(o);`
-
 // #3
+var p = function() {
+  function ToProgress(opt, selector) {
+    this.progressBar = document.createElement('div');
+  }
+
+  ToProgress.prototype.hide = function() {
+    this.progressBar.style.opacity = '0';
+  }
+
+  return ToProgress
+}();
 
 
 // ===
