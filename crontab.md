@@ -106,3 +106,8 @@ oracle root
 0 12 * * * /root/bin/sync-clock.sh
 [root@dave cron]#
 
+```
+0,5,10,15,20,25,30,35,40,45,50,55  * * * * php app/Console/cake.php send_emails
+// equal
+*/5  * * * * php app/Console/cake.php send_emails
+```
