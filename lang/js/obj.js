@@ -62,6 +62,7 @@ var p = function(opt) {
   }
 }()
 
+// 闭包（Closure）是词法闭包（Lexical Closure）或函数闭包（function closures）的简称
 // 对于 闭包函数的 突破
 // 创建Person函数  
 function Person()  
