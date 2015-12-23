@@ -27,8 +27,4 @@ Ctrl+a <        read paste buffer from file useful for pasting between screens
 
 Ctrl+a ?        show key bindings/command names Note unbound commands only in man page
 Ctrl+a :        goto screen command prompt  up shows last command entered
-
-alias proj="cd /data/web/data.jinfuzi.net/"
-alias wget="wget --no-check-certificate"
-alias pyftp="sudo ~yantze/.bin/_pyftp"
 ```
