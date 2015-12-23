@@ -1,3 +1,4 @@
+# vargrant
 
 #### Will download soft
 
@@ -6,7 +7,6 @@
 
 then
 
-# vargrant
 - mkdir a dir name `ubuntu`
 - put command `vagrant init hashicorp/precise32`
 
