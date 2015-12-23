@@ -9,7 +9,7 @@ gcc dummy.c -Wl,--verbose 2>&1 | grep succeeded
 ```
 
 - 5.9
-must delete previous binutils-build direction
+: must delete previous binutils-build direction
 
 - 5.12
 cp -v configure{,.orig}
@@ -23,17 +23,21 @@ Above the meaning of the configure options: `--without-bash-malloc`, This option
 
 
 
-###get skill
+### get skill
 
 #### no.1
+```
 ld --verbose | ag SEARCH | sed 's/;/\n/g'
 sed 's|;|\n|g'  OR sed 's@;@\n@g also take effect
+```
 
 #### no.2
+```
 gcc -dumpspecs | sed -e 's@/tools@@g'                   \
     -e '/\*startfile_prefix_spec:/{n;s@.*@/usr/lib/ @}' \
     -e '/\*cpp:/{n;s@$@ -isystem /usr/include@}' >      \
     `dirname $(gcc --print-libgcc-file-name)`/specs
+```
 
 #### no.3
 `find curdir -name *.sh`
