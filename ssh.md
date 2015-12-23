@@ -1,7 +1,6 @@
-#change the login message motd(message of today)
-/etc/motd
+# About SSH
 
-ssh登陆
+### ssh登陆
 我使用远程的方法：
 ```
 ssh-gen
@@ -17,15 +16,15 @@ mkdir -p to avoid failing if .ssh already exists.
 brew install ssh-copy-id
 ```
 
-
-ssky-keygen + ssh-copy-id 无密码登陆远程LINUX主 机
+### ssky-keygen + ssh-copy-id 无密码登陆远程LINUX主 机
 
 使用下例中ssky-keygen和ssh-copy-id，仅需通过3个步骤的简单设置而无需输入密码就能登录远程Linux主机。
-ssh-keygen 创建公钥和密钥。
-ssh-copy-id 把本地主机的公钥复制到远程主机的authorized_keys文件上。
-ssh-copy-id 也会给远程主机的用户主目录（home）和~/.ssh, 和~/.ssh/authorized_keys设置合适的权限 。
+- ssh-keygen 创建公钥和密钥。
+- ssh-copy-id 把本地主机的公钥复制到远程主机的authorized_keys文件上。
+- ssh-copy-id 也会给远程主机的用户主目录（home）和~/.ssh, 和~/.ssh/authorized_keys设置合适的权限 。
 
 步骤1: 用 ssh-key-gen 在本地主机上创建公钥和密钥
+```
 ligh@local-host$ ssh-keygen -t  rsa
 Enter file in which to save the key (/home/jsmith/.ssh/id_rsa):[Enter key]
 Enter passphrase (empty for no passphrase): [Press enter key]
@@ -33,33 +32,33 @@ Enter same passphrase again: [Pess enter key]
 Your identification has been saved in /home/jsmith/.ssh/id_rsa.
 Your public key has been saved in /home/jsmith/.ssh/id_rsa.pub.
 The key fingerprint is: 33:b3:fe:af:95:95:18:11:31:d5:de:96:2f:f2:35:f9
-ligh@local-host
+```
 
 步骤2: 用 ssh-copy-id 把公钥复制到远程主机上
+```
 ligh@local-host$ ssh-copy-id -i ~/.ssh/id_rsa.pub  root@192.168.0.3
 ligh@remote-host‘s password:
 Now try logging into the machine, with ―ssh ?remote-host‘‖, and check in:
 .ssh/authorized_keys to make sure we haven‘t added extra keys that you weren‘t expecting.
-[注: ssh-copy-id 把密钥追加到远程主机的 .ssh/authorized_key 上.]
+```
+> [注: ssh-copy-id 把密钥追加到远程主机的 .ssh/authorized_key 上.]
 
 步骤3: 直接登录远程主机
+```
 ligh@local-host$ ssh remote-host
 Last login: Sun Nov 16 17:22:33 2008 from 192.168.1.2
-[注: SSH 不会询问密码.]
-ligh@remote-host$
-[注: 你现在已经登录到了远程主机上]
+```
+> [注: SSH 不会询问密码.]
 
 
 
-SSH反向连接及Autossh
+## SSH反向连接及Autossh
 detail:http://www.cnblogs.com/eshizhan/archive/2012/07/16/2592902.html
 
 ssh连接主机两种方法:
-1,被动连接:C访问公网IP地址服务器S
-2,主动连接:C访问S已经联通本地的网络:
-内网主机主动连接到外网主机，又被称作反向连接（Reverse Connection），这样NAT路由/防火墙就会在内网主机和外网主机之间建立映射，自然可以相互通信了。但是，这种映射是NAT路由自动维持的，不会持续下去，如果连接断开或者网络不稳定都会导致通信失败，这时内网主机需要再次主动连接到外网主机，建立连接。
-
- 
+- 被动连接:C访问公网IP地址服务器S
+- 主动连接:C访问S已经联通本地的网络:
+> 内网主机主动连接到外网主机，又被称作反向连接（Reverse Connection），这样NAT路由/防火墙就会在内网主机和外网主机之间建立映射，自然可以相互通信了。但是，这种映射是NAT路由自动维持的，不会持续下去，如果连接断开或者网络不稳定都会导致通信失败，这时内网主机需要再次主动连接到外网主机，建立连接。
 
 1.理论的介绍完了，下面实际操作：
 
@@ -138,3 +137,9 @@ SysV：/etc/inid.d/autossh
 Upstart: /etc/init/autossh.conf
 
 systemd: /usr/lib/systemd/system/autossh.service
+
+change the login message motd(message of today)
+```
+/etc/motd
+```
+
