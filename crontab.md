@@ -1,7 +1,7 @@
-# Linux定时任务命令Crontab参数详解
-author: 蜂巢  /  yadgen
+# Crontab参数详解
 
-> crontab——操作每个用户的守护程序和该执行的时间表。
+> Linux定时任务命令 crontab——操作每个用户的守护程序和该执行的时间表。
+author: 蜂巢  /  yadgen
 
 ## Format
 crontab文件的格式：M H D m d cmd.
@@ -129,10 +129,13 @@ HOME=/
 /etc/cron.allow 表示能使用crontab的用户。
 如果两个文件同时存在，那么/etc/cron.allow 优先。
 如果两个文件都不存在，那么只有超级用户可以安排作业。
-每个用户都会生成一个自己的crontab 文件。这些文件在/var/spool/cron目录下：
+```
 
+每个用户都会生成一个自己的crontab 文件。这些文件在/var/spool/cron目录下：
 ```
 0,5,10,15,20,25,30,35,40,45,50,55  * * * * php app/Console/cake.php send_emails
-// equal
+
+# equal
+
 */5  * * * * php app/Console/cake.php send_emails
 ```
