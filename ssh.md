@@ -3,10 +3,19 @@
 
 ssh登陆
 我使用远程的方法：
+```
 ssh-gen
 ssh-copy-id -i ~/.ssh/id_rsa.pub user@localhost
-取出private key,然后用 puttygen转换成 putty的 private key，登陆的时候导入
+# 取出private key,然后用 puttygen转换成 putty的 private key，登陆的时候导入
+```
 
+same with ssh-copy-id
+```
+`ssh user@host "mkdir -p .ssh && cat >> .ssh/authorized_keys" < ~/.ssh/id_rsa.pub`
+mkdir -p to avoid failing if .ssh already exists.
+# `ssh-copy-id` not work in mac can use :
+brew install ssh-copy-id
+```
 
 
 ssky-keygen + ssh-copy-id 无密码登陆远程LINUX主 机

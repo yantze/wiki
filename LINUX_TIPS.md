@@ -138,11 +138,6 @@ openssl rand -hex n
 截取长度
 ${variable:0:5}
 
-zsh内置函数
-zmv
-zmv '(*).lis' '$1.txt' // renames 'foo.lis' to 'foo.txt'
-alias mmv='noglob zmv -W'  //noglob means no need quote the arguments
-mmv *.c.orig orig/*.c
 
 stat file/dirname
 显示inode和blocks数量
@@ -252,25 +247,6 @@ wget http://host_name_of_the_server/path/to/file3.txt
 
 
 
-
-
-zsh使用技巧
-..  快速向上跳 ‘...’顶目录
-ls * 或者ls -l * 都是可以递归显示
-j 曾今访问过的目录名 这个功能需要安装autojump
-alt+l 直接执行上一次执行的内容
-直接输入目录可以进入
-zsh 的补全，所有待补全项都可以通过键盘方向键或者 <Ctrl-n/p/f/b> 来选择
-聰明的目錄補全 cd /u/p/w/p/s/m/w/s/j<TAB>
-快速目录切换 zsh 会记住你每一次切换的路径，然后通过 1 来切换到你上一次访问的路径，2 切换到上上次……一直到 9，还可以通过 d 查看目录访问历史
-自动历史目录: cd -<TAB>, 可以看到当前命令行中的历史目录
-osx:
-man-preview 通过 preview 程序查看一个命令的手册，例如 man-preview git  (需要給oh-my-zsh
-中添加參數 osx)
-quick-look 快速预览文件
-pfd 返回当前 finder 打开的文件夹的路径
-cdf 切换到当前 finder 所在的目录
-
 ssh使用技巧
 ssh-keygen 生成id_rsa,id_rsa.pub
 cat id_rsa.pub>>authorized_keys
@@ -340,6 +316,12 @@ rename 's/^glyphicons_[0-9]+_//' glyphicons_*.png
 ls -1 glyphicons_[0-9]*.png|sed "s/glyphicons_\([0-9][0-9]*\)_\(.*\).png/mv & \2.png/"|sh -v
 rm !(*.php) // 删除当前目录下不是扩展名php的文件。
 
+
+set 和 typeset 的区别
+set 显示当前系统的环境变量
+typeset 还显示这些系统变量的类型
+typeset -aU path 可以去掉重复的 PATH
+
 vimdiff
 vimdiff =(gcc -march=native -Q --help=target) =(gcc -march=core2 -Q --help=target) #比较两个非文件不同
 diff =(typeset) =(set) #也是可以比较的，但是不够vimdiff详细
@@ -366,26 +348,6 @@ smbclient //192.168.1.50/share -U domain\user
 e2fsch -p //检测并自动修复文件系统
 
 
-dd
-备份/dev/hdb全盘数据，并利用gzip工具进行压缩，保存到指定路径
-    dd if=/dev/hdb | gzip> /root/image.gz
-将压缩的备份文件恢复到指定盘
-    gzip -dc /root/image.gz | dd f=/dev/hdb
-备份磁盘开始的512个字节大小的MBR 主引导记录信息到指定文件
-    dd if=/dev/hda f=/root/image count=1 bs=512   默认从硬盘0柱面0磁道1扇区读取512个字节
-    count=1指仅拷贝一个块；bs=512指块大小为512个字节。
-    恢复：dd if=/root/image f=/dev/hda
-修复硬盘：                 自初始化硬盘
-    dd if=/dev/sda f=/dev/sda  SCSI硬盘 或dd if=/dev/hda f=/dev/hda   IDE
-BLOCKS单位:b=512, c=1, k=1024, w=2, xm=number m
-跳过一段以后才输出 seek=BLOCKS
-跳过一段以后才输入 skip=BLOCKS
-eg:dd if=fork.c of=i.iso count=20 bs=2c
-讲的是从fork.c中提取20个2char，写到文件i.iso中
-eg:dd if=fork.c of=i.iso count=20 bs=2c seek=2c skip=2c
-讲的是从fork.c中先偏移读取指针2char，提取20个2char，再放弃输出2char，然后输出18char到i.iso文件中
-eg:dd if=/dev/zero of=2g.img seek=1000 count=1 bs=1M
-这条命令输出后，结果是占用了1M磁盘空间，但是用ll显示，是1001M的文件
 
 
 dev
@@ -404,13 +366,6 @@ rouchdb #一个json格式的nosql数据库
 fail2ban
 duck #duck -q --synchronize ftp://pftp:pftp@127.0.0.1/pocket/ ~/tmp/tes
 #必须要在url后面指定一个文件夹,否则程序会出错
-
-zsh使用技巧
-..  快速向上跳 ‘...’顶目录
-ls * 或者ls -l * 都是可以递归显示
-j 曾今访问过的目录名 这个功能需要安装autojump
-alt+l 直接执行上一次执行的内容
-直接输入目录可以进入
 
 dirs 的命令
 d  //d is an alias for dirs -v | head -10
@@ -496,7 +451,7 @@ expr 1 + 1
 let a=1
 echo $((1+1))
 echo '1+1' | bc
-具体的可以看 ~/.dotfiles/doc/bash.math.md
+具体的可以看 ~/.dotfiles/wiki/
 
 
 常见的日志位置

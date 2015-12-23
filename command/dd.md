@@ -1,6 +1,26 @@
+dd
+备份/dev/hdb全盘数据，并利用gzip工具进行压缩，保存到指定路径
+    dd if=/dev/hdb | gzip> /root/image.gz
+将压缩的备份文件恢复到指定盘
+    gzip -dc /root/image.gz | dd f=/dev/hdb
+备份磁盘开始的512个字节大小的MBR 主引导记录信息到指定文件
+    dd if=/dev/hda f=/root/image count=1 bs=512   默认从硬盘0柱面0磁道1扇区读取512个字节
+    count=1指仅拷贝一个块；bs=512指块大小为512个字节。
+    恢复：dd if=/root/image f=/dev/hda
+修复硬盘：                 自初始化硬盘
+    dd if=/dev/sda f=/dev/sda  SCSI硬盘 或dd if=/dev/hda f=/dev/hda   IDE
+BLOCKS单位:b=512, c=1, k=1024, w=2, xm=number m
+跳过一段以后才输出 seek=BLOCKS
+跳过一段以后才输入 skip=BLOCKS
+eg:dd if=fork.c of=i.iso count=20 bs=2c
+讲的是从fork.c中提取20个2char，写到文件i.iso中
+eg:dd if=fork.c of=i.iso count=20 bs=2c seek=2c skip=2c
+讲的是从fork.c中先偏移读取指针2char，提取20个2char，再放弃输出2char，然后输出18char到i.iso文件中
+eg:dd if=/dev/zero of=2g.img seek=1000 count=1 bs=1M
+这条命令输出后，结果是占用了1M磁盘空间，但是用ll显示，是1001M的文件
+
 # linux dd命令参数及用法详解---用指定大小的块拷贝一个文件
-date:2010-06-14
-from: 未知
+date:2010-06-14 from:unknown
 
 dd 的主要选项：
 

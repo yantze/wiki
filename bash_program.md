@@ -193,3 +193,16 @@ test -c /dev/hda ; echo $? # 将打印 1 表示 test 命令的返回值为 1, /d
 
 更多的用法在 `man bash`
 [more](http://www.ibm.com/developerworks/cn/linux/shell/bash/bash-2/index.html)
+
+
+
+### 少见
+退出码, linux 命令行上一个命令的退出码放在了$?环境变变中
+```
+$ true; $?  =>  0
+$ false; $? =>  1
+```
+
+如果这个命令是一串管道符连接和多个命令，怎么知道每个命令的退出码？
+你可以使用 PIPESTATUS环境变量。比如这个测试：true | false | true; echo "${PIPESTATUS[@]}"
+
