@@ -8,7 +8,7 @@ will show all the files successfully opened during the linking.
 gcc dummy.c -Wl,--verbose 2>&1 | grep succeeded 
 ```
 
-5.9
+*5.9*
 must delete previous binutils-build direction
 
 5.12
