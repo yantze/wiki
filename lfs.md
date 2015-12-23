@@ -29,14 +29,14 @@ This option turns off the use of Bash's memory allocation (malloc) function whic
 ld --verbose | ag SEARCH | sed 's/;/\n/g'
 sed 's|;|\n|g'  OR sed 's@;@\n@g also take effect
 
-####no.2
+#### no.2
 gcc -dumpspecs | sed -e 's@/tools@@g'                   \
     -e '/\*startfile_prefix_spec:/{n;s@.*@/usr/lib/ @}' \
     -e '/\*cpp:/{n;s@$@ -isystem /usr/include@}' >      \
     `dirname $(gcc --print-libgcc-file-name)`/specs
 
-####no.3
-find curdir -name *.sh
+#### no.3
+`find curdir -name *.sh`
 此命令在某些情况下不能顺利找到curdir下的*.sh文件
 -name后面的参数 *.sh 并不一定会直接传给 find命令，而是现在当前目录下进行匹配
 根据当前目录的匹配情况，可能有一下三种可能：
