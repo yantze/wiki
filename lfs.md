@@ -46,6 +46,7 @@ gcc -dumpspecs | sed -e 's@/tools@@g'                   \
 2、当目录存在一个abc.sh时，shell命令实际变为 find /yazuo_apps/crm35/current -name abc.sh;
 3、当前目录存在多个sh文件（abc.sh; cba.sh），shell命令实际变为 find /yazuo_apps/crm35/current -name abc.sh cba.sh;，此时因为-name后面有两个匹配字符，shell将报错: find: paths must precede expression:
 ```
+
 1. 当前目录不存在*.sh，此时shell会顺利的把 *.sh传递给find命令，此时一切顺利。
 
 2. 当目录存在一个abc.sh时，shell命令实际变为 find /yazuo_apps/crm35/current -name abc.sh;
