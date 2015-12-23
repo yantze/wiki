@@ -24,6 +24,7 @@ crontab文件的格式：M H D m d cmd.
 当第1列为 a, b, c,… 时表示第 a, b, c,… 分钟要执行,第2列 为 a, b, c,… 时表示第 a, b, c…个小时要执行,其余类推
 ```
 
+## Argument
 具体的部分参数说明如下：
 ```
 crontab file [-u user]-用指定的文件替代目前的crontab。 
@@ -34,7 +35,6 @@ crontab-d[user]-删除用户目前的crontab.
 crontab-c dir- 指定crontab的目录。 
 ```
 
-
 服务器不重启的情况下定时自动重启apache及mysql服务，其实也大同小异。具体步骤如下：
 
 1. 每天的12点及16点重启apache及mysql服务
@@ -42,7 +42,6 @@ crontab-c dir- 指定crontab的目录。
 # cd /opt/
 # vim reboot.txt
 ```
-
 在reboot.txt文件中输入下面的内容后保存
 ```
 0 12 * * * service httpd restart
