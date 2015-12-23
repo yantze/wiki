@@ -49,33 +49,40 @@ inner join region_manager rm on u.user_id = rm.user_id
 
 ```
 -h: PostgreSQL服务器的主机为192.168.149.137。
+
 -U: 登录用户为postgres。
+
 -t: 导出表名以test开头的数据表，如testtable。
+
 -a: 仅仅导出数据，不导出对象的schema信息。
+```
+
 -f: 输出文件是当前目录下的my_dump.sql
 ```
 # mydatabase是此次操作的目标数据库。
-```
 pg_dump -h 192.168.149.137 -U postgres -t test* -a -f ./my_dump.sql mydatabase
 ```
-#-c: 先输出删除数据库对象的SQL命令，在输出创建数据库对象的SQL命令，这对于部署干净的初始系统或是搭建测试环境都非常方便。
+
+-c: 先输出删除数据库对象的SQL命令，在输出创建数据库对象的SQL命令，这对于部署干净的初始系统或是搭建测试环境都非常方便。
 ```
 pg_dump -h 192.168.220.136 -U postgres -c -f ./my_dump.sql mydatabase
 ```
-#导出mydatabase数据库的信息。在通过psql命令导入时可以重新指定数据库，如：/> psql -d newdb -f my_dump.sql
+
+导出mydatabase数据库的信息。在通过psql命令导入时可以重新指定数据库，如：/> psql -d newdb -f my_dump.sql
 ```
 pg_dump -h 192.168.220.136 -U postgres -f ./my_dump.sql mydatabase
 ```
-#导出模式为my_schema和以test开头的数据库对象名，但是不包括my_schema.employee_log对象。
+
+导出模式为my_schema和以test开头的数据库对象名，但是不包括my_schema.employee_log对象。
 ```
 pg_dump -t 'my_schema.test*' -T my_schema.employee_log mydatabase > my_dump.sql
 ```
-#导出east和west模式下的所有数据库对象。下面两个命令是等同的，只是后者使用了正则。
+
+导出east和west模式下的所有数据库对象。下面两个命令是等同的，只是后者使用了正则。
 ```
 pg_dump -n 'east' -n 'west' mydatabase -f my_dump.sql
 pg_dump -n '(east|west)' mydatabase -f my_dump.sql
 ```
-
 
 如果仅仅导出数据表结构，需要添加 -s 参数，例如：
 ```
