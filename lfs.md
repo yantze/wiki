@@ -1,12 +1,15 @@
+The following command will illustrate the current search paths and their order.
+```
 ld --verbose | grep SEARCH
-will illustrate the current search paths and their order.
+```
 
-gcc dummy.c -Wl,--verbose 2>&1 | grep succeeded 
 will show all the files successfully opened during the linking.
+```
+gcc dummy.c -Wl,--verbose 2>&1 | grep succeeded 
+```
 
-
-
-5.9,must delete previous binutils-build direction
+5.9
+must delete previous binutils-build direction
 
 5.12
 cp -v configure{,.orig}
