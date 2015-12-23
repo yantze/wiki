@@ -24,7 +24,9 @@ This option turns off the use of Bash's memory allocation (malloc) function whic
 
 
 ###get skill
-####no.1
+---
+
+#### no.1
 ld --verbose | ag SEARCH | sed 's/;/\n/g'
 sed 's|;|\n|g'  OR sed 's@;@\n@g also take effect
 
