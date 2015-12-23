@@ -5,6 +5,8 @@
 mysql -uroot -hlocalhost -p
 ```
 
+基本操作
+```
 列出数据库：show databases;
 选择数据库：use databaseName;
 列出表格：show tables；
@@ -12,6 +14,7 @@ mysql -uroot -hlocalhost -p
 匹配字符：可以用通配符_代表任何一个字符，％代表任何字符串;
 增加一个字段：alter table tabelName add column fieldName dateType;
 增加多个字段：alter table tabelName add column fieldName1 dateType,add columns fieldName2 dateType;
+```
 
 创建用户
 ```
