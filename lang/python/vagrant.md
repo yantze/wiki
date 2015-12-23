@@ -1,4 +1,4 @@
-#### will download soft
+#### Will download soft
 
 - vagrant
 - vitrulbox
@@ -9,7 +9,7 @@ then
 - put command `vagrant init hashicorp/precise32`
 
 
-#### there have some command
+#### There have some command
 ```
 $ vagrant init  # 初始化
 $ vagrant up  # 启动虚拟机
@@ -22,7 +22,7 @@ $ vagrant destroy  # 销毁当前虚拟机
 $ vagrant ssh-config #This lets you see the detailed login credentials of how you could connect to the virtual environment.
 ```
 
-#### have a share dir
+#### Have a share dir
 ```
 cd ~/Documents/vagrant/ubuntu
 vagrant up
@@ -33,6 +33,6 @@ there have some command
 ```
 
 
-#### package some box
+#### Package some box
 you can put command `vagrant package` to package a Box, vagrant box add myubuntu ~/Documents/Vagrant/Ubunutu/ubunut.box, the myubuntu is your box name 
 
