@@ -1,8 +1,14 @@
-# every system will use it
-pip install Glances
+# *nix software recommand
 
-# trash-cli : python2.7
-/bin/pip install trash-cli
+glances system stats
+```
+pip install glances
+```
 
-# cling:clang
+trash-cli : python2.7
+```
+pip install trash-cli
+```
+
+cling:clang
 https://ecsft.cern.ch/dist/cling/current/

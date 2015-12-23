@@ -2,9 +2,7 @@
 
 查看负载均衡
 ```
-#view system loadavg
 sysctl vm.loadavg
-brew install coreutils #install coreutils to compatible linux
 ```
 
 install homebrewcask
