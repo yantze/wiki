@@ -9,7 +9,7 @@ gcc dummy.c -Wl,--verbose 2>&1 | grep succeeded
 ```
 
 - 5.9
-: must delete previous binutils-build direction
+must delete previous binutils-build direction
 
 - 5.12
 cp -v configure{,.orig}
