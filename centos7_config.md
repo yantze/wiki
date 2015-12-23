@@ -15,11 +15,11 @@ sudo yum install yum-axelget
 
 ## time
 ```bash
-# timedatectl list-timezones # 列出所有时区
-# timedatectl set-local-rtc 1 # 将硬件时钟调整为与本地时钟一致, 0 为设置为 UTC 时间
-# timedatectl set-timezone Asia/Shanghai # 设置系统时区为上海
+timedatectl list-timezones # 列出所有时区
+timedatectl set-local-rtc 1 # 将硬件时钟调整为与本地时钟一致, 0 为设置为 UTC 时间
+timedatectl set-timezone Asia/Shanghai # 设置系统时区为上海
 
-# cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 ```
 
 ## repo
