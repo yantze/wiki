@@ -1,6 +1,6 @@
-## MySQL基本命令
+# MySQL 实践
 
-[TOC]
+[[TOC]]
 
 进入MySQL管理，用yum mysql mysql-devel
 ```
