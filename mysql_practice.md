@@ -203,7 +203,8 @@ create trigger general_entry_menu after insert on d_menu
 drop trigger general_entry_menu
 ```
 
----
+## 其他人的总结
+
 创建myisam表
 ```
 CREATE TABLE test2(
@@ -215,7 +216,7 @@ PRIMARY KEY (id)
 
 
 
-//创建innodb表
+创建innodb表
 ```
 CREATE TABLE test1(
 id int(11) NOT NULL AUTO_INCREMENT,
@@ -313,38 +314,48 @@ truncate table test1;
 show variables like '%log_bin%';
 ```
 
-log_bin on //开启
+# 二进制备份
 开启方法。my.cnf
-log-bin=xxx
+log_bin on //开启
 
+```
 mysql>flush logs; //执行就会多一个最新的bin-log日志。
-
 
 mysql>show master status; //查看最后一个bin-log日志
 
 mysql>reset master;//清空所有的bin-log日志
+```
 
 
+```bash
 ./mysqlbinlog --no-defaults mysql-0001.bin//查看日志内容
 
 ./mysqlbinlog --no-defaults mysql-0001.bin | mysql -uroot -p123 test//烣复数据
 
 mysqldump -uroot -p123456 -l -F  test> test.sql
 -l  lock read -F flush logs
+```
 
 
 慢查询次数
+```
 show status like 'slow_queries';
+```
 
 慢查询时间
+```
 show variables like 'long_query_time';
+```
 
 打开慢查询
+```
 my.cnf
 slow_query_log =1
 long_query_time=1
+```
 
 存储过程
+```
 DELIMITER $$
 DROP PROCEDURE IF EXISTS create_test1$$
 CREATE PROCEDURE  create_test1(IN n INT)
@@ -359,12 +370,16 @@ BEGIN
     SET autocommit = 1;
 END$$
 DELIMITER ;
+```
 
 //显示存储过程
+```
 SHOW CREATE PROCEDURE pro_test1;
 show procedure status \G
+```
 
 //存储过程预处理语句执行动态表插入
+```
 DELIMITER $$
 DROP PROCEDURE IF EXISTS create_test$$
 CREATE PROCEDURE create_test(IN n INT, IN table_name VARCHAR(255))
@@ -387,9 +402,11 @@ CREATE PROCEDURE create_test(IN n INT, IN table_name VARCHAR(255))
     END$$
 
 DELIMITER ;
+```
 
 
 //function 
+```
 DELIMITER $$
 DROP FUNCTION IF EXISTS shorten$$
 CREATE FUNCTION shorten(s VARCHAR(255), n INT) RETURNS VARCHAR(255) CHARSET utf8
@@ -407,8 +424,10 @@ BEGIN
      END IF;
 END$$
 DELIMITER ;
+```
 
 
+```
 DELIMITER $$
 DROP FUNCTION IF EXISTS test$$
 CREATE FUNCTION test(n INT) RETURNS VARCHAR(255) 
@@ -422,8 +441,10 @@ BEGIN
     RETURN s;
 END$$
 DELIMITER ;
+```
 
 
+```
 DELIMITER $$
 DROP FUNCTION IF EXISTS test1$$
 CREATE FUNCTION test1(n INT) RETURNS VARCHAR(255) 
@@ -437,8 +458,10 @@ BEGIN
     RETURN s;
 END$$
 DELIMITER ;
+```
 
 
+```
 DELIMITER $$
 DROP FUNCTION IF EXISTS test2$$
 CREATE FUNCTION test2(n INT) RETURNS VARCHAR(255) 
@@ -454,11 +477,12 @@ BEGIN
     RETURN s;
 END$$
 DELIMITER ;
+```
 
 
 
+```
 DELIMITER $$
-
 
 DROP VIEW IF EXISTS `test_view`$$
 CREATE VIEW test2_view AS (
@@ -468,9 +492,11 @@ SELECT
 FROM `test2`
 )$$
 DELIMITER ;
+```
 
 
 
+```
 delimiter $$
 
 create function rand_string(n INT) 
@@ -487,10 +513,13 @@ begin
    end while;
   return return_str;
   end $$
+```
 
 
-# 指导手册
+## 参考
+
+#### 指导手册
 《网易MySQL》这本不错，讲得很实战化。
 
-# 慢查询 优化
+#### 慢查询 优化
 [b+tree](http://www.javaranger.com/archives/1728)
