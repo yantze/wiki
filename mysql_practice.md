@@ -314,9 +314,11 @@ truncate table test1;
 show variables like '%log_bin%';
 ```
 
-# 二进制备份
+## 二进制日志
+```
 开启方法。my.cnf
 log_bin on //开启
+```
 
 ```
 mysql>flush logs; //执行就会多一个最新的bin-log日志。
@@ -372,13 +374,13 @@ END$$
 DELIMITER ;
 ```
 
-//显示存储过程
+显示存储过程
 ```
 SHOW CREATE PROCEDURE pro_test1;
 show procedure status \G
 ```
 
-//存储过程预处理语句执行动态表插入
+存储过程预处理语句执行动态表插入
 ```
 DELIMITER $$
 DROP PROCEDURE IF EXISTS create_test$$
@@ -405,7 +407,7 @@ DELIMITER ;
 ```
 
 
-//function 
+function 
 ```
 DELIMITER $$
 DROP FUNCTION IF EXISTS shorten$$
