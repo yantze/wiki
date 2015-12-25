@@ -1,6 +1,6 @@
 # MySQL 实践
 
-[[TOC]]
+[[mysql_base]]
 
 进入MySQL管理，用yum mysql mysql-devel
 ```
