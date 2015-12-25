@@ -1,5 +1,7 @@
 ## MySQL基本命令
 
+[TOC]
+
 进入MySQL管理，用yum mysql mysql-devel
 ```
 mysql -uroot -hlocalhost -p
@@ -162,7 +164,6 @@ ALTER TABLE `ipstats` DROP INDEX `ip`;
 alter table radcheck drop mac;
 ```
 
-### 未实践
 增加表的外键
 ```
 alter table score add constraint fk foreign key(stu_id) references student(id);
@@ -315,8 +316,9 @@ show variables like '%log_bin%';
 ```
 
 ## 二进制日志
+开启方法
 ```
-开启方法。my.cnf
+# my.cnf
 log_bin on //开启
 ```
 
