@@ -40,7 +40,7 @@ update mysql.user set password=password('新密码') where User="phplamp" and Ho
 
 创建数据库：
 ```
-create database phplampDB;
+CREATE DATABASE `dbname` /*!40100 COLLATE 'utf8_general_ci' */
 ```
 刷新系统权限表
 ```

@@ -59,11 +59,14 @@ nl || cat -n || cat -d //给文件加行号，中间的会给空行加行号，�
 nl等同于cat -b
 dmesg //查看软硬件配置
 uptime //查看计算机登陆信息，负载均衡等
-su www -c 'php xxx.php' //命令下行指定用户组来执行命令
-usermod -a -G groupA user //添加用户到用户组
 od -c file / od file //显示文件内容，如果没有c显示其它进制
 fc //这个是可以在命令行输入文字到vim中编辑的内置命令
 time command // 这个可以查看当前命令执行的时间
+
+groupadd sftpgroup
+useradd username -g sftpgroup -s /bin/bash -d home_dir
+usermod -a -G groupA user //添加用户到用户组
+su www -c 'php xxx.php' //命令下行指定用户组来执行命令
 
 ifconfig
 ifconfig -a //显示所有网卡接口
