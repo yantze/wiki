@@ -1,4 +1,5 @@
-# Bored with "tar -zxvf" for .tar.gz, "tar -xvjf" for .tar.bz2 or something else?
+### Bored with "tar -zxvf" for .tar.gz, "tar -xvjf" for .tar.bz2 or something else?
+```bash
 extract () {
   if [ -f $1 ] ; then
       case $1 in
@@ -24,8 +25,10 @@ extract () {
       echo "'$1' is not a valid file!"
   fi
 }
+```
 
-# some useful compress command[^1]
+### some useful compress command[^1]
+```
 .tar (僅打包，無壓縮)
 套件名稱：tar。
 打包：
@@ -164,8 +167,10 @@ $ rar x FileName.rar DirName
 $ lha -a FileName.lha FileName
 解壓縮：
 $ lha -e FileName.lha
+```
 
-# benchmark[2]
+### benchmark[2]
+```
 ### Compression ratio
     gzip    bzip2   lzma    lzma -e xz      xz -e   lz4     lzop
 1   26.8%   20.2%   18.4%   15.5%   18.4%   15.5%   35.6%   36.0%
@@ -194,6 +199,7 @@ $ lha -e FileName.lha
 9   3s      15s     5s      5.1s    5.6s    5.6s    -       1.2s
 
 so gzip is the best
+```
 
 
 [^1] from: http://note.drx.tw/2008/04/command.html
