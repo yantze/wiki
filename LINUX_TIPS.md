@@ -180,10 +180,7 @@ dig domain.com txt
 traceroute -n -w 2 -q 2 -m 30 8.8.4.4
 
 ab -c 20 -n 2000 http://baidu.com/ //查看这个网站的并发量等功能，一个httpd的附属软件
-#限定apache每秒钟连接数为1,峰值为3
-iptables -A INPUT -d 172.16.100.1 -p tcp –dport 80 -m limit –limit 1/second –limit-burst 3 -j ACCEPT
-c 代表请求的网页数目,越大越准
-n 代表并发2000
+ab 太旧了，不适宜用来测试 web 性能。现在应该用 wrk, siege
 lsblk 这个可以查看整个磁盘的逻辑位置
 lsb_relase 这个在centos图形界面才可以用
 uname -a //这个也可以现实电脑的详细信息，但是显示不了发行版本

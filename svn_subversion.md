@@ -1,5 +1,21 @@
 # SVN
 
+## Start
+```
+# 下拉数据
+svn checkout repo_url dest_dir
+
+# 更新数据
+svn update
+svn up
+
+# 更换远程库
+svn relocate new_repo_url
+svn switch --relocate OLD_repo_url NEW_repo_url
+```
+
+## Advance
+
 设置代理
 ```
 查看[global]选项
