@@ -20,6 +20,9 @@ sites:#站点配置
     to:#站点在vagrant中的默认目录
 ```
 
+homestead 集成了laravel 官方的各种最好的搭配，在虚拟机中运行，直接在本地修改，非常的方便
+
 引用
 ---
 [^1] [use homestead](https://quericy.me/blog/827)
+[^2] [laravel homestead](https://laravel.com/docs/5.2/homestead)
