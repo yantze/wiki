@@ -12,6 +12,14 @@ load by rsa key
 PUTTY.EXE -i d:\ssh\wess.ppk -P 22333 yantze@wess
 ```
 
+## recommend setting
+import [putty reg file](https://github.com/yantze/pt_black/blob/master/pt_black_putty_all_setting.reg)
+
+## shortcut
+copy some text: shift + drag
+copy text reactanglur: alt + drag
+
+
 ## proxy
 PuTTY的Connection->SSH->Tunnels中创建一个Dynamic的Foward端口就可以了。比如，我们可以在Source port中输入6500，然后选Dynamic，再点一下Add。
 一个SOCKS(v5)代理，服务器地址用127.0.0.1，端口就是前面设的6500。

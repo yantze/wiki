@@ -1,6 +1,11 @@
 # Flush all current rules from iptables
  iptables -F
 
+#限定apache每秒钟连接数为1,峰值为3
+iptables -A INPUT -d 172.16.100.1 -p tcp –dport 80 -m limit –limit 1/second –limit-burst 3 -j ACCEPT
+c 代表请求的网页数目,越大越准
+n 代表并发2000
+
 # Allow SSH connections on tcp port 22
 # This is essential when working on remote servers via SSH to prevent locking yourself out of the system
  iptables -A INPUT -p tcp --dport 22 -j ACCEPT
