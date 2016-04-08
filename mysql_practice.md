@@ -28,6 +28,7 @@ grant all privileges on yaf.* to yaf@localhost identified by '1234';
 grant all privileges on `yaf`.* to `yaf`@'%' with grant option;
 grant all on *.* to yaf;
 grant all privileges on *.* to 'root'@'%' identified by '1234' with grant option;
+show grants for jfz_data@'%';
 ```
 删除用户
 ```
