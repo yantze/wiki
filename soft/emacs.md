@@ -1,5 +1,8 @@
 # Emacs Manual
 
+## Install
+sudo yum install emacs-common emacs-filesystem emacs-nox
+
 ## Base
 C-x C-f # find file
 C-x C-v # open another file
