@@ -149,10 +149,6 @@ stat file/dirname
 软件使用：
 netstat -tupln 查看网络信息
 sp mem 查看内存使用，与free一样
-lsof list open file 可以使用lsof -i 查看网络的信息
-lsof -i:22 //查看22端口在运行什么程序
-lsof -c abc //查看abc进程现在在打开的文件
-lsof -p 12 //查看进程号为12的打开了什么文件
 lsmod //查看使用的模块
 iotop //查看磁盘，与top结合
 ss //another utily socket viewer
@@ -292,21 +288,6 @@ SAVEHIST stores the maximum number of events to save in the history file
 # 最常用的10个命令
 history | awk '{a[$2]++}END{for(i in a){print a[i] " " i}}' | sort -n | tail
 
-find http://www.cnblogs.com/peida/archive/2012/11/14/2769248.html
-常用find：
-find . -type f -exec ls -l {} \;
-find . -type f -mtime +14 -exec rm {} \;
-find . -name "*.log" -mtime +5 -ok rm {} \;
-find /etc -name "passwd*" -exec grep "root" {} \;
-find . -name "*.log" -exec mv {} .. \;
-find . -name "*.log" -exec cp {} test3 \;
-find . -depth; 这个可以不让find输出文件夹
-find . -name "*.log" print0 | xargs -0 cat | wc -l
-find . -perm /u+x -type f -exec rm {} \;  //删除可执行文件
-find . -perm /u+x -maxdepth 1 -type f -exec ag xxx {} \;  //查找当前目录的文件
-find 路径 -name '*.JPG' -exec rename "s/.JPG/.jpg/g" \{\} \; //修改文件扩展名
-for filename in *eee*; do newname=`echo $filename|sed -n ‘s/eee/EEE/p’`; mv $filename $newname;done
-for  i in `ls|grep glyphicons`
 do
     newName=`echo $i |cut -d_ -f3`
     mv $i $newName

@@ -1,6 +1,7 @@
-## Info
-- [emacs.d](https://github.com/purcell/emacs.d) is my emacs config.
-- cheat emacs also have some tips
+# Emacs Manual
+
+## Install
+sudo yum install emacs-common emacs-filesystem emacs-nox
 
 ## Base
 C-x C-f # find file
@@ -13,6 +14,7 @@ C-d # equal Del
 M-d # equal vim dw # M-Backspace
 C-k # d$
 C-/ # Undo
+C-g C-/ # redo
 
 
 C-x u # run by file type
@@ -23,6 +25,26 @@ C-s   # search
 C-x C-@ # back to original from
 C-r   # find next
 
+M-f next word
+M-b previous word
+C-a beginning of line
+C-e end of line
+C-k delete line (starting from cursor)
+C-d delete next character after the cursor
+C-y restore (yank) line
+C-x i insert (file)
+M-< top of file
+M-> bottom of file
+C-v next screen
+M-v previous screen
+C-s search
+M-x and then type "goto-line"
+C-x C-s save file
+C-x C-c quit emacs
+C-z suspend emacs (fg to restore)
+C-x C-w save file to different name
+
+
 ## More
 C-x z # repeat previous command
 
@@ -32,8 +54,6 @@ will save a subfix '#' file, use M-x recover-file to recover
 C-h t # 调出Emacs Tutorial。
 C-h r # 调出Emacs Manual。
 C-h k (command) # 调出对应command的帮助，比如C-h k C-n 就是查看C-n的帮助。
-
-## [Emacs修炼之道](http://xlambda.com/blog/2013/01/08/the-pragmatic-emacser/)
 
 # Basic usage
 
@@ -105,3 +125,18 @@ C-h k (command) # 调出对应command的帮助，比如C-h k C-n 就是查看C-n
     (add-hook 'org-mode-hook
               '(lambda ()
                  (visual-line-mode 1)))
+
+## redo
+```
+To undo once: C-/
+To undo twice: C-/ C-/
+To redo once, immediately after undoing: C-g C-/
+To redo twice, immediately after undoing: C-g C-/ C-/. Note that C-g is not repeated.
+To undo immediately again, once: C-g C-/
+To undo immediately again, twice: C-g C-/ C-/
+```
+
+## Info
+- [emacs.d](https://github.com/purcell/emacs.d) is my emacs config.
+- cheat emacs also have some tips
+## [Emacs修炼之道](http://xlambda.com/blog/2013/01/08/the-pragmatic-emacser/)
