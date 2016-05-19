@@ -2,13 +2,66 @@
 
 ## Install
 sudo yum install emacs-common emacs-filesystem emacs-nox
+brew install emacs --with-cocoa --with-rsvg --with-gnutls --with-imagemagick
 
-## Base
-C-x C-f # find file
-C-x C-v # open another file
-C-x C-s # save file
-C-x C-w # save to another file
-C-x c-c # quit
+## 基本
+
+```
+C-x C-f 開檔。
+C-x C-s 存檔。
+C-x C-w 另存新檔。
+C-x C-c 離開 Emacs。
+```
+
+## Buffer 相關
+
+```
+C-x k 關掉目前 buffer。
+C-x C-← 切換到上一個 buffer。
+C-x C-→ 切換到下一個 buffer。
+C-x b 切換到/開啟一個名為 xxx 的 buffer。
+C-x C-b 開啟 buffer 管理員(不推薦使用，預設的管理員難用到爆)
+```
+
+## Window 相關
+
+C-x 0 關掉目前 Window
+C-x 1 將目前 Window 以外的所有 Window 關掉。
+C-x 2 水平分割 Window
+C-x 3 垂直分割 Window
+C-x o 切換到下一個 Window（不推薦使用，不知道誰想出來的爛設計）
+
+游標移動
+
+C-a 跳到行首
+C-e 跳到行尾
+M-f 跳到下一個英文單字(f 表示 forward)
+M-b 跳到前一個英文單字(b 表示 backward)
+M-g M-g 跳到第 N 行。
+M-< 跳到文件最頂端。
+M-> 跳到文件最尾端。
+
+畫面捲動
+
+C-v 向下捲動一頁
+M-v 向上捲動一頁
+M-Page Down 隔壁的 window 向下捲動一頁
+M-Page Up 隔壁的 window 向上捲動一頁
+C-l 畫面與游標位置對齊（重複按可對齊三種位置）
+
+搜尋
+
+C-s 普通字串搜尋（繼續按 C-s 搜尋下一個）
+C-M-s Regexp 搜尋 （一樣，也是繼續按 C-s 搜尋下一個）
+M-% 字串搜尋並取代
+
+執行外部命令
+
+注意，目前 buffer 的工作目錄就是指令執行時的 pwd 位置。
+M-! 執行外部指令(synchronously)
+M-& 執行外部指令(asynchronously)
+M-| 將選取起來的區域(使用 C-@)透過 pipe 傳送給外部命令
+
 
 C-d # equal Del
 M-d # equal vim dw # M-Backspace
@@ -136,7 +189,18 @@ To undo immediately again, once: C-g C-/
 To undo immediately again, twice: C-g C-/ C-/
 ```
 
+關掉目前的 Frame 是 C-x 0 ， 但這個動作並不會把 Buffer 也一起關掉！ 即使關掉 frame，buffer 其實還活在背景中、隨時可以叫出。這一點與現在一般常見的編輯器不同，並不是關掉視窗後、檔案也會一起關閉。
+切換到不同的 Frame： C-x o
+將目前以外的所有 Frame 關掉： C-x 1
+將目前的 Frame 分成上下兩塊： C-x 2
+將目前的 Frame 分成左右兩塊： C-x 3
+關掉 Buffer 是 C-x k ， 將會真正地把檔案關掉 (kill-buffer)
+切換到下一個/前一個 buffer： C-x C-<right>/<left> （方向鍵）
+直接切到某個 buffer： C-x b （可以用 tab 鍵補全）
+開啟 buffer 管理員： C-x C-b （強力推薦改用 Ibuffer ，因為預設的非常難用）
+
 ## Info
 - [emacs.d](https://github.com/purcell/emacs.d) is my emacs config.
 - cheat emacs also have some tips
+- https://github.com/emacs-tw/emacs-101
 ## [Emacs修炼之道](http://xlambda.com/blog/2013/01/08/the-pragmatic-emacser/)
