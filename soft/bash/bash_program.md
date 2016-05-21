@@ -195,6 +195,9 @@ test -c /dev/hda ; echo $? # 将打印 1 表示 test 命令的返回值为 1, /d
 [more](http://www.ibm.com/developerworks/cn/linux/shell/bash/bash-2/index.html)
 
 
+### 实践
+curpath=`dir $0`
+filename=`basename $curpath`
 
 ### 少见
 退出码, linux 命令行上一个命令的退出码放在了$?环境变变中
