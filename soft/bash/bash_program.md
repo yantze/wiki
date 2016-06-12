@@ -209,3 +209,6 @@ $ false; $? =>  1
 如果这个命令是一串管道符连接和多个命令，怎么知道每个命令的退出码？
 你可以使用 PIPESTATUS环境变量。比如这个测试：true | false | true; echo "${PIPESTATUS[@]}"
 
+
+## Shell Style Guide
+[google shell style](https://google.github.io/styleguide/shell.xml)
