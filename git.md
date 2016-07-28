@@ -1,9 +1,7 @@
-jjjjjjjjjjjjjj//////////////////////////k,,,,....///////////////:::~~安装
+git manual
+---
+> 提供常见的 git 命令，其它一些使用方法需要看：https://github.com/git-tips/tips/blob/master/README.md
 
-在 Windows 上安装 Git 同样轻松，有个叫做 msysGit 的项目提供了安装包：
-
-http://msysgit.github.io/
-完成安装之后，就可以使用命令行的 git 工具（已经自带了 ssh 客户端）了，另外还有一个图形界面的 Git 项目管理工具。
 
 配置
 
