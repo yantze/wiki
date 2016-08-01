@@ -1,5 +1,11 @@
 # OSX Darwin
 
+制作移动 u 盘
+```
+sudo /Volumes/MacX/Install OS X El Capitan.app/Contents/Resources/createinstallmedia --volume /Volumes/Untitled --applicationpath /Volumes/MacX/Install OS X El Capitan.app --nointeraction
+```
+
+
 查看负载均衡
 ```
 sysctl vm.loadavg
