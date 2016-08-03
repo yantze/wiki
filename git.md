@@ -6,35 +6,44 @@ git manual
 配置
 
 首先是配置帐号信息
-
+```
 git config --global user.name yanhaijing
 git config --global user.email yanhaijing@yeah.net
+```
 
+```
 git config --list # 查看配置的信息
-
 git help config # 获取帮助信息
+```
+
 配置自动换行（自动转换坑太大）
-
+```
 git config --global core.autocrlf input  # 提交到git是自动将换行符转换为lf
+```
+
 配置密钥
-
+```
 ssh-keygen -t rsa -C yanhaijing@yeah.net  # 生成密钥
-
 ssh -T git@github.com  # 测试是否成功
-新建仓库
+```
 
+新建仓库
+```
 git init # 初始化
 git status # 获取状态
 git add file # .或*代表全部添加
 git commit -m "message" # 此处注意乱码
 git remote add origin git@github.com:yanhaijing/test.git # 添加源
 git push -u origin master # push同事设置默认跟踪分支
-从现有仓库克隆
+```
 
+从现有仓库克隆
+```
 git clone git://github.com/yanhaijing/data.js.git    
 git clone git://github.com/schacon/grit.git mypro # 克隆到自定义文件夹
-本地
+```
 
+```
 git add * # 跟踪新文件
 
 rm *&git rm * # 移除文件
@@ -115,29 +124,25 @@ git push origin --tags # 一次性推送所有分支
 
 git tag -d v0.1 # 删除标签
 git push origin :refs/tags/v0.1 # 删除远程标签
-总结
+```
 
-啊哈！终于总结完了，以后不会的时候，再也不用到处去找了。
-
-其实还有两个最有用的命令还未提到。
-
+```
 git help * # 获取命令的帮助信息
 git status # 获取当前的状态，非常有用，因为git会提示接下来的能做的事情
+```
+
 参考资料
+- Git参考手册
+- Git简明手册
+- Git Magic
+- Git Community Book 中文版
+- Pro Git
+- 图解Git
+- git-简明指南
+- learnGitBranching
+原文链接 http://yanhaijing.com/git/2014/11/01/my-git-note/
 
-Git参考手册
-Git简明手册
-Git Magic
-Git Community Book 中文版
-Pro Git
-图解Git
-git-简明指南
-learnGitBranching
-原文链接
-
-http://yanhaijing.com/git/2014/11/01/my-git-note/
-
-##submodule
+## submodule
 if display error detach master,use below commands
 ```
 git checkout HEAD
@@ -151,7 +156,6 @@ git pull
 git checkout master
 git rebase origin/master
 ```
-
 
 # git-extras
 ```bash
