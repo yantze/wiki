@@ -148,6 +148,7 @@ if (zend_hash_find(Z_ARRVAL_P(attributes), name, nameLen + 1, (void **)&value) =
 http://type.so/c/php-extension-in-action-get-arguments-after-zend-execute-ex.html
 http://type.so/c/php-extension-in-action-implements-builtin-interface.html
 http://type.so/c/php-extension-doc-collection.html
+https://gist.github.com/denji/8e50fcb13482c5d6c78a
 ```
 
 从 php 内核挂载钩子解密源码 [from](http://type.so/c/php-dump-eval.html)
