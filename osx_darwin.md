@@ -1,5 +1,13 @@
 # OSX Darwin
 
+OSX 的用户系统
+- 查看单用户模式的列表: `/etc/passwd`
+- 查看图形模式所有用户的列表: 打开`Directory Utility`软件，可以找到用户所有auth信息
+- 具体的就查看 `/etc/passwd` 里面的说明
+
+> osx 系统使用 opendirtectoryd 服务，可以用多种架构去管理用户，我看有三种用户管理工具 `Active Directory` `LDAPv3` `NIS` 在`Directory Utility`工具中有出现，不过其实系统还支持 `Local`的方式存储用户信息，类似 linux ，以后用的着可以找一下.
+> 相关命令有 `man opendirectoryd`, `odutil`, `dscl`
+
 制作移动 u 盘
 ```
 sudo /Volumes/MacX/Install OS X El Capitan.app/Contents/Resources/createinstallmedia --volume /Volumes/Untitled --applicationpath /Volumes/MacX/Install OS X El Capitan.app --nointeraction
