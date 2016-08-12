@@ -39,6 +39,17 @@ pm.max_children = 1
 - start php-fpm and check pid
 - gdb -p pid
 
+### debug info 三种
+- 使用 -g 编译的文件，或者像php 用 --enable-debug 开启全局debuginfo 的选项，可以使用 list 方法查看源代码
+- 正常的编译文件，需要加载源代码才能查看源代码，同样也可以 b func，使用所有 symbols info：用 nm 查看
+- 精简的文件，无法通过断函数名或者文件函数来断点了，所以只能在汇编层面debug
+
+### debug 形式 三种
+- 运行 `gdb filename` 直接运行和dubug
+- 使用 `attach pid` 捕获进程，然后读入debug 信息，和 debug symbols info 等
+- 使用`coredump`获取进程最后保留镜像，具体的使用方法在 wiki 目录 `linux_sparing.md`, [Laruence‘s coredump](http://www.laruence.com/2011/06/23/2057.html)
+    > 其实有时候没必要用这种方法，coredump 由于平台相关，很多时候 not work。我尝试用有 enable-debug 的php 去运行文件，程序直接显示内存申请溢出（ps，所以上面Laruence的文章堆爆栈好像说得不对）
+
 
 ## 便捷知识
 nm      - display name list (symbol table)

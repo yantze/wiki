@@ -9,6 +9,8 @@
 - 查看生成 coredump
     - linux 会在当前程序运行目录生成 core.<pid> 文件
     - osx 会在 /cores/core.<pid> 生成
+- 查看信息用 gdb php -c core.<pid>
+- osx 用户用 lldb 才能查看 lldb php -c core.<pid>
 
 ### 解压/boot目录下的img文件
 - 先用file initramfs.xxx.img查看文件类型，是gzip文件
