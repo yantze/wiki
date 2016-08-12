@@ -1,32 +1,16 @@
-# vim: set expandtab:
 With less code you get more done.
+---
 
 测试代码:alias cp=rsync -ah --progress --append
 
-linux 详细的使用说明
+## 一些问题
 
-###download video
-you-get
-youtube-dl
-
-##常用技能
-* vim
-- CtrlP
-- ag
-
-* linux
-- 在要代理的软件前面加上 proxy
-
-TODO
-phabricator 这个软件没有完成,dirctory定位到/home/yantze/phabricator/phabricator/webboot,打开phabricator系统的ip地址，提示无权限
-如果成功解决，打开url：http://www.phabricator.com/docs/phabricator/article/Configuring_Accounts_and_Registration.html
-
-1，由于在home建立的网页apache默认是不允许读取的，就算有777也不行
-getsebool -a |grep httpd_enable_homedirs
-httpd_enable_homedirs --> off
-所以要运行：
-setsebool httpd_enable_homedirs on
-重启可正常
+- 1.1 home建立的网站apache默认是不允许读取的，就算有777也不行
+    > getsebool -a |grep httpd_enable_homedirs
+    httpd_enable_homedirs --> off
+    所以要运行：
+    setsebool httpd_enable_homedirs on
+    重启可正常
 
 内置命令：
 cat << EOF >> output.txt
@@ -449,3 +433,10 @@ echo '1+1' | bc
 
 /usr unix shared resources
 /opt editable text configuration
+
+TODO
+phabricator 这个软件没有完成,dirctory定位到/home/yantze/phabricator/phabricator/webboot,打开phabricator系统的ip地址，提示无权限
+如果成功解决，打开url：http://www.phabricator.com/docs/phabricator/article/Configuring_Accounts_and_Registration.html
+
+
+# vim: set expandtab:

@@ -4,6 +4,20 @@ zsh 使用技巧
 > 先查看 `man zsh-lovers` 或者 `lang/bash/zsh-lovers.1.txt` 文件 或者网页版[zsh-lovers](https://grml.org/zsh/zsh-lovers.html) 查看里面的用法先
 > 执行 `brew install zsh-lovers` 可以快速安装 `man zsh-lovers`
 
+## 便捷 or 常用
+```
+ESC ESC - 执行 sudo， 或者用 sudo !! 也行，而 ! 这个通配符是由 histchars 决定
+^lastcommandword^reg^ - 替换上一个命令, 这个通配符也是由 histchars 决定
+ESC . - 上一次命令最后一个单词，windows 的putty 可以用 `alt + .`
+fc - 读取上一个命令，并用 $EDITOR 打开，保存退出后会显示在命令行，类似功能有的 `Ctrl+x-e` [more](http://superuser.com/questions/409150/how-do-i-edit-previous-lines-in-a-multiple-line-command-in-bash)
+
+    > 转换多行代码为一行代码的风格，使用&&替换; [more](http://askubuntu.com/questions/619894/run-multiple-line-as-a-single-line-command-bash)
+Ctrl+x-x, Ctrl+e, Ctrl+a - 分别控制回跳，行尾，行首
+```
+
+
+
+
 ## 基础
 ```
 ..  快速向上跳 ‘...’顶目录
