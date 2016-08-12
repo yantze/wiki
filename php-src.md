@@ -2,6 +2,7 @@
 ---
 
 本文摘自 小子：http://type.so
+1.1 查找函数
 ```
 # 所有php函数
 ag 'PHP_FUNCTION\(\w+\)'
@@ -23,7 +24,9 @@ function phpsrc
 ag 'void zend_do_' Zend/zend_compile.c
 ```
 
-定义常量
+1.2 [一些预定义解释](http://type.so/c/php-extension-doc-collection.html)
+
+1.3 定义常量
 ```
 PHP_MINIT_FUNCTION(learn)
 {
@@ -35,7 +38,7 @@ PHP_MINIT_FUNCTION(learn)
 }
 ```
 
-定义类
+1.4 定义类
 ```
 zend_class_entry *learn_ce;
 
@@ -85,7 +88,7 @@ PHP_MINIT_FUNCTION(learn)
 }
 ```
 
-调用类
+1.5 调用类
 ```
 PHP_FUNCTION(learn_call) {
     // 实例化类
@@ -113,7 +116,7 @@ PHP_FUNCTION(learn_call) {
 }
 ```
 
-数组操作
+1.6 数组操作
 ```
 # 初始化数组
 zval *arr;
@@ -151,7 +154,7 @@ http://type.so/c/php-extension-doc-collection.html
 https://gist.github.com/denji/8e50fcb13482c5d6c78a
 ```
 
-从 php 内核挂载钩子解密源码 [from](http://type.so/c/php-dump-eval.html)
+1.7 从 php 内核挂载钩子解密源码 [from](http://type.so/c/php-dump-eval.html)
 ```
 static zend_op_array *edump_compile_string(zval *source_string, char *filename TSRMLS_DC)
 {

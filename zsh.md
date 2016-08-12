@@ -1,4 +1,10 @@
-# zsh 使用技巧
+zsh 使用技巧
+---
+
+> 先查看 `man zsh-lovers` 或者 `lang/bash/zsh-lovers.1.txt` 文件 或者网页版[zsh-lovers](https://grml.org/zsh/zsh-lovers.html) 查看里面的用法先
+> 执行 `brew install zsh-lovers` 可以快速安装 `man zsh-lovers`
+
+## 基础
 ```
 ..  快速向上跳 ‘...’顶目录
 ls * 或者ls -l * 都是可以递归显示
@@ -16,8 +22,9 @@ osx:
 man-preview 通过 preview 程序查看一个命令的手册，例如 man-preview git  (需要給oh-my-zsh
 中添加參數 osx)
 quick-look 快速预览文件
-pfd 返回当前 finder 打开的文件夹的路径
-cdf 切换到当前 finder 所在的目录
+pfd 返回最前 finder 打开的文件夹的路径
+cdf 切换到最前 finder 所在的目录
+cds 切换到最前 finder 目录或者选中的文件，可以使用 $(`cds`) 获取字符串（使用我的 zsh_func）
 ```
 
 zsh内置函数
@@ -56,6 +63,10 @@ install and update:
 ```
 git pull && git submodule update --init --recursive
 ```
+
+## 提升
+设置 zsh 的通配符: histchars，比较简单。
+[Changing History Characters with histchars](http://docstore.mik.ua/orelly/unix3/upt/ch30_15.htm)
 
 
 The Zsh Reference Card and the zsh-lovers man page are indispensable.

@@ -2,6 +2,14 @@
 
 > 常用的命令在LINUX_TIPS.md文件中
 
+### 开启 coredump
+- 查看各个参数 ulimit -a
+- 设置coredump ulimit -c unlimit
+- 运行错误的程序
+- 查看生成 coredump
+    - linux 会在当前程序运行目录生成 core.<pid> 文件
+    - osx 会在 /cores/core.<pid> 生成
+
 ### 解压/boot目录下的img文件
 - 先用file initramfs.xxx.img查看文件类型，是gzip文件
 - 改名initramfs.xxx.img.gz,使用gzip -d initramfs.xxx.img.gz
