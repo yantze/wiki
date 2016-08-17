@@ -13,6 +13,7 @@ Linux use log
     - append the line 'address=/double-click.net/127.0.0.1':
     ddress=/double-click.net/127.0.0.1
     address=/dev/127.0.0.1
+
     - test:
     dig abc.dev @127.0.0.1 
 
@@ -20,11 +21,12 @@ Linux use log
     abc.dev.                0       IN      A       127.0.0.1
     ```
 
-- global wild valid
+- Global wild valid
     ```
     - way 1.
     add in setting preferences
-    - way 2.(according to `man 5 resolver`)
+
+    - way 2.(effective, according to `man 5 resolver`)
     sudo mkdir /etc/resolve
     echo 'nameserver 127.0.0.1' > /etc/resolve/dev
     ```
