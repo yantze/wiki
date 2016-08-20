@@ -1,7 +1,17 @@
 Linux use log
 ---
 
-## install dnsmasq in macOS
+## Interactive commands convert to scripts
+```
+tftp <<EOF
+connect 192.168.111.1
+mode binary
+put dd-wrt.v24-13309_NEWD-2_K2.6_std_usb_ftp.bin
+quit
+EOF
+```
+
+## Install dnsmasq in macOS
 - Install by brew
     ```
     brew install dnsmasq

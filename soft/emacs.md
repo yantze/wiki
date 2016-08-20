@@ -1,16 +1,14 @@
 # Emacs Manual
 
-## Install
-sudo yum install emacs-common emacs-filesystem emacs-nox
-brew install emacs --with-cocoa --with-rsvg --with-gnutls --with-imagemagick
-
 ## 基本
 
 ```
-C-x C-f 開檔。
-C-x C-s 存檔。
-C-x C-w 另存新檔。
-C-x C-c 離開 Emacs。
+| Shortcut | Action |
+| --- | --- |
+| C-x C-f | 開檔 |
+| C-x C-s | 存檔 |
+| C-x C-w | 另存新檔 |
+| C-x C-c | 離開 Emacs  |
 ```
 
 ## Buffer 相關
@@ -199,8 +197,19 @@ To undo immediately again, twice: C-g C-/ C-/
 直接切到某個 buffer： C-x b （可以用 tab 鍵補全）
 開啟 buffer 管理員： C-x C-b （強力推薦改用 Ibuffer ，因為預設的非常難用）
 
+
 ## Info
+
+Install
+```
+sudo yum install emacs-common emacs-filesystem emacs-nox
+brew install emacs --with-cocoa --with-rsvg --with-gnutls --with-imagemagick
+```
+
+Config
 - [emacs.d](https://github.com/purcell/emacs.d) is my emacs config.
 - cheat emacs also have some tips
 - https://github.com/emacs-tw/emacs-101
-## [Emacs修炼之道](http://xlambda.com/blog/2013/01/08/the-pragmatic-emacser/)
+
+Resouce
+- [Emacs修炼之道](http://xlambda.com/blog/2013/01/08/the-pragmatic-emacser/)

@@ -1,6 +1,18 @@
 Syslog
 ---
 
+## macOS
+- command
+    ```
+    tail /var/log/system.log
+    ```
+- GUI app: console
+    ```
+    open /Applications/Utilities/Console.app
+    ```
+- Activity Monitor [GUI]
+
+
 ## ios device
 - Apple Configurator 2 from Mac App Store
 - brew install libimobiledevice ; idevicesyslog
