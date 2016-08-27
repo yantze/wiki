@@ -5,25 +5,25 @@ GDB
 ## Base Usage
 [GDB cheatsheet](http://darkdust.net/files/GDB%20Cheat%20Sheet.pdf)
 
-| Command | Action |
-| --- | --- |
-| load .gdbinit     | |
-| gdb --args sapi/cli/php ext/pcre/tests/preg_match_basic.phpt | |
-| run -r "strlen('zzzvvv');" | |
-| break |  function_name / filepath:line_num, more info check `help breakpoints` |
-| run r | run a program |
-| step s [N] | step in, may step into function next level |
-| next n [N] | step out, reduce one level to next line  |
-| list l [N] | list current ten lines |
-| continue c [N] | continue |
-| attach a [pid] | attach a process |
-| quit q | quit |
+| Command | Shortcut | Action |
+| --- | --- | --- |
+| load .gdbinit     | | |
+| gdb --args sapi/cli/php ext/pcre/basic.phpt | | |
+| run -r "strlen('zzz');" | | |
+| break | b | function_name / filepath:line_num, more info check `help breakpoints` |
+| run r | r | Run a program |
+| step [N] | s | Step in, may step into function next level |
+| next [N] | n | Step out, reduce one level to next line  |
+| list [N] | l | List current ten lines |
+| continue [N] | c | Continue |
+| attach [pid] | a | Attach a process |
+| quit | q | Quit |
 
-backtrace bt : callstack list 
+backtrace (bt) 
 - f [0-n] - frame, check one frame from stack list
 - l filename:linenum - list, check more code from select line
-- print var_name - print var name
-- set var var value - set value
+- print varname - print var name
+- set varname value - set value
 
 
 ## debug 进程
@@ -38,9 +38,9 @@ pm.max_children = 1
 - gdb -p pid
 
 ### debug info 三种
-- 使用 -g 编译的文件，或者像php 用 --enable-debug 开启全局debuginfo 的选项，可以使用 list 方法查看源代码
-- 正常的编译文件，需要加载源代码才能查看源代码，同样也可以 b func，使用所有 symbols info：用 nm 查看
-- 精简的文件，无法通过断函数名或者文件函数来断点了，所以只能在汇编层面debug
+- 编译文件带参数 -g，或者像 php 用 `--enable-debug` ，可用 list 方法查看源代码
+- 编译文件不带参数 -g，需要加载源代码才能查看源代码，同样也可以 b func，使用所有 symbols info(用 nm 查看)
+- 精简的文件，无法通过断函数名或者文件函数来断点了，所以只能在汇编层面 debug
 
 ### debug 形式 三种
 - 运行 `gdb filename` 直接运行和dubug
