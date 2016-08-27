@@ -4,27 +4,27 @@ GDB
 
 ## Base Usage
 [GDB cheatsheet](http://darkdust.net/files/GDB%20Cheat%20Sheet.pdf)
-```
-1.1 load .gdbinit
-1.2 gdb --args sapi/cli/php ext/pcre/tests/preg_match_basic.phpt
-1.3 run -r "strlen('zzzvvv');"
-1.4 break - more info check `help breakpoints`
-    function_name
-    filepath:line_num
-1.5 run r - run a program
-1.6 step s [N] - step in, may step into function next level
-1.7 next n [N] - step out, reduce one level to next line 
-1.8 list l [N] - list current ten lines
-1.9 continue c [N] - continue
-1.10 backtrace bt - callstack list
-    - f [0-n] - frame, check one frame from stack list
-    - l filename:linenum - list, check more code from select line
-    - print var_name - print var name
-    - set var var value - set value
-1.10 attach a [pid] - attach a process
-1.11 quit q - quit
 
-```
+| Command | Action |
+| --- | --- |
+| load .gdbinit     | |
+| gdb --args sapi/cli/php ext/pcre/tests/preg_match_basic.phpt | |
+| run -r "strlen('zzzvvv');" | |
+| break |  function_name / filepath:line_num, more info check `help breakpoints` |
+| run r | run a program |
+| step s [N] | step in, may step into function next level |
+| next n [N] | step out, reduce one level to next line  |
+| list l [N] | list current ten lines |
+| continue c [N] | continue |
+| attach a [pid] | attach a process |
+| quit q | quit |
+
+backtrace bt : callstack list 
+- f [0-n] - frame, check one frame from stack list
+- l filename:linenum - list, check more code from select line
+- print var_name - print var name
+- set var var value - set value
+
 
 ## debug 进程
 

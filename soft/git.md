@@ -187,3 +187,10 @@ remove ignored as well as non-ignored files
 git clean -f -x
 # git clean -fx
 ```
+
+## 把已经提交的文件添加到 .gitignore
+```
+git update-index --assume-unchanged .idea/project.iml
+git update-index --no-assume-unchanged
+from:http://stackoverflow.com/questions/3319479/git-can-i-commit-a-file-and-ignore-the-content-changes 
+```

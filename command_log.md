@@ -38,7 +38,7 @@ EOF
 
     - way 2.(effective, according to `man 5 resolver`)
     sudo mkdir /etc/resolve
-    echo 'nameserver 127.0.0.1' > /etc/resolve/dev
+    echo 'nameserver 127.0.0.1' > /etc/resolver/dev
     ```
 
 

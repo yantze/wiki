@@ -4,18 +4,18 @@
 
 | Shortcut | Action |
 | --- | --- |
-| C-x C-f | 開檔 |
-| C-x C-s | 存檔 |
-| C-x C-w | 另存新檔 |
-| C-x C-c | 離開 Emacs  |
+| C-x C-f | open a file |
+| C-x C-s | save a file |
+| C-x C-w | save new file |
+| C-x C-c | close Emacs  |
 
 ## Buffer 相關
 
 | Shortcut | Action |
 | --- | --- |
 | C-x k |  關掉目前 buffer。 |
-| C-x C-←  | 切換到上一個 buffer。 |
-| C-x C-→ |  切換到下一個 buffer。 |
+| C-x ←  | 切換到上一個 buffer。 |
+| C-x → |  切換到下一個 buffer。 |
 | C-x b  | 切換到/開啟一個名為 xxx 的 buffer。 |
 | C-x C-b |  開啟 buffer 管理員(不推薦使用，預設的管理員難用到爆) |
 
@@ -35,18 +35,18 @@
 | --- | --- |
 | C-a | 跳到行首 |
 | C-e | 跳到行尾 |
-| M-f | 跳到下一個英文單字(f 表示 forward) |
-| M-b | 跳到前一個英文單字(b 表示 backward) |
+| M-f | next word (f 表示 forward) |
+| M-b | previous word (b 表示 backward) |
 | M-g | M-g 跳到第 N 行。 |
-| M-< | 跳到文件最頂端。 |
-| M-> | 跳到文件最尾端。 |
 
 畫面捲動
 
 | Shortcut | Action |
 | --- | --- |
-| C-v | 向下捲動一頁 |
-| M-v | 向上捲動一頁 |
+| M-< | top of file |
+| M-> | bottom of file |
+| C-v | next screen |
+| M-v | previous screen |
 | M-Page Down | 隔壁的 window 向下捲動一頁 |
 | M-Page Up | 隔壁的 window 向上捲動一頁 |
 | C-l | 畫面與游標位置對齊（重複按可對齊三種位置） |
@@ -60,8 +60,8 @@
 | M-% | 字串搜尋並取代 |
 
 執行外部命令
-
 > 注意，目前 buffer 的工作目錄就是指令執行時的 pwd 位置。
+
 | Shortcut | Action |
 | --- | --- |
 | M-! | 執行外部指令(synchronously) |
@@ -82,34 +82,12 @@
 | --- | --- |
 | C-x u | run by file type |
 | C-w   | cut current or marked line |
-| c-y   | paste |
-
-| Shortcut | Action |
-| --- | --- |
+| C-y | paste: restore (yank) line |
 | C-s   | search |
 | C-x C-@ | back to original from |
 | C-r   | find next |
-
-| Shortcut | Action |
-| --- | --- |
-| M-f | next word |
-| M-b | previous word |
-| C-a | beginning of line |
-| C-e | end of line |
-| C-k | delete line (starting from cursor) |
-| C-d | delete next character after the cursor |
-| C-y | restore (yank) line |
-| C-x | i insert (file) |
-| M-< | top of file |
-| M-> | bottom of file |
-| C-v | next screen |
-| M-v | previous screen |
-| C-s | search |
+| C-x i | insert (file) |
 | M-x | and then type "goto-line" |
-| C-x | C-s save file |
-| C-x | C-c quit emacs |
-| C-z | suspend emacs (fg to restore) |
-| C-x | C-w save file to different name |
 
 
 ## More
@@ -120,6 +98,7 @@
 | Shortcut | Action |
 | --- | --- |
 | M-x kill-emacs | quit by kill |
+
 > will save a subfix '#' file, use M-x recover-file to recover
 
 | Shortcut | Action |
@@ -127,6 +106,9 @@
 | C-h t             | 调出Emacs Tutorial |
 | C-h r             | 调出Emacs Manual |
 | C-h k (command)   | 调出对应command的帮助，比如C-h k C-n 就是查看C-n的帮助 |
+
+------------------ ------------------ ------------------ ------------------ ------------------ ------------------ 
+
 
 # Basic usage
 
@@ -213,7 +195,6 @@ To redo once, immediately after undoing: C-g C-/
 To redo twice, immediately after undoing: C-g C-/ C-/. Note that C-g is not repeated.
 To undo immediately again, once: C-g C-/
 To undo immediately again, twice: C-g C-/ C-/
-```
 
 關掉目前的 Frame 是 C-x 0 ， 但這個動作並不會把 Buffer 也一起關掉！ 即使關掉 frame，buffer 其實還活在背景中、隨時可以叫出。這一點與現在一般常見的編輯器不同，並不是關掉視窗後、檔案也會一起關閉。
 切換到不同的 Frame： C-x o
@@ -225,6 +206,7 @@ To undo immediately again, twice: C-g C-/ C-/
 直接切到某個 buffer： C-x b （可以用 tab 鍵補全）
 開啟 buffer 管理員： C-x C-b （強力推薦改用 Ibuffer ，因為預設的非常難用）
 
+```
 
 ## Info
 
@@ -233,6 +215,23 @@ Install
 sudo yum install emacs-common emacs-filesystem emacs-nox
 brew install emacs --with-cocoa --with-rsvg --with-gnutls --with-imagemagick
 ```
+```
+去掉 `https://melpa.org/packages/` 中的 https 为 http
+;; emacsclient でアクセスした時の文字コード設定
+;; バグ: "emacsclient -c" で起動すると実行されない
+(add-hook 'server-visit-hook
+  (lambda ()
+    (set-terminal-coding-system 'utf-8)
+    (set-keyboard-coding-system 'utf-8)))
+    ;;
+
+(setq-default custom-enabled-themes '(sanityinc-solarized-light))
+```
+
+Problem
+- Ctrl+a 与 tmux 冲突
+- M+V 不能被捕获到
+
 
 Config
 - [emacs.d](https://github.com/purcell/emacs.d) is my emacs config.
