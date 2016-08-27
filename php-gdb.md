@@ -58,7 +58,7 @@ pm.max_children = 1
 | nm      | display name list (symbol table) |
 | strip   | remove symbols |
 | strings | find the printable strings in a object, or other binary, file |
-| objdump -s | display all symbs |
+| `objdump -s` | display all symbs |
 | man size | the size's man page section 'see also' have all reletive program, `rpm -ql binutils` will tell more, such as size, readelf, ar, ldd |
 
 ## 编译使用动态连接库
