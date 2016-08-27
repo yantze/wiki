@@ -1,6 +1,6 @@
 GDB
 ---
-> 如果发现 gdb error，用`sudo`运行，具体原因是未用mac签名.使用 lldb 会更适合osx
+> 如果发现 gdb error，用`sudo`运行，具体原因是未用mac签名。使用 `lldb` 会更适合osx
 
 ## Base Usage
 [GDB cheatsheet](http://darkdust.net/files/GDB%20Cheat%20Sheet.pdf)
@@ -52,12 +52,14 @@ pm.max_children = 1
     > 其实有时候没必要用这种方法，coredump 由于平台相关，很多时候 not work。我尝试用有 enable-debug 的php 去运行文件，程序直接显示内存申请溢出（ps，所以上面Laruence的文章堆爆栈好像说得不对）
 
 
-## 便捷知识
-- nm      - display name list (symbol table)
-- strip   - strip - remove symbols
-- strings - find the printable strings in a object, or other binary, file
-- objdump -s - display all symbs
-- `man size` ,the size's man page section 'see also' have all reletive program, `rpm -ql binutils` will tell more, such as size, readelf, ar, ldd
+## 便捷命令
+| Command | Action |
+| --- | --- |
+| nm      | display name list (symbol table) |
+| strip   | remove symbols |
+| strings | find the printable strings in a object, or other binary, file |
+| objdump -s | display all symbs |
+| man size | the size's man page section 'see also' have all reletive program, `rpm -ql binutils` will tell more, such as size, readelf, ar, ldd |
 
 ## 编译使用动态连接库
 - [Linux GCC编译使用动态、静态链接库](http://blog.csdn.net/a600423444/article/details/7206015)
