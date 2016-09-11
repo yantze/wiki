@@ -131,18 +131,13 @@ stat file/dirname
 
 
 软件使用：
-netstat -tupln 查看网络信息
 sp mem 查看内存使用，与free一样
 lsmod //查看使用的模块
 iotop //查看磁盘，与top结合
 ss //another utily socket viewer
 # 用tcpdump嗅探80端口的访问看看谁最高
 sudo tcpdump -i eth7 -tnn dst port 80 -c 1000 | awk -F "." '{print $1"."$2"."$3"."$4}' | sort | uniq -c | sort-nr |head -20
-# 查看http的并发请求数及其TCP连接状态
-netstat -n | awk '/^tcp/ {++S[$NF]} END {for(a in S) print a, S[a]}'
-# 查看IP连接数
-netstat -n | awk '/^tcp/ {print $5}'| awk -F: '{print $1}' | sort | uniq -c | sort -rn
-netstat -lntp看侦听在网络某端口的进程ㄝ也可以使用 lsof。
+
 
 # 查找一个域名的真实ip地址
 # TXT/spf records

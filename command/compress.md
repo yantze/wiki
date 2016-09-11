@@ -1,3 +1,6 @@
+Compress
+---
+
 ### Bored with "tar -zxvf" for .tar.gz, "tar -xvjf" for .tar.bz2 or something else?
 ```bash
 extract () {
@@ -26,6 +29,7 @@ extract () {
   fi
 }
 ```
+> oh-my-zsh 添加插件extract提供同样的功能。
 
 ### some useful compress command[^1]
 ```
