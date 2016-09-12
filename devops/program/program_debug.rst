@@ -75,6 +75,7 @@ strace常用来跟踪进程执行时的系统调用和所接收的信号。在Li
 nm
 ^^^^^^^^^^^^^^^^^^^
 nm用来列出目标文件的符号清单。 
+这里有一个图示程序，对理解有很好的帮助: http://www.redbubble.com/people/ange4771/works/12369059-a-mini-elf?c=309448-mini-posters
 
 ::
 
