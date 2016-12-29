@@ -194,3 +194,10 @@ git update-index --assume-unchanged .idea/project.iml
 git update-index --no-assume-unchanged
 from:http://stackoverflow.com/questions/3319479/git-can-i-commit-a-file-and-ignore-the-content-changes 
 ```
+
+## 打包源码，但不包括 `.git` 
+```
+git archive --format zip --output /full/path/to/zipfile.zip master 
+git help archive
+
+```

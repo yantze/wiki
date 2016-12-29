@@ -1,6 +1,19 @@
-# low frequency commands
-
+Low frequency commands
+---
 > 常用的命令在LINUX_TIPS.md文件中
+
+### 重啓的方法
+sudo reboot
+sudo shutdown -r now
+sudo shutdown -r -f now # sudo shutdown -r -F now 
+
+sudo su - # 先切成 root，不然下述命令寫不進去
+echo 1 > /proc/sys/kernel/sysrq
+echo b > /proc/sysrq-trigger # 立刻關掉電源。 o 直接開機。
+
+echo 1 | sudo tee /proc/sys/kernel/sysrq # 不用進入root賬戶
+echo b | sudo tee /proc/sysrq-trigger
+from: https://major.io/2009/01/29/linux-emergency-reboot-or-shutdown-with-magic-commands/
 
 ### 开启 coredump
 - 查看各个参数 ulimit -a
