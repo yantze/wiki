@@ -1,4 +1,4 @@
-# update some wiki from other
+# update text base file
 
 # update bash-handbook
 wget -O lang/bash/handbook.md https://github.com/denysdovhan/bash-handbook/raw/master/README.md
