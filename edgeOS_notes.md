@@ -11,3 +11,13 @@ show dhcp leases
 ```
 show arp | sed '/incomplete/d'
 ```
+
+## Dnsmasq
+> 使用 Dnsmasq 管理本地 DNS
+```
+/etc/init.d/dnsmasq status
+/usr/sbin/dnsmasq
+# 查看配置
+ps -ef | grep dnsmasq
+```
+
