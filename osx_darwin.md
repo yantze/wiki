@@ -29,6 +29,16 @@ install coreutils to compatible linux
 brew install coreutils 
 ```
 
+brew remove special version
+```
+rm -rf /usr/local/Cellar/node/0.4.11
+```
+
+brew delete all but the newer version
+```
+brew cleanup node
+```
+
 install Today-Scripts
 https://github.com/SamRothCA/Today-Scripts
 
