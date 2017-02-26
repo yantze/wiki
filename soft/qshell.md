@@ -8,6 +8,7 @@ qshell account ak sk
 qshell fput bucket-name qiniu.jpg /Users/jemy/Documents/qiniu.jpg
 
 # 同fput，但上传大文件，分片上传
+# https://github.com/qiniu/qshell/blob/master/docs/rput.md
 qshell rput bucket-name qiniu.mp4 /Users/jemy/Documents/qiniu.mp4
 
 ```
