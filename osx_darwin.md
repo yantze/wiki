@@ -43,6 +43,16 @@ install Today-Scripts
 https://github.com/SamRothCA/Today-Scripts
 
 
+### DNS
+- Install dnsmasq. 
+>    'adress=/local/127.0.01' may not work
+    ping aaa.aaa.local, work;
+    ping aaa.local, not work;
+    but dev not this case;may be 'local' is system key word
+
+- Add dev file to /etc/resolver/dev
+> cat /etc/resolver/dev, nameserver 127.0.0.1
+
 ### OS X Screencast to animated GIF
 - Open "Quicktime Player",
 - Go to File -> New Screen Recording
