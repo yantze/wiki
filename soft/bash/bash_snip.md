@@ -170,3 +170,4 @@ var=ababcdcd
 > echo ${var//ab/01}
 0101cdcd
 ```
+
