@@ -31,3 +31,10 @@ tail -F access.log > tmp.log */5 * * * * mv tmp.log upload.txt; curl
 -d "upload_file=@upload.txt" http://xxx.com/log_upload.php; rm
 upload.txt 
 ```
+
+### 隐藏下载进度
+```
+curl -sS http://xxx.xxx/bar.zip
+# -s slient mode
+# -S show error
+```
