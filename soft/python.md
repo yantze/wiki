@@ -15,8 +15,8 @@ sudo pip install -i http://pypi.douban.com/simple/ saltTesting
         index-url = http://pypi.douban.com/simple 
 
 there have some fast pypi resources:
-    http://pypi.douban.com/simple/
-    https://pypi.python.org/simple/
-    http://pypi.v2ex.com/simple/
+- http://pypi.douban.com/simple/
+- https://pypi.python.org/simple/
+- http://pypi.v2ex.com/simple/
 
 
