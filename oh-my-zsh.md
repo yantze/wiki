@@ -136,7 +136,6 @@ plugins=(... osx)
 | `ofd`         | Open  frontest directory, Open the current directory in a Finder window  |
 | `cdf`         | `cd` to the current Finder directory           |
 | `pushdf`      | `pushd` to the current Finder directory        |
-
 | `tab`         | Open the current directory in a new tab        |
 | `quick-look`  | Quick-Look a specified file                    |
 | `man-preview` | Open a specified man page in Preview app       |
