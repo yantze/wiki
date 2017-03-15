@@ -10,13 +10,16 @@ With less code you get more done.
 ## 一些问题
 
 - 1.1 home建立的网站apache默认是不允许读取的，就算有777也不行
-    > getsebool -a |grep httpd_enable_homedirs
+    ```
+    getsebool -a |grep httpd_enable_homedirs
     httpd_enable_homedirs --> off
     所以要运行：
     setsebool httpd_enable_homedirs on
     重启可正常
+    ```
 
 内置命令：
+```
 cat << EOF >> output.txt
 heredoc> type what you want append
 heredoc> EOF
@@ -26,7 +29,9 @@ cat <<< a <<< b #显示a，然后换行，显示b
 cat <<-EOF
 heredoc> type what you want to echo
 heredoc> <<EOF
+```
 
+```
 printf "%x\n" 111
 locale 查看当前语言区的设置, locale -v
 paste -sd, 1.txt 合并单个文件
@@ -40,7 +45,9 @@ Ctrl+x Ctrl+e //编辑当前的命令到编辑器，可以在zshrc中export EDIT
 Ctrl+R   来搜索历史命令
 Ctrl+W  来删除最后一个单词
 Ctrl+U  来删除一行命令
+```
 
+```
 echo $'\x41'  //输出A
 echo "`ls -l`" || echo `ls -l` //shell用IFS定义的分隔符来分隔字符串，包括、n，所以再传给echo就是，"line 1" "line 2"
 nl || cat -n || cat -d //给文件加行号，中间的会给空行加行号，其它的不会
@@ -50,19 +57,25 @@ uptime //查看计算机登陆信息，负载均衡等
 od -c file / od file //显示文件内容，如果没有c显示其它进制
 fc //这个是可以在命令行输入文字到vim中编辑的内置命令
 time command // 这个可以查看当前命令执行的时间
+```
 
+```
 groupadd sftpgroup
 useradd username -g sftpgroup -s /bin/bash -d home_dir
 usermod -a -G groupA user //添加用户到用户组
 su www -c 'php xxx.php' //命令下行指定用户组来执行命令
+```
 
+```
 ifconfig
 ifconfig -a //显示所有网卡接口
 ifconfig eth0 down //禁用eth0网卡
 ifconfig eth0 up//启用eth0网卡
 ifdown eth0; ifup eth0; //同上
+```
 
 route
+```
 如果你有两个以上的网卡，那么很不幸的是默认网关是内部网，现在需要删除默认的再添加自己设定的默认
 ip route del default
 ip route add default via 192.168.100.1
@@ -71,9 +84,13 @@ ip route add default via 192.168.100.1
 http://tldp.org/HOWTO/Adv-Routing-HOWTO/lartc.rpdb.multiple-links.html
 http://unix.stackexchange.com/questions/22770/two-interfaces-two-addresses-two-gateways
 http://www.thomas-krenn.com/en/wiki/Two_Default_Gateways_on_One_System
+```
 
+```
 sha  //输入这三个字母后会自动有几个选项，可以自己选吧
+```
 
+```
 !!上一条指令
 !hist //执行历史命令中hist开头的最后一条指令
 !?hist //执行历史命令中包含hist开头的命令
@@ -89,17 +106,24 @@ eg.
 $ ls code src
 $ cp -r !*
 $_ //you can use to access the last argument in the last command, putty have another efficient key is 'Alt+.'
+```
 
+```
 ^hits^hist  //替换上一条指令
 ^hits^hist^:G  //替换上一条命令的所有string
+```
 
+解压 more in extract()
+```
 xz://有时候出现tar.xz要分开解压
 xz -zk //要压缩的文件，k保留源文件
 xz -dk //要解压的文件，k保留源文件
 
 tar 解压指定文件
 tar zxvf package.tar.gz -C new_dir
+```
 
+```
 grep MemTotal /proc/meminfo
 grep MemFree /proc/meminfo # 查看空闲内存量
 
@@ -108,42 +132,61 @@ last # 查看用户登录日志
 passwd -l accountName #锁定一个特定用户
 passwd -u accountName #解锁一个被锁定的账号
 #被锁定的用户仅对root用户仍然可见。这个锁定是通过将加密过的密码替换成（！）来实现的
+```
 
+```
 在putty下
 alt+.
 在vim下
 Ctrl+Y
+```
 
+```
 ldd exefile //查找这个程序需要的动态链接库
 ldconfig //刷新当前系统的动态链接库
 pkg-config // 查看当前系统中lib的编译选项
+```
 
+```
 awk  //格式化输出 http://coolshell.cn/articles/9070.html
 sed  //
+```
 
+```
 watch command //实时监视命令结果变动，可以调节更新频率
+```
 
 生成十六随机数, n是多少位
+```
 openssl rand -hex n
+```
 
 截取长度
+```
 ${variable:0:5}
+```
 
 
-stat file/dirname
 显示inode和blocks数量
+```
+stat file/dirname
+```
 
 
 软件使用：
+```
+显示inode和blocks数量
 sp mem 查看内存使用，与free一样
 lsmod //查看使用的模块
 iotop //查看磁盘，与top结合
 ss //another utily socket viewer
 # 用tcpdump嗅探80端口的访问看看谁最高
 sudo tcpdump -i eth7 -tnn dst port 80 -c 1000 | awk -F "." '{print $1"."$2"."$3"."$4}' | sort | uniq -c | sort-nr |head -20
+```
 
 
-# 查找一个域名的真实ip地址
+查找一个域名的真实ip地址
+```
 # TXT/spf records
 # A TXT record is a type of DNS record that provides text information to sources outside your domain.
 # Sender Policy Framework (SPF) records allow domain owners to publish a list of IP addresses or subnets that are authorized to send email on their behalf.
@@ -157,7 +200,9 @@ nslookup -q=TXT _netblocks.google.com 8.8.4.4
 dig @ns1.nameserver1.com domain.com txt
 dig domain.com txt
 traceroute -n -w 2 -q 2 -m 30 8.8.4.4
+```
 
+```
 ab -c 20 -n 2000 http://baidu.com/ //查看这个网站的并发量等功能，一个httpd的附属软件
 ab 太旧了，不适宜用来测试 web 性能。现在应该用 wrk, siege
 lsblk 这个可以查看整个磁盘的逻辑位置
@@ -181,8 +226,10 @@ fuser //列出当前打开的文件和socket
 sha... // 哈希值，sha<tab>可以查看所有的hash值
 md5sum filename //计算文件的大小
 pushd $LFS/sources;md5sum -c md5sums;popd  //检查md5sums里面的md5值
+```
 
 
+```
 ag keychar  //直接查看当前目录下包含keychar的字符
 ag -g pattern  //查看当前目录下的所有文件名
 grep -r "some_text" /path/to/dir //递归查找grep的目录
@@ -196,17 +243,23 @@ grep -x "hole line" a.txt // only output that exactly match the whole line
 ps -ef | grep 'httpd\|vsftpd' //find 'httpd' or 'vsftpd'
 rsync -arvuzp --chmod=g+rx -e "ssh -p 22333" ./db.txt 172.31.195.91:/home/yantze/test/
 chmod -v a+wt dir  //Make this directory writable and sticky. “Sticky” means that even if multiple users have write permission on a directory, only the owner of a file can delete the file within a sticky directory.
+```
 
+```
 lex=flex / yacc / bison
 bison是GUN版的语法分析器，yacc是Berkeley版的语法分析器，两者实现功能类似，可能会有微小的语义差别
+```
 
 
+```
 curl
 curl -u "yantze" -d '{"scopes":["public_repo"]}' https://api.github.com/users/yantze\?callback\=haha
 curl -u "yantze" -H "Accept: application/vnd.github.v3.text+json"  https://api.github.com/users/yantze
 curl -i/-I -u "username":"password"
+```
 
 wget
+```
 1) use –quiet option to surpress download progress indicator
 wget --quiet http://host_name_of_the_server/path/to/afile.doc
 
@@ -222,11 +275,13 @@ Each of the above commands is equivalent to the following
 wget http://host_name_of_the_server/path/to/file1.txt
 wget http://host_name_of_the_server/path/to/file2.txt
 wget http://host_name_of_the_server/path/to/file3.txt
+```
 
 
 
 
 ssh使用技巧
+```
 ssh-keygen 生成id_rsa,id_rsa.pub
 cat id_rsa.pub>>authorized_keys
 如果是linux使用ssh-copy-id，自动就会把id_rsa添加到目的linux主机
@@ -234,19 +289,25 @@ cat id_rsa.pub>>authorized_keys
 +++进阶,authorized_keys使用command
 下面是authorized_keys内容，command可以设置ssh端登陆后的操作
 command="$HOME/bin/hello",no-port-forwarding,no-X11-forwarding,no-agent-forwarding,no-pty ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA
+```
 
 
 glances
+```
 su root
 # rpm -ivh http://fr2.rpmfind.net/linux/epel/6/x86_64/epel-release-6-7.noarch.rpm
 # yum install python-pip python-devel
 # pip-python install glances
 more info:http://www.vpsee.com/2013/07/a-new-system-monitoring-tool-glances-installation-and-usage/
+```
 
+```
 sysstat
 iostat #这个软件中包含了这个软件
+```
 
 日志监控软件
+```
 iostat
 vmstat
 atop #同top,集成了iostat, vmstat, netstat 
@@ -254,8 +315,10 @@ htop / sp htop
 glances #这个很好用,可以监控温度
 goaccess #for apache/nginx/lighttp
 dstat  # yum install dstat, repoforge repo
+```
 
 linux帮助命令
+```
 man/page
 whereis
 type -a #这个可以查找所以的命令位置
@@ -263,14 +326,18 @@ whatis #这个可以解释一组命令
 which #查找当前path里面的可执行文件
 type file #如果用whereis找不到可以先看看文件类型
 nm  #查看.o文件中调用了哪些程序
+```
 
 history
+```
 HISTFILE stores the path to the history file
 HISTSIZE stores the maximum number of events to save in the internal history
 SAVEHIST stores the maximum number of events to save in the history file
 # 最常用的10个命令
 history | awk '{a[$2]++}END{for(i in a){print a[i] " " i}}' | sort -n | tail
+```
 
+```
 do
     newName=`echo $i |cut -d_ -f3`
     mv $i $newName
@@ -279,24 +346,32 @@ zmv 'glyphicons_*_(*).png' '$1.png'
 rename 's/^glyphicons_[0-9]+_//' glyphicons_*.png
 ls -1 glyphicons_[0-9]*.png|sed "s/glyphicons_\([0-9][0-9]*\)_\(.*\).png/mv & \2.png/"|sh -v
 rm !(*.php) // 删除当前目录下不是扩展名php的文件。
+```
 
 
+```
 set 和 typeset 的区别
 set 显示当前系统的环境变量
 typeset 还显示这些系统变量的类型
 typeset -aU path 可以去掉重复的 PATH
+```
 
 vimdiff
+```
 vimdiff =(gcc -march=native -Q --help=target) =(gcc -march=core2 -Q --help=target) #比较两个非文件不同
 diff =(typeset) =(set) #也是可以比较的，但是不够vimdiff详细
 sdiff # diff的垂直展示
+```
 
 xargs
+```
 echo 'a.json' | > newfile.txt
 echo 'a.json' | xargs cat
 echo 'a.json' | cat
+```
 
 sshfs
+```
 sshfs -o allow_other root@192.168.9.109:/opt /opt/s109 #挂载(如配上ssh key可完全自动化)
 添加allow_other是因为执行这条命令的人可能需要其它人使用，所以添加这个参数后就可以用用其它的用户了
 fusermount -u /opt/s109 #卸载
@@ -310,52 +385,65 @@ mount -t cifs //192.168.1.100/share /mnt/share -o username="domain\user",uid="61
 # smb客户端
 smbclient //192.168.1.50/share -U domain\user
 e2fsch -p //检测并自动修复文件系统
+```
 
 
 
 
 dev
+```
 /dev/urandom
 /dev/zero
+```
 
+```
 二进制 text2bin test2hex
 //有格式的解释二进制文件: [ [iteration_count]/byte_count ] "format"
 hexdump -e '1/1 "%i " 1/2 "%i " 2/4 "%i "  "\n"' data2bin
 xxd
+```
 
 
 
 本机使用的软件
-rouchdb #一个json格式的nosql数据库
+```
 fail2ban
 duck #duck -q --synchronize ftp://pftp:pftp@127.0.0.1/pocket/ ~/tmp/tes
 #必须要在url后面指定一个文件夹,否则程序会出错
+```
 
+```
 dirs 的命令
 d  //d is an alias for dirs -v | head -10
 po //popd , popd is pop dir
 pp //pushd , put the current dir
 在zsh中输入d命令下面的数字，可以直接进入
+```
 
+```
 echo '#!/bin/env sh
 cd /var/www/html
 '> ~/.bin/proj
 . proj // 用这种方法可以直接在当前bash运行
-
-
+```
 
 
 valgrind
+```
 c检查错误工具，编译需要加上'-g'
 valgrind ./execufile
+```
 
 mosh
+```
 一个比ssh快很多倍和稳定强的terminal,需要先连上ssh,同时安装mosh:
 https://mosh.mit.edu
 但是我测试一下显示的环境，用这里连接DigtalOcean的三番服务器，但是mosh-server由于长时间丢包，导致一直不能访问，很明显ssh要稳定得多。
+```
 
 
 tmux
+```
 #shortcut explan
 !           Break the current pane out of the window.
 ;           Move to the previously active pane.
@@ -374,18 +462,22 @@ tmux list-sessions  #list all sessions
 
 bind-key F1 set-window-option force-width 81
 set-window-title $(whoami)@$(hostname)  //设置当前putty或者tmux下面的标签栏
+```
 
 较少使用的命令
+```
 shred - overwrite a file to hide its contents, and optionally delete it
 python -m SimpleHTTPServer 8888 & //python 2+
 python -m http.server 8888 & //python 3+
 python -m pyftpdlib -w //后面的-w是添加写权限，更多可看-h
 gpg -c file件加密
 gpg file.gpg件解密
+```
 
 有一个命令参考比较齐全，之后再消化一下
-http://www.pixelbeat.org/cmdline_zh_CN.html
+- http://www.pixelbeat.org/cmdline_zh_CN.html
 
+```
 killall
 killall -TERM mysqld #关闭mysql进程
 kill -TERM/15 PID
@@ -398,27 +490,34 @@ ps -ef f  # 显示ascii进程图
 jobs -l(列出id)查看后台运行情况
 fg [%]id 把id拿到前台来
 bg 显示fg要放在前面的,其中一个功能是
+```
 
+```
 had three console version dict
 ~/bin/dict
 go get github.com/c4pt0r/yd
 wget https://raw.githubusercontent.com/felixonmars/ydcv/master/ydcv.py
+```
 
 
 top的参数理解
+```
 NI 代表的是niceless, "-19/-20"(highest priority, 耗资源多) and "19/20"(lowest priority)
 use "nice -n 15 command_to_execute" when start
 use "renice 0 PID_to_prioritize" when already executing
+```
 
 数学运算
+```
 expr 1 + 1
 let a=1
 echo $((1+1))
 echo '1+1' | bc
-具体的可以看 ~/.dotfiles/wiki/
+```
 
 
 常见的日志位置
+```
 /var/log/message      – 记录系统日志或当前活动日志。
 /var/log/auth.log     – 身份认证日志。
 /var/log/kern.log     – 内核日志。
@@ -432,10 +531,12 @@ echo '1+1' | bc
 
 /usr unix shared resources
 /opt editable text configuration
+```
 
-TODO
+```
 phabricator 这个软件没有完成,dirctory定位到/home/yantze/phabricator/phabricator/webboot,打开phabricator系统的ip地址，提示无权限
 如果成功解决，打开url：http://www.phabricator.com/docs/phabricator/article/Configuring_Accounts_and_Registration.html
+```
 
 
 # vim: set expandtab:
