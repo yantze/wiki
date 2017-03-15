@@ -21,8 +21,9 @@ eg:dd if=/dev/zero of=2g.img seek=1000 count=1 bs=1M
 这条命令输出后，结果是占用了1M磁盘空间，但是用ll显示，是1001M的文件
 ```
 
-# linux dd命令参数及用法详解---用指定大小的块拷贝一个文件
-date:2010-06-14 from:unknown
+## linux dd命令参数及用法详解
+> 用指定大小的块拷贝一个文件
+date:2010-06-14 author:unknown
 
 ```
 dd 的主要选项：

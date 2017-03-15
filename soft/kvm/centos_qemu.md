@@ -1,5 +1,5 @@
 install qemu for 6.828
-
+```
 if
 egrep '(vmx|svm)' /proc/cpuinfo
 have some msg out,is more perfect
@@ -12,3 +12,4 @@ yum install qemu qemu-common qemu-guest-agent qemu-kvm-common qemu-system-x86 qe
 
 #then process below line command
 yum install qemu-kvm qemu-img virt-manager libvirt libvirt-python python-virtinst libvirt-client virt-install virt-viewer
+```
