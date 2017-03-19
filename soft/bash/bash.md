@@ -1,3 +1,4 @@
+
 通过上下键来搜索
 ```
 $ vim ~/.inputrc
@@ -39,5 +40,7 @@ $@	传递给脚本或函数的所有参数。被双引号(" ")包含时，与 $*
 $?	上个命令的退出状态，或函数的返回值。
 $$	当前Shell进程ID。对于 Shell 脚本，就是这些脚本所在的进程ID。
 ```
-[ref](http://c.biancheng.net/cpp/view/2739.html)
+
+## Reference
+- [ref](http://c.biancheng.net/cpp/view/2739.html)
 

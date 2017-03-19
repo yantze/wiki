@@ -1,24 +1,7 @@
 With less code you get more done.
 ---
 
-## mpv 常用
-改变速率，看 man mpv 前面的三个快捷键。
-
-
-测试代码:alias cp=rsync -ah --progress --append
-
-## 一些问题
-
-- 1.1 home建立的网站apache默认是不允许读取的，就算有777也不行
-    ```
-    getsebool -a |grep httpd_enable_homedirs
-    httpd_enable_homedirs --> off
-    所以要运行：
-    setsebool httpd_enable_homedirs on
-    重启可正常
-    ```
-
-内置命令：
+内置命令
 ```
 cat << EOF >> output.txt
 heredoc> type what you want append
@@ -156,14 +139,10 @@ sed  //
 watch command //实时监视命令结果变动，可以调节更新频率
 ```
 
+
 生成十六随机数, n是多少位
 ```
 openssl rand -hex n
-```
-
-截取长度
-```
-${variable:0:5}
 ```
 
 
@@ -242,6 +221,7 @@ grep -c "str" a.txt  // only output the number of result
 grep -x "hole line" a.txt // only output that exactly match the whole line
 ps -ef | grep 'httpd\|vsftpd' //find 'httpd' or 'vsftpd'
 rsync -arvuzp --chmod=g+rx -e "ssh -p 22333" ./db.txt 172.31.195.91:/home/yantze/test/
+rsync -ah --progress --append
 chmod -v a+wt dir  //Make this directory writable and sticky. “Sticky” means that even if multiple users have write permission on a directory, only the owner of a file can delete the file within a sticky directory.
 ```
 
@@ -405,26 +385,12 @@ xxd
 
 
 
-本机使用的软件
-```
-fail2ban
-duck #duck -q --synchronize ftp://pftp:pftp@127.0.0.1/pocket/ ~/tmp/tes
-#必须要在url后面指定一个文件夹,否则程序会出错
-```
-
 ```
 dirs 的命令
 d  //d is an alias for dirs -v | head -10
 po //popd , popd is pop dir
 pp //pushd , put the current dir
 在zsh中输入d命令下面的数字，可以直接进入
-```
-
-```
-echo '#!/bin/env sh
-cd /var/www/html
-'> ~/.bin/proj
-. proj // 用这种方法可以直接在当前bash运行
 ```
 
 
@@ -492,27 +458,11 @@ fg [%]id 把id拿到前台来
 bg 显示fg要放在前面的,其中一个功能是
 ```
 
-```
-had three console version dict
-~/bin/dict
-go get github.com/c4pt0r/yd
-wget https://raw.githubusercontent.com/felixonmars/ydcv/master/ydcv.py
-```
-
-
 top的参数理解
 ```
 NI 代表的是niceless, "-19/-20"(highest priority, 耗资源多) and "19/20"(lowest priority)
 use "nice -n 15 command_to_execute" when start
 use "renice 0 PID_to_prioritize" when already executing
-```
-
-数学运算
-```
-expr 1 + 1
-let a=1
-echo $((1+1))
-echo '1+1' | bc
 ```
 
 
@@ -539,4 +489,14 @@ phabricator 这个软件没有完成,dirctory定位到/home/yantze/phabricator/p
 ```
 
 
+## 一些问题
+
+- home 建立的网站 apache 默认是不允许读取的，就算有777也不行，与 selinux 有关
+```
+getsebool -a |grep httpd_enable_homedirs
+httpd_enable_homedirs --> off
+所以要运行：
+setsebool httpd_enable_homedirs on
+重启可正常
+```
 # vim: set expandtab:
