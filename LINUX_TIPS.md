@@ -405,30 +405,6 @@ mosh
 一个比ssh快很多倍和稳定强的terminal,需要先连上ssh,同时安装mosh:
 https://mosh.mit.edu
 但是我测试一下显示的环境，用这里连接DigtalOcean的三番服务器，但是mosh-server由于长时间丢包，导致一直不能访问，很明显ssh要稳定得多。
-```
-
-
-tmux
-```
-#shortcut explan
-!           Break the current pane out of the window.
-;           Move to the previously active pane.
-x           Kill the current pane.
-{           Swap the current pane with the previous pane.
-}           Swap the current pane with the next pane.
-m           split the current window with manpage
-q num       #select a panel in window
-x           #kill one panel in window
-[           #surface upon window
-w           #show all window(Select from interactive list of windows)
-s           # list all session and select one
-tmux list-sessions  #list all sessions
-#cheatsheet:https://gist.github.com/MohamedAlaa/2961058#file-tmux-cheatsheet-markdown
-#use space to enter visual model in ctrl+a ] condition
-
-bind-key F1 set-window-option force-width 81
-set-window-title $(whoami)@$(hostname)  //设置当前putty或者tmux下面的标签栏
-```
 
 较少使用的命令
 ```
@@ -499,4 +475,5 @@ httpd_enable_homedirs --> off
 setsebool httpd_enable_homedirs on
 重启可正常
 ```
-# vim: set expandtab:
+
+vim: set expandtab:
