@@ -307,7 +307,7 @@ lock table t1 write;
 //自己可以读可改，别人不可读不可改
 ```
 
-清空表
+清空表 empty table
 ```
 truncate table test1;
 ```
