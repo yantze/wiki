@@ -194,13 +194,35 @@ test -c /dev/hda ; echo $? # 将打印 1 表示 test 命令的返回值为 1, /d
 更多的用法在 `man bash`
 [more](http://www.ibm.com/developerworks/cn/linux/shell/bash/bash-2/index.html)
 
+## 其它应用
 
-### 实践
+##### 执行文件路径
+```bash
+# 当前目录
+CURRENT_SCRIPT_HOME=$(cd `dirname $0`; pwd)
+CURRENT_EXECUTE_HOME=$(pwd -P)
+# echo $CURRENT_SCRIPT_HOME # 脚本的路径
+# echo $CURRENT_EXECUTE_HOME # 调用脚本的路径
+```
+```
 curpath=`dir $0`
 filename=`basename $curpath`
+```
+
+##### 参数
+```bash
+while getopts f:t: opts; do
+   case ${opts} in
+      f) FROM_VAL=${OPTARG} ;;
+      t) TO_VAL=${OPTARG} ;;
+   esac
+done
+```
+
+
 
 ### 少见
-退出码, linux 命令行上一个命令的退出码放在了$?环境变变中
+退出码, linux 命令行上一个命令的退出码放在了`$?`环境变量中
 ```
 $ true; $?  =>  0
 $ false; $? =>  1

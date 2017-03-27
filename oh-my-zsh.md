@@ -5,24 +5,15 @@ oh-my-zsh cheatsheet
 
 | Command               | Description                                                                                                   |
 |:----------------------|:--------------------------------------------------------------------------------------------------------------|
-| _tabs_                 | Create a new tab in the current directory (OS X - req enabling access for assistive devices under sys prefs). |
-| _take_                | Create a new directory and change to it, will create intermediate directories as required.                    |
+| _tabs_                | Create a new tab in the current directory (OS X - req enabling access for assistive devices under sys prefs). |
+| _take_                | Create a new directory and change to it, will create intermediate directories as required. Like mcd command   |
 | _x_ / _extract_       | Extract an archive (supported types: tar.{bz2,gz,xz,lzma}, bz2, rar, gz, tar, tbz2, tgz, zip, Z, 7z).         |
 | _zsh_stats_           | Get a list of the top 20 commands and how many times they have been run.                                      |
 | _uninstall_oh_my_zsh_ | Uninstall Oh-my-zsh.                                                                                          |
 | _upgrade_oh_my_zsh_   | Upgrade Oh-my-zsh.                                                                                            |
-| _take_   | like mcd                                                                                            |
-| _zsh_stats_   | zsh command stats                                                                                            |
-| _open_command_   | open command in window cygwin `cygstart`, in darwin `open`, in linux `xdg-open`                                                                                            |
+| _zsh_stats_           | zsh command stats.                                                                                            |
+| _open_command_        | open command in window cygwin `cygstart`, in darwin `open`, in linux `xdg-open`                               |
 
-
-## Alias
-
-| Alias               | Description                                                                                                   |
-|:----------------------|:--------------------------------------------------------------------------------------------------------------|
-| "\_"                 | alias for sudo  |
-
----
 
 ## Git plugins=(... git)
 
@@ -67,6 +58,14 @@ oh-my-zsh cheatsheet
 | _gup_                  | git pull --rebase                                                                 |
 | _gvt_                  | git verify-tag                                                                    |
 
+
+## Alias
+
+| Alias               | Description                                                                                                   |
+|:----------------------|:--------------------------------------------------------------------------------------------------------------|
+| "\_"                 | alias for sudo  |
+
+---
 
 ## Editors
 
