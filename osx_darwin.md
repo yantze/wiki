@@ -1,6 +1,20 @@
 # OSX Darwin
 
-OSX 的用户系统
+### OSX Services
+
+
+ftp server
+```
+# start
+sudo -s launchctl load -w /System/Library/LaunchDaemons/ftp.plist
+# stop
+sudo -s launchctl unload -w /System/Library/LaunchDaemons/ftp.plist
+# manual
+man ftpd
+```
+
+
+### OSX 的用户系统
 - 查看单用户模式的列表: `/etc/passwd`, 里面也有说明只有单一用户模式有效
 - 查看图形模式所有用户的列表: 打开`Directory Utility`软件，可以找到用户所有auth信息
 - `/var/db/dslocal/nodes/Default/users` 是`Directory Utility`的文件存储数据，里面的文件列表就是当前系统所有用户的列表，里面的文件大部分是apple自定的LDAP格式，最好用提供的工具修改
@@ -14,7 +28,7 @@ sudo /Volumes/MacX/Install OS X El Capitan.app/Contents/Resources/createinstallm
 ```
 
 
-查看负载均衡
+### 查看负载均衡
 ```
 sysctl vm.loadavg
 ```

@@ -1,5 +1,9 @@
 Linux use log
 ---
+## docker server
+```
+docker run -it --rm -p 6080:80 dorowu/ubuntu-desktop-lxde-vnc
+```
 
 ## Interactive commands convert to scripts
 ```
