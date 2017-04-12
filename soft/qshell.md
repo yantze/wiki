@@ -11,4 +11,9 @@ qshell fput bucket-name qiniu.jpg /Users/jemy/Documents/qiniu.jpg
 # https://github.com/qiniu/qshell/blob/master/docs/rput.md
 qshell rput bucket-name qiniu.mp4 /Users/jemy/Documents/qiniu.mp4
 
+# 删除指定文件
+# format: qshell delete <Bucket> <Key>
+qshell delete bucket-name qiniu.mp4
+
+
 ```
