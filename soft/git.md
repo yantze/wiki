@@ -203,9 +203,21 @@ git help archive
 ```
 ## 浏览源码具体修改记录
 ```
+# 查看最近一次（包括未 commit）记录
+git diff HEAD~1
+
 # 从最老的 commit 记录查看变动
 git log --reverse -p
 
 # 从最近 commit 查看记录
 git show HEAD~1
+```
+## 修改最后一次 commit 的 message
+```
+# 修改页面的第一行
+git commit -v --amend
+
+# 修改之前几次的 commit 记录, 把其中的 pick 改为 reword，然后修改后面的 message
+git rebase -i HEAD~3
+# detail: https://help.github.com/articles/changing-a-commit-message/
 ```
