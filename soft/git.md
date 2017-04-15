@@ -201,3 +201,11 @@ git archive --format zip --prefix=project/ --output ~/project.zip master
 git help archive
 
 ```
+## 浏览源码具体修改记录
+```
+# 从最老的 commit 记录查看变动
+git log --reverse -p
+
+# 从最近 commit 查看记录
+git show HEAD~1
+```
