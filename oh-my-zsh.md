@@ -1,5 +1,7 @@
 oh-my-zsh cheatsheet
 ---
+## Alias
+See all alias just run `alias`.
 
 ## Commands
 
