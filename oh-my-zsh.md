@@ -55,7 +55,6 @@ oh-my-zsh cheatsheet
 | _gunignore_            | git update-index --no-assume-unchanged                                            |
 | _gunwip_               | git log -n 1 &#124; grep -q -c "\-\-wip\-\-" && git reset HEAD~1                  |
 | _gup_                  | git pull --rebase                                                                 |
-| _gvt_                  | git verify-tag                                                                    |
 
 
 ## Alias

@@ -5,9 +5,9 @@
 - 扁平化：常用软件使用 `bash_`开头重复多个文件
 
 ## Wiki on Terminal
-- `mw` 自动打开浏览器
-- `mf` 打开某个文件， 比如是 bash_program.md, 可以直接输入 `mf program`
-- `mm` 用 [cheat](https://github.com/chrisallenlane/cheat) 命令查找
+- `mw` 搜索内容关键字，并自动打开浏览器
+- `mf` 搜索文件名关键字，并打开某个文件， 比如是 bash_program.md, 可以直接输入 `mf program`
+- `mm` 搜索指定命令，用 [cheat](https://github.com/chrisallenlane/cheat) 命令查找
 ```
 alias mw='m w'  # search web
 alias mf='m f'  # search file and open it
