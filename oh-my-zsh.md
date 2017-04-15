@@ -1,8 +1,5 @@
 oh-my-zsh cheatsheet
 ---
-## Alias
-See all alias just run `alias`.
-
 ## Commands
 
 | Command               | Description                                                                                                   |
@@ -62,6 +59,7 @@ See all alias just run `alias`.
 
 
 ## Alias
+See all alias just run `alias`.
 
 | Alias               | Description                                                                                                   |
 |:----------------------|:--------------------------------------------------------------------------------------------------------------|
