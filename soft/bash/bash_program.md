@@ -20,6 +20,14 @@ echo ${str##*is}    # ##*is 表示从头开始找，直到最远is
 echo ${str%is*}     # %*is 表示从尾部开始找直到最近的is
 echo ${str%%is*}    # %%*is 表示从尾部开始找直到最远的is
 ```
+数组
+```
+array=(
+"abc"
+"bbb"
+"ddd"
+)
+```
 
 比较
 ```bash

@@ -30,5 +30,5 @@ show firewall
 ## Port forward
 Firewall NET -> Port Forwarding
 
-## Reset
-重置 edgeMAX，长按十秒，接到 WAN 口，手动设置网卡 192.168.1.1，打开 192.168.1.1 进入设置向导
+## Reset edgeMAX
+长按十秒，接到 WAN 口，手动设置网卡 192.168.1.1，打开 192.168.1.1 进入设置向导
