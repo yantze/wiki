@@ -143,3 +143,7 @@ change the login message motd(message of today)
 /etc/motd
 ```
 
+## ssh 常见运用
+```
+ssh remote tail -f /var/log/apache2/access.log 
+```

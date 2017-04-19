@@ -148,7 +148,7 @@ $ 7z x FileName.7z
 .zip
 套件名稱：zip。
 壓縮：
-$ zip FileName.zip DirName
+$ zip -r FileName.zip DirName
 解壓縮：
 $ unzip FileName.zip
 

@@ -6,7 +6,7 @@
 
 ## Wiki on Terminal
 - `mw` 搜索内容关键字，并自动打开浏览器
-- `mf` 搜索文件名关键字，并打开某个文件， 比如是 bash_program.md, 可以直接输入 `mf program`
+- `mf` 搜索文件名关键字，并打开某个文件， 比如是 *bash_program.md*, 可以直接输入 `mf program`
 - `mm` 搜索指定命令，用 [cheat](https://github.com/chrisallenlane/cheat) 命令查找
 ```
 alias mw='m w'  # search web

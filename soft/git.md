@@ -221,3 +221,8 @@ git commit -v --amend
 git rebase -i HEAD~3
 # detail: https://help.github.com/articles/changing-a-commit-message/
 ```
+
+## clients
+- git gui
+- gitup
+- git-fork.com
