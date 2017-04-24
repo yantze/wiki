@@ -1,5 +1,6 @@
 # Summary
 
+* [Introductionx](readme.md)
 * [Introduction](Home.md)
 * [First Chapter](gui.md)
 * [adap2](lfs.md)
