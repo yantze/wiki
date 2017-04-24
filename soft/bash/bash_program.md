@@ -185,6 +185,7 @@ file1 ­ot file2 file1 比 file2 旧时返回真，修改时间更旧
 ```
 
 
+example
 ```
 if [ -b /dev/hda ]
 then
@@ -198,9 +199,6 @@ test -c /dev/hda ; echo $? # 将打印 1 表示 test 命令的返回值为 1, /d
 [ -w /etc/passwd ]; echo $? # 查看对当前用户而言, passwd 文件是否可写
 
 ```
-
-更多的用法在 `man bash`
-[more](http://www.ibm.com/developerworks/cn/linux/shell/bash/bash-2/index.html)
 
 ## 其它应用
 
@@ -237,8 +235,11 @@ $ false; $? =>  1
 ```
 
 如果这个命令是一串管道符连接和多个命令，怎么知道每个命令的退出码？
-你可以使用 PIPESTATUS环境变量。比如这个测试：true | false | true; echo "${PIPESTATUS[@]}"
+你可以使用 PIPESTATUS环境变量。比如这个测试：`true | false | true; echo "${PIPESTATUS[@]}"`
 
 
-## Shell Style Guide
+## Other
 [google shell style](https://google.github.io/styleguide/shell.xml)
+更多的用法在 `man bash`
+[more](http://www.ibm.com/developerworks/cn/linux/shell/bash/bash-2/index.html)
+

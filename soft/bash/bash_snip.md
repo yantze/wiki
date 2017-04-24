@@ -119,56 +119,28 @@ echo $result
 echo $(cd "$(dirname "$0")"; pwd)
 ```
 
-
-# Bash 一些变量的操作
-2015-01-16 左耳朵耗子
-
-> 有时候我们需要对变量进行一些操作，比如截取，替换，删除等操作，很多同学会使用awk, sed 或cut等命令来干这事，其实，bash的内置的变量操作就可以干这个事。下面说明一些常用的方法：
-
-这些操作需要使用 ${var} 这种变量的写法（用花括号）。
-
+# 杀掉进程
 ```
-${#var} 输出 var的字符串长度
-
-${var:pos:len} 你可以理解为变量的切片操作。如：
-
-> var=0123456789
-> echo ${var:2}
-23456789
-> echo ${var:2:2}
-23
-> echo ${var:2:3}
-234
-> echo ${var::1}
-0
-> echo ${var::-2}
-01234567
-或许需要这样
-echo $get_url[-4,-1]
-
-${var#word} 或 ${var##word} 删除匹配word的前缀，#为最短匹配，##为最长匹配
-
-${var%word} 或 ${var%%word} 删除匹配word的后缀，%为最短匹配，%%为最长匹配
-
-> var=ababcdcd
-> echo ${var#a*b}
-abcdcd
-> echo ${var##a*b}
-cdcd
-> echo ${var%c*d}
-ababcd
-> echo ${var%c*d}
-ababcd
-> echo ${var%%c*d}
-abab
-${var/pattern/replacement} 替换第一个匹配
-
-${var//pattern/replacement} 替换所有的匹配
-
-var=ababcdcd
-> echo ${var/ab/01}
-01abcdcd
-> echo ${var//ab/01}
-0101cdcd
+ps -ef | grep glances | grep -v grep | awk '{print $2}' | xargs kill -9
 ```
 
+列出 ip 地址
+```
+ifconfig | awk '/eth0/{getline;gsub(/addr:/,"",$2);print $2}'
+```
+
+便捷函数
+```
+function jz() {
+    echo $*
+}
+
+~$ jz hahha
+```
+
+终端程序进程化
+```
+nohup php myprog.php > log.txt &
+// 单独 php myprog.php， ctrl + c 会中断程序执行，并终止子进程
+// php myprog.php &，这样执行程序虽然也是转为后台运行，实际上是依赖终端的，当用户退出终端时进程就会被杀掉。
+```
