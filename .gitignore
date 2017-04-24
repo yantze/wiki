@@ -1,2 +1,4 @@
-.Archive
 *.data
+_book
+.Archive
+cover.html
