@@ -3,55 +3,56 @@
 ## 基本
 
 | Shortcut | Action |
-| --- | --- |
-| C-x C-f | open a file |
-| C-x C-s | save a file |
-| C-x C-w | save new file |
-| C-x C-c | close Emacs  |
+| ---      | --- |
+| C-x C-f  | open a file              |
+| C-x C-s  | save a file              |
+| C-x C-w  | save new file            |
+| C-x C-c  | close Emacs              |
+| C-x k    | close Emacs without save |
 
 ## Buffer 相關
 
 | Shortcut | Action |
-| --- | --- |
-| C-x k |  關掉目前 buffer。 |
-| C-x ←  | 切換到上一個 buffer。 |
-| C-x → |  切換到下一個 buffer。 |
-| C-x b  | 切換到/開啟一個名為 xxx 的 buffer。 |
-| C-x C-b |  開啟 buffer 管理員(不推薦使用，預設的管理員難用到爆) |
+| ---      | --- |
+| C-x k    | 關掉目前 buffer。 |
+| C-x ←    | 切換到上一個 buffer。 |
+| C-x →    | 切換到下一個 buffer。 |
+| C-x b    | 切換到/開啟一個名為 xxx 的 buffer。 |
+| C-x C-b  | 開啟 buffer 管理員(不推薦使用，預設的管理員難用到爆) |
 
 ## Window 相關
 
 | Shortcut | Action |
-| --- | --- |
-| C-x 0 | 關掉目前 Window |
-| C-x 1 | 將目前 Window 以外的所有 Window 關掉。 |
-| C-x 2 | 水平分割 Window |
-| C-x 3 | 垂直分割 Window |
-| C-x o | 切換到下一個 Window（不推薦使用，不知道誰想出來的爛設計） |
+| ---      | --- |
+| C-x 0    | 關掉目前 Window |
+| C-x 1    | 將目前 Window 以外的所有 Window 關掉。 |
+| C-x 2    | 水平分割 Window |
+| C-x 3    | 垂直分割 Window |
+| C-x o    | 切換到下一個 Window（不推薦使用，不知道誰想出來的爛設計） |
 
-游標移動
-
-| Shortcut | Action |
-| --- | --- |
-| C-a | 跳到行首 |
-| C-e | 跳到行尾 |
-| M-f | next word (f 表示 forward) |
-| M-b | previous word (b 表示 backward) |
-| M-g | M-g 跳到第 N 行。 |
-
-畫面捲動
+## 游標移動
 
 | Shortcut | Action |
-| --- | --- |
-| M-< | top of file |
-| M-> | bottom of file |
-| C-v | next screen |
-| M-v | previous screen |
+| ---      | --- |
+| C-a      | 跳到行首 |
+| C-e      | 跳到行尾 |
+| M-f      | next word (f 表示 forward) |
+| M-b      | previous word (b 表示 backward) |
+| M-g      | M-g 跳到第 N 行。 |
+
+## 畫面捲動
+
+| Shortcut    | Action |
+| ---         | --- |
+| M-<         | top of file |
+| M->         | bottom of file |
+| C-v         | next screen |
+| M-v         | previous screen |
 | M-Page Down | 隔壁的 window 向下捲動一頁 |
-| M-Page Up | 隔壁的 window 向上捲動一頁 |
-| C-l | 畫面與游標位置對齊（重複按可對齊三種位置） |
+| M-Page Up   | 隔壁的 window 向上捲動一頁 |
+| C-l         | 畫面與游標位置對齊（重複按可對齊三種位置） |
 
-搜尋
+## 搜尋
 
 | Shortcut | Action |
 | --- | --- |
@@ -59,7 +60,7 @@
 | C-M-s | Regexp 搜尋 （一樣，也是繼續按 C-s 搜尋下一個） |
 | M-% | 字串搜尋並取代 |
 
-執行外部命令
+## 執行外部命令
 > 注意，目前 buffer 的工作目錄就是指令執行時的 pwd 位置。
 
 | Shortcut | Action |
@@ -70,24 +71,24 @@
 
 
 | Shortcut | Action |
-| --- | --- |
-| C-d | equal Del |
-| M-d | equal vim dw # M-Backspace |
-| C-k | d$ |
-| C-/ | Undo |
-| C-g C-/ | redo |
+| ---      | --- |
+| C-d      | equal Del |
+| M-d      | equal vim dw # M-Backspace |
+| C-k      | d$ |
+| C-/      | Undo |
+| C-g C-/  | redo |
 
 
 | Shortcut | Action |
-| --- | --- |
-| C-x u | run by file type |
-| C-w   | cut current or marked line |
-| C-y | paste: restore (yank) line |
-| C-s   | search |
-| C-x C-@ | back to original from |
-| C-r   | find next |
-| C-x i | insert (file) |
-| M-x | and then type "goto-line" |
+| ---      | --- |
+| C-x u    | run by file type |
+| C-w      | cut current or marked line |
+| C-y      | paste: restore (yank) line |
+| C-s      | search |
+| C-x C-@  | back to original from |
+| C-r      | find next |
+| C-x i    | insert (file) |
+| M-x      | and then type "goto-line" |
 
 
 ## More
@@ -139,7 +140,7 @@
 | CTRL-u 24 CTRL-x 3| Split screen horizontally with 24 column width |
 | CTRL-x 1          | Revert to single screen                        |
 | CTRL-x 0          | Hide the current screen                        |
-| CTRL-x k          | Kill the current screen                        |
+| CTRL-x k          | Kill the current screen, delete current buffer |
 | CTRL-x O          | Move to the next buffer                        |
 | CTRL-x b          | Select a buffer                                |
 | CTRL-x CTRL-e     | Run command in the scratch buffer              |
@@ -228,14 +229,17 @@ brew install emacs --with-cocoa --with-rsvg --with-gnutls --with-imagemagick
 (setq-default custom-enabled-themes '(sanityinc-solarized-light))
 ```
 
-Problem
-- Ctrl+a 与 tmux 冲突
-- M+V 不能被捕获到
 
+## 兼容性问题
+在 Terminal.app 中 `Ctrl + a` 与 tmux 冲突，其实很好解决，在 tmux.conf 里面添加，然后按两次 `Ctrl + a` 可以实现
+```
+# campatible with emacs shortcut
+bind ^a send-keys 'C-a'
+```
 
 Config
 - [emacs.d](https://github.com/purcell/emacs.d) is my emacs config.
-- cheat emacs also have some tips
+- cheat emacs tips
 - https://github.com/emacs-tw/emacs-101
 
 Resouce

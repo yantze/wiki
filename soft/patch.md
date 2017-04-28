@@ -37,3 +37,4 @@ git diff > new.patch
 patch -p0 new.patch
 ```
 
+meld
