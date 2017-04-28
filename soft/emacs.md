@@ -64,11 +64,11 @@
 ## 執行外部命令
 > 注意，目前 buffer 的工作目錄就是指令執行時的 pwd 位置。
 
-| Shortcut | Action                       |                                                    |
-| ---      | ---                          |                                                    |
-| M-!      | 執行外部指令(synchronously)  |                                                    |
-| M-&      | 執行外部指令(asynchronously) |                                                    |
-| M-       |                              | 將選取起來的區域(使用 C-@)透過 pipe 傳送給外部命令 |
+| Shortcut | Action                                             |
+| ---      | ---                                                |
+| M-!      | 執行外部指令(synchronously)                        |
+| M-&      | 執行外部指令(asynchronously)                       |
+| M-       | 將選取起來的區域(使用 C-@)透過 pipe 傳送給外部命令 |
 
 
 ## 基本操作
