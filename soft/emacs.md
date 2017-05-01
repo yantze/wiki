@@ -196,6 +196,15 @@ brew install emacs --with-cocoa --with-rsvg --with-gnutls --with-imagemagick
 (setq-default custom-enabled-themes '(sanityinc-solarized-light))
 ```
 
+Alias
+```
+alias ec='emacsclient -a ""'        # osx
+alias ec='emacsclient -a "" -c'     # *nix
+alias et='emacsclient -t'  # 适合 GUI 时，启动一个新的 frame (-n) 
+alias en='emacsclient -n'  # 适合 终端运行(emacs --daemon) 后
+# alias e='command emacs -nw' # run emacs gui in command line
+```
+
 ## 兼容性问题
 tmux 与 `Ctrl + a` 冲突，其实很好解决，在 tmux.conf 里面添加，然后按两次 `Ctrl + a` 可以实现
 ```
@@ -203,10 +212,7 @@ tmux 与 `Ctrl + a` 冲突，其实很好解决，在 tmux.conf 里面添加，�
 bind ^a send-keys 'C-a'
 ```
 
-## 探索快捷键
-```
-C-x ←/→  # previous / next winner
-```
+Terminal.app 不支持 `Ctrl + /` 撤销，使用 `Ctrl + -`，具体原因请看 [footnote 1]
 
 ## 参考资料
 Config
@@ -218,4 +224,4 @@ Resouce
 - [Emacs修炼之道](http://xlambda.com/blog/2013/01/08/the-pragmatic-emacser/)
 
 ---
-[footnote 1] 具体原因请看[how to send c-/](https://apple.stackexchange.com/questions/24261/how-do-i-send-c-that-is-control-slash-to-the-terminal)
+[footnote 1] 具体原因请看[how to send c-/ ?](https://apple.stackexchange.com/questions/24261/how-do-i-send-c-that-is-control-slash-to-the-terminal)
