@@ -2,36 +2,38 @@
 
 ## 基本
 
-| Shortcut | Action                   |
-| ---      | ---                      |
-| C-x C-f  | open a file              |
-| C-x C-s  | save a file              |
-| C-x C-w  | save new file            |
-| C-x C-c  | close Emacs              |
-| C-x k    | close Emacs without save |
+| Shortcut    | Action                   |
+| ---         | ---                      |
+| C-x C-f     | open a file              |
+| C-x C-s     | save a file              |
+| C-x C-w     | save new file            |
+| ESC ESC ESC | Cancel a command         |
+| C-x k       | close Emacs without save |
+| C-x C-c     | close Emacs              |
+> Close Emacs will save a buffer in a subfix '#' file, use M-x recover-file to recover
 
-## Window 相關
+## Window 相关
 
 | Shortcut | Action                                 |
 | ---      | ---                                    |
-| C-x 0    | 關掉目前 Window                        |
-| C-x 1    | 將目前 Window 以外的所有 Window 關掉。 |
+| C-x 0    | 关掉目前 Window                        |
+| C-x 1    | 将目前 Window 以外的所有 Window 关掉。 |
 | C-x 2    | 水平分割 Window                        |
 | C-x 3    | 垂直分割 Window                        |
-| C-x o    | 切換到下一個 Window                    |
+| C-x o    | 切换到下一个 Window                    |
 
-## Buffer 相關
+## Buffer 相关
 
 | Shortcut | Action                                               |
 | ---      | ---                                                  |
-| C-x k    | 關掉目前 buffer                                      |
-| C-x ←    | 切換到上一個 buffer                                  |
-| C-x →    | 切換到下一個 buffer                                  |
-| C-x b    | 切換到/開啟一個名為 xxx 的 buffer                    |
-| C-x C-b  | 開啟 buffer 管理員(不推薦使用，預設的管理員難用到爆) |
+| C-x k    | 关掉目前 buffer                                      |
+| C-x ←    | 切换到上一个 buffer                                  |
+| C-x →    | 切换到下一个 buffer                                  |
+| C-x b    | 切换到/开启一个名为 xxx 的 buffer                    |
+| C-x C-b  | 开启 buffer 管理员(不推荐使用，预设的管理员难用到爆) |
 
 
-## 游標移動
+## 游标移动
 
 | Shortcut | Action                          |
 | ---      | ---                             |
@@ -40,103 +42,85 @@
 | M-f      | next word (f 表示 forward)      |
 | M-b      | previous word (b 表示 backward) |
 | M-g      | M-g 跳到第 N 行。               |
+| M-r      | 循环跳动光标的文件中上下        |
 
-## 畫面捲動
+## 画面卷动
 
-| Shortcut    | Action                                     |
-| ---         | ---                                        |
-| M-<         | top of file                                |
-| M->         | bottom of file                             |
-| C-v         | next screen                                |
-| M-v         | previous screen                            |
-| M-Page Down | 隔壁的 window 向下捲動一頁                 |
-| M-Page Up   | 隔壁的 window 向上捲動一頁                 |
-| C-l         | 畫面與游標位置對齊（重複按可對齊三種位置） |
+| Shortcut | Action                             |
+| ---      | ---                                |
+| M-<      | top of file                        |
+| M->      | bottom of file                     |
+| C-v      | next screen                        |
+| M-v      | previous screen                    |
+| C-l      | 画面与游标位置对齐(循环)三种位置） |
 
-## 搜尋
+## 搜寻
 
 | Shortcut | Action                                          |
 | ---      | ---                                             |
-| C-s      | 普通字串搜尋（繼續按 C-s 搜尋下一個）           |
-| C-M-s    | Regexp 搜尋 （一樣，也是繼續按 C-s 搜尋下一個） |
-| M-%      | 字串搜尋並取代                                  |
+| C-s      | 普通字串搜寻（继续按 C-s 搜寻下一个）           |
+| C-M-s    | Regexp 搜寻 （一样，也是继续按 C-s 搜寻下一个） |
+| C-r      | find next                  |
+| M-%      | 字串搜寻并取代                                  |
 
-## 執行外部命令
-> 注意，目前 buffer 的工作目錄就是指令執行時的 pwd 位置。
+## 编辑
+| Shortcut    | Action                                              |
+| ---         | ---                                                 |
+| C-d         | Del                                                 |
+| M-d         | equal vim dw # M-Backspace                          |
+| C-k         | d$, C-k at the end of a line, it joins that line with the following line. |
+| C-/         | Undo, 在 Terminal.app 中使用 Control+-  [^footnote 1] |
+| C-g C-/     | redo                                                |
+| M-backspace | Delete privous word                                 |
+| C-w         | cut current or marked line                          |
+| C-y         | paste: restore (yank) line                          |
+> 显示行数，M-x global-linum-mode，下次打开自动显示行数。只当前显示，M-x linum-mode
+
+
+## 执行外部命令
+> 注意，目前 buffer 的工作目录就是指令执行时的 pwd 位置。
 
 | Shortcut | Action                                             |
 | ---      | ---                                                |
-| M-!      | 執行外部指令(synchronously)                        |
-| M-&      | 執行外部指令(asynchronously)                       |
-| M-       | 將選取起來的區域(使用 C-@)透過 pipe 傳送給外部命令 |
-
-
-## 基本操作
-| Shortcut | Action                                              |
-| ---      | ---                                                 |
-| C-d      | equal Del                                           |
-| M-d      | equal vim dw # M-Backspace                          |
-| C-k      | d$                                                  |
-| C-/      | Undo, 在 Terminal.app 中使用 Control+- [footnote 1] |
-| C-g C-/  | redo                                                |
-
-
-| Shortcut | Action                     |
-| ---      | ---                        |
-| C-x u    | run by file type           |
-| C-w      | cut current or marked line |
-| C-y      | paste: restore (yank) line |
-| C-s      | search                     |
-| C-x C-@  | back to original from      |
-| C-r      | find next                  |
-| C-x i    | insert (file)              |
-| M-x      | and then type "goto-line"  |
+| M-!      | 执行外部指令(synchronously)                        |
+| M-&      | 执行外部指令(asynchronously)                       |
+| M-       | 将选取起来的区域(使用 C-@)透过 pipe 传送给外部命令 |
 
 
 ## More
-| Shortcut | Action                  |
-| ---      | ---                     |
-| C-x z    | repeat previous command |
-
-| Shortcut       | Action       |
-| ---            | ---          |
-| M-x kill-emacs | quit by kill |
-
-> will save a subfix '#' file, use M-x recover-file to recover
-
-| Shortcut        | Action                                                 |
-| ---             | ---                                                    |
-| C-h t           | 调出Emacs Tutorial                                     |
-| C-h r           | 调出Emacs Manual                                       |
-| C-h k (command) | 调出对应command的帮助，比如C-h k C-n 就是查看C-n的帮助 |
-
------------------- ------------------ ------------------ ------------------ ------------------ ------------------ 
-
-| Shortcut           | Action                                         |
-| ---                | ---                                            |
-| CTRL-x d           | Directory listing                              |
-| ESC ESC ESC        | Cancel a command                               |
-| CTRL-x CTRL-+      | Font size bigger                               |
-| CTRL-x CTRL--      | Font size smaller                              |
-|                    |                                                |
-| CTRL-u 5 CTRL-x 2  | Split screen vertically with 5 row height      |
-| CTRL-u 24 CTRL-x 3 | Split screen horizontally with 24 column width |
-| CTRL-x 1           | Revert to single screen                        |
-| CTRL-x 0           | Hide the current screen                        |
-| CTRL-x b           | Select a buffer                                |
-| CTRL-x CTRL-e      | Run command in the scratch buffer              |
-|                    |                                                |
-| Open a shell       | ALT-x eshell                |
-| Goto a line number | ALT-x goto-line             |
-| Word wrap          | ALT-x toggle-word-wrap      |
-| Spell checking     | ALT-x flyspell-mode         |
-| Line numbers       | ALT-x linum-mode            |
-| Toggle line wrap   | ALT-x visual-line-mode      |
-| Compile some code  | ALT-x compile               |
-| List packages      | ALT-x package-list-packages |
+| Shortcut           | Action                                                 |
+| ---                | ---                                                    |
+| C-x u              | run by file type                                       |
+| C-x C-@            | back to original from                                  |
+| C-x i              | insert (file)                                          |
+| C-x z              | repeat previous command                                |
+| C-x d           | Directory listing                                      |
+| C-x C-+      | Font size bigger (GUI)                                 |
+| C-x C--      | Font size smaller  (GUI)                               |
+|                    |                                                        |
+| C-h t              | 调出Emacs Tutorial                                     |
+| C-h r              | 调出Emacs Manual                                       |
+| C-h k (command)    | 调出对应command的帮助，比如C-h k C-n 就是查看C-n的帮助 |
+|                    |                                                        |
+| C-u 5 C-x 2  | Split screen vertically with 5 row height              |
+| C-u 24 C-x 3 | Split screen horizontally with 24 column width         |
+| C-x 1           | Revert to single screen                                |
+| C-x 0           | Hide the current screen                                |
+| C-x b           | Select a buffer                                        |
+| C-x C-e      | Run command in the scratch buffer                      |
+|                    |                                                        |
+| ALT-x eshell                 |    Open a shell                                |
+| ALT-x goto-line              |    Goto a line number                          |
+| ALT-x toggle-word-wrap       |    Word wrap                                   |
+| ALT-x flyspell-mode          |    Spell checking                              |
+| ALT-x linum-mode             |    Line numbers                                |
+| ALT-x visual-line-mode       |    Toggle line wrap                            |
+| ALT-x compile                |    Compile some code                           |
+| ALT-x package-list-packages  |    List packages                               |
 
 
 # Org-mode
+Org-mode 可以方便的创建和修改 markdown 表格
 ```
 To begin org-mode                            ALT-x org-mode
 Table column separator                       Vertical/pipe character
@@ -153,6 +137,7 @@ To make org-mode automatically wrap lines:
                (visual-line-mode 1)))
 
 ```
+more info `M-x org-info`.
 
 
 ## redo
@@ -164,15 +149,15 @@ To redo twice, immediately after undoing: C-g C-/ C-/. Note that C-g is not repe
 To undo immediately again, once: C-g C-/
 To undo immediately again, twice: C-g C-/ C-/
 
-關掉目前的 Frame 是 C-x 0 ， 但這個動作並不會把 Buffer 也一起關掉！ 即使關掉 frame，buffer 其實還活在背景中、隨時可以叫出。這一點與現在一般常見的編輯器不同，並不是關掉視窗後、檔案也會一起關閉。
-切換到不同的 Frame： C-x o
-將目前以外的所有 Frame 關掉： C-x 1
-將目前的 Frame 分成上下兩塊： C-x 2
-將目前的 Frame 分成左右兩塊： C-x 3
-關掉 Buffer 是 C-x k ， 將會真正地把檔案關掉 (kill-buffer)
-切換到下一個/前一個 buffer： C-x C-<right>/<left> （方向鍵）
-直接切到某個 buffer： C-x b （可以用 tab 鍵補全）
-開啟 buffer 管理員： C-x C-b （強力推薦改用 Ibuffer ，因為預設的非常難用）
+关掉目前的 Frame 是 C-x 0 ， 但这个动作并不会把 Buffer 也一起关掉！ 即使关掉 frame，buffer 其实还活在背景中、随时可以叫出。这一点与现在一般常见的编辑器不同，并不是关掉视窗后、档案也会一起关闭。
+切换到不同的 Frame： C-x o
+将目前以外的所有 Frame 关掉： C-x 1
+将目前的 Frame 分成上下两块： C-x 2
+将目前的 Frame 分成左右两块： C-x 3
+关掉 Buffer 是 C-x k ， 将会真正地把档案关掉 (kill-buffer)
+切换到下一个/前一个 buffer： C-x C-<right>/<left> （方向键）
+直接切到某个 buffer： C-x b （可以用 tab 键补全）
+开启 buffer 管理员： C-x C-b （强力推荐改用 Ibuffer ，因为预设的非常难用）
 
 ```
 
@@ -180,13 +165,18 @@ To undo immediately again, twice: C-g C-/ C-/
 
 Install
 ```
+# centos-like
+#> emacs-nox   # no x window emacs
 sudo yum install emacs-common emacs-filesystem emacs-nox
+
+# darwin
+#> with-cocoa  # gui
 brew install emacs --with-cocoa --with-rsvg --with-gnutls --with-imagemagick
 ```
+
+如果安装包管理器不能正常工作，主要是代理问题
 ```
 去掉 `https://melpa.org/packages/` 中的 https 为 http
-;; emacsclient でアクセスした時の文字コード設定
-;; バグ: "emacsclient -c" で起動すると実行されない
 (add-hook 'server-visit-hook
   (lambda ()
     (set-terminal-coding-system 'utf-8)
@@ -197,12 +187,18 @@ brew install emacs --with-cocoa --with-rsvg --with-gnutls --with-imagemagick
 ```
 
 Alias
+> use alias to run emacs server, the fastest open a file by emacs. run a frame.
 ```
+# use `emacs --daemon` to run emacs server and then `emacsclient filename`
+# `-a ''` attempt to connect to an existing server, and if no server exists, start one then connect to it.
+
 alias ec='emacsclient -a ""'        # osx
 alias ec='emacsclient -a "" -c'     # *nix
 alias et='emacsclient -t'  # 适合 GUI 时，启动一个新的 frame (-n) 
 alias en='emacsclient -n'  # 适合 终端运行(emacs --daemon) 后
 # alias e='command emacs -nw' # run emacs gui in command line
+
+# shutdown emacs server M-x kill-emacs
 ```
 
 ## 兼容性问题
@@ -212,7 +208,7 @@ tmux 与 `Ctrl + a` 冲突，其实很好解决，在 tmux.conf 里面添加，�
 bind ^a send-keys 'C-a'
 ```
 
-Terminal.app 不支持 `Ctrl + /` 撤销，使用 `Ctrl + -`，具体原因请看 [footnote 1]
+Terminal.app 不支持 `Ctrl + /` 撤销，使用 `Ctrl + -` [^footnote 1]
 
 ## 参考资料
 Config
@@ -220,8 +216,9 @@ Config
 - cheat emacs tips
 - https://github.com/emacs-tw/emacs-101
 
-Resouce
+Resource
 - [Emacs修炼之道](http://xlambda.com/blog/2013/01/08/the-pragmatic-emacser/)
+- [Gun Emacs Editing](https://www.gnu.org/software/emacs/manual/html_node/emacs/Basic.html#Basic)
 
 ---
-[footnote 1] 具体原因请看[how to send c-/ ?](https://apple.stackexchange.com/questions/24261/how-do-i-send-c-that-is-control-slash-to-the-terminal)
+[^footnote 1] 具体原因请看[how to send c-/ ?](https://apple.stackexchange.com/questions/24261/how-do-i-send-c-that-is-control-slash-to-the-terminal)
