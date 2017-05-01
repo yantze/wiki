@@ -10,7 +10,7 @@
 | ESC ESC ESC | Cancel a command         |
 | C-x k       | close Emacs without save |
 | C-x C-c     | close Emacs              |
-> Close Emacs will save a buffer in a subfix '#' file, use M-x recover-file to recover
+> Close Emacs will save a buffer in a subfix '#' file, use `M-x recover-file` to recover
 
 ## Window 相关
 
@@ -74,7 +74,7 @@
 | M-backspace | Delete privous word                                 |
 | C-w         | cut current or marked line                          |
 | C-y         | paste: restore (yank) line                          |
-> 显示行数，M-x global-linum-mode，下次打开自动显示行数。只当前显示，M-x linum-mode
+> 显示行数，`M-x global-linum-mode`，下次打开自动显示行数。只当前显示，`M-x linum-mode`
 
 
 ## 执行外部命令
@@ -193,9 +193,9 @@ Alias
 # `-a ''` attempt to connect to an existing server, and if no server exists, start one then connect to it.
 
 alias ec='emacsclient -a ""'        # osx
-alias ec='emacsclient -a "" -c'     # *nix
-alias et='emacsclient -t'  # 适合 GUI 时，启动一个新的 frame (-n) 
-alias en='emacsclient -n'  # 适合 终端运行(emacs --daemon) 后
+alias ec='emacsclient -a "" -c'     # linux
+alias et='emacsclient -t'           # 适合 GUI 时，启动一个新的 frame (-n) 
+alias en='emacsclient -n'           # 适合 终端运行(emacs --daemon) 后
 # alias e='command emacs -nw' # run emacs gui in command line
 
 # shutdown emacs server M-x kill-emacs
@@ -208,7 +208,7 @@ tmux 与 `Ctrl + a` 冲突，其实很好解决，在 tmux.conf 里面添加，�
 bind ^a send-keys 'C-a'
 ```
 
-Terminal.app 不支持 `Ctrl + /` 撤销，使用 `Ctrl + -` [^footnote 1]
+Terminal.app 不支持 `Ctrl + /` 撤销，使用 `Ctrl + -` 
 
 ## 参考资料
 Config
@@ -219,6 +219,7 @@ Config
 Resource
 - [Emacs修炼之道](http://xlambda.com/blog/2013/01/08/the-pragmatic-emacser/)
 - [Gun Emacs Editing](https://www.gnu.org/software/emacs/manual/html_node/emacs/Basic.html#Basic)
+- [EmacsWiKi LineNumbers](https://www.emacswiki.org/emacs/LineNumbers)
 
 ---
-[^footnote 1] 具体原因请看[how to send c-/ ?](https://apple.stackexchange.com/questions/24261/how-do-i-send-c-that-is-control-slash-to-the-terminal)
+[^footnote 1]: 具体原因请看 [how to send c-/ ?](https://apple.stackexchange.com/questions/24261/how-do-i-send-c-that-is-control-slash-to-the-terminal)
