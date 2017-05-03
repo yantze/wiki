@@ -1,6 +1,6 @@
 Pandoc
 ---
-a universal document converter
+a universal document converter, [online version](http://pandoc.org/try/)
 
 ## Markdown to Web Pages
 ```

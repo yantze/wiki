@@ -88,3 +88,26 @@ extundelete  /dev/sdc1  --restore-all
 生成 core dump: gcore PID
 https://github.com/zendtech/ZendOptimizerPlus/issues/176
 https://ma.ttias.be/generate-php-core-dumps-segfaults-php-fpm/
+
+Linux 死机时的重启方法
+```
+Sys Rq 是一种叫做系统请求的东西，按住Alt-Print 的时候就相当于按住了Sys Rq 键，这个时候输入的一切都会直接由Linux 内核来处理，它可以进行许多低级操作。这个时候 reisub 中的每一个字母都是一个独立操作，他们分别表示：
+
+unRaw       将键盘控制从Server 那里抢回来
+tErminate   给所有进程发送SIGTERM 信号，让他们自己解决善后
+kIll        给所有进程发送SIGKILL 信号，强制他们马上关闭
+Sync        将所有数据同步至磁盘
+Unmount     将所有分区挂载为只读模式
+reBoot      重启
+
+顺序固定，倒过来方便记忆 busier
+```
+
+linux屏幕亮度
+```
+# method 1
+xbacklight -set 50
+
+# method 2
+echo 2800 > /sys/class/backlight/intel_backlight/brightness
+```

@@ -43,6 +43,7 @@
 | M-b      | previous word (b 表示 backward) |
 | M-g      | M-g 跳到第 N 行。               |
 | M-r      | 循环跳动光标的文件中上下        |
+> 显示行数，`M-x global-linum-mode`，下次打开自动显示行数。只当前显示，`M-x linum-mode`
 
 ## 画面卷动
 
@@ -74,7 +75,6 @@
 | M-backspace | Delete privous word                                 |
 | C-w         | cut current or marked line                          |
 | C-y         | paste: restore (yank) line                          |
-> 显示行数，`M-x global-linum-mode`，下次打开自动显示行数。只当前显示，`M-x linum-mode`
 
 
 ## 执行外部命令
@@ -119,7 +119,7 @@
 | ALT-x package-list-packages  |    List packages                               |
 
 
-# Org-mode
+## Org-mode
 Org-mode 可以方便的创建和修改 markdown 表格
 ```
 To begin org-mode                            ALT-x org-mode
@@ -140,7 +140,7 @@ To make org-mode automatically wrap lines:
 more info `M-x org-info`.
 
 
-## redo
+## Redo
 ```
 To undo once: C-/
 To undo twice: C-/ C-/
@@ -202,13 +202,13 @@ alias en='emacsclient -n'           # 适合 终端运行(emacs --daemon) 后
 ```
 
 ## 兼容性问题
-tmux 与 `Ctrl + a` 冲突，其实很好解决，在 tmux.conf 里面添加，然后按两次 `Ctrl + a` 可以实现
+1. tmux 与 `Ctrl + a` 冲突，其实很好解决，在 tmux.conf 里面添加，然后按两次 `Ctrl + a` 可以实现
 ```
 # campatible with emacs shortcut
 bind ^a send-keys 'C-a'
 ```
 
-Terminal.app 不支持 `Ctrl + /` 撤销，使用 `Ctrl + -` 
+2. Terminal.app 不支持 `Ctrl + /` 撤销，使用 `Ctrl + -` 
 
 ## 参考资料
 Config
@@ -219,6 +219,7 @@ Config
 Resource
 - [Emacs修炼之道](http://xlambda.com/blog/2013/01/08/the-pragmatic-emacser/)
 - [Gun Emacs Editing](https://www.gnu.org/software/emacs/manual/html_node/emacs/Basic.html#Basic)
+- [Gun Emacs Moving Point](https://www.gnu.org/software/emacs/manual/html_node/emacs/Moving-Point.html)
 - [EmacsWiKi LineNumbers](https://www.emacswiki.org/emacs/LineNumbers)
 
 ---

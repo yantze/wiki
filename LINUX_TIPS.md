@@ -85,6 +85,8 @@ echo filename haha !#:1  //显示当前第1个参数!#:1的位置
 !:2-4   //获取上一个参数的第二到第四个参数
 !:2*    //获取上一个历史参数第二个位置和之后的所有位置
 !*  //获取上一个历史命令的所有参数
+!!:gs/old/new
+^old^new   // 替换前一条命令里的部分字符串。
 eg.
 $ ls code src
 $ cp -r !*
@@ -179,6 +181,18 @@ nslookup -q=TXT _netblocks.google.com 8.8.4.4
 dig @ns1.nameserver1.com domain.com txt
 dig domain.com txt
 traceroute -n -w 2 -q 2 -m 30 8.8.4.4
+mtr -r vastiny.com 集win的ping、troucert、于一身
+
+To Query MX (Mail Exchange) record.
+nslookup -query=mx www.yahoo.com
+To query NS(Name Server) record.
+nslookup -query=ns www.yahoo.com
+To query SOA (Start of Authority) record.
+nslookup -type=soa www.yahoo.com
+To query all Available DNS records.
+nslookup -query=any yahoo.com
+Enable Debug mode
+nslookup -debug yahoo.com
 ```
 
 ```
@@ -334,6 +348,7 @@ set 和 typeset 的区别
 set 显示当前系统的环境变量
 typeset 还显示这些系统变量的类型
 typeset -aU path 可以去掉重复的 PATH
+printenv 显示当前 shell 的环境变量
 ```
 
 vimdiff

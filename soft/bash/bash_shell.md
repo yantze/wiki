@@ -41,6 +41,15 @@ $?	上个命令的退出状态，或函数的返回值。
 $$	当前Shell进程ID。对于 Shell 脚本，就是这些脚本所在的进程ID。
 ```
 
+去掉重复的 PATH
+`typeset -aU path` 
+
+记录root登录的次数
+`last | grep root | cut -d “ “ -f 1 | wc -l`
+
+列出头十个最耗内存的进程
+`ps aux | sort -nk +4 | tail`
+
 ## Reference
 - [ref](http://c.biancheng.net/cpp/view/2739.html)
 

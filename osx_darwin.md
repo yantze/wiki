@@ -98,3 +98,13 @@ change hostname
 hostname what-you-want
 sudo scutil --set HostName yourname
 ```
+
+### Network Utility
+- Info
+- Netstat
+- Ping
+- Lookup
+- Traceroute
+- Whois
+- Finger
+- PortScan
