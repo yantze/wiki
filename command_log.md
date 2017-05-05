@@ -58,10 +58,6 @@ echo !:1
 ```
 
 
-```bash
-lsof | grep php-fpm
-```
-
 want to use remi repo to install new software
 ```bash
 sudo yum --enablerepo=remi install php-tcpdf
