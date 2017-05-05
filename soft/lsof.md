@@ -57,5 +57,5 @@ inode number in filesystem
 ```
 
 ## See Also
-[fuser](./fuser.md) file user
-[netstat](./netstat.md) network listen
+- [fuser](./fuser.md) file user
+- [netstat](./netstat.md) network listen
