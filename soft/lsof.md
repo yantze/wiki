@@ -1,10 +1,10 @@
 ---
-command: lsof
 author: yantze
-license: MIT
+license: CC-BY-NC-SA 4.0
+
 ---
 
-# lsof list open file
+# lsof: list open file
 
 ## Practical case
 ```
@@ -56,3 +56,5 @@ NODE
 inode number in filesystem
 ```
 
+## See Also
+[fuser](soft/fuser.md) file user
