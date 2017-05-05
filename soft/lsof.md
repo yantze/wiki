@@ -1,3 +1,9 @@
+---
+command: lsof
+author: yantze
+license: MIT
+---
+
 # lsof list open file
 
 ## Practical case
