@@ -1,7 +1,7 @@
 ---
 author: yantze
+os: linux | darwin
 license: CC-BY-NC-SA 4.0
-system: linux | darwin
 
 ---
 
@@ -12,4 +12,4 @@ system: linux | darwin
 `yum install psmisc` to install `fuser`
 
 ## See Also
-- [lsof](./lsof.md)  list open file
+- [lsof](/soft/lsof.md)  list open file

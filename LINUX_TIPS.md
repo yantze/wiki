@@ -214,8 +214,6 @@ hell将正常时间转为unix时间
 date -d "2011-10-18 14:00:00" +%s //转换为unix时间：1318917600。
 date -d @1314583003  // unix时间转换为正常时间
 make 2>&1 | tee make.log //可以直接把显示的内容保存在make.log文件中
-lsof //列出当前正在使用的文件
-fuser //列出当前打开的文件和socket
 sha... // 哈希值，sha<tab>可以查看所有的hash值
 md5sum filename //计算文件的大小
 pushd $LFS/sources;md5sum -c md5sums;popd  //检查md5sums里面的md5值

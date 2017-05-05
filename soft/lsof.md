@@ -1,5 +1,6 @@
 ---
 author: yantze
+os: linux, darwin
 license: CC-BY-NC-SA 4.0
 
 ---
@@ -57,5 +58,5 @@ inode number in filesystem
 ```
 
 ## See Also
-- [fuser](./fuser.md)
-- [netstat](./netstat.md)
+- [fuser](/soft/fuser.md)
+- [netstat](/soft/netstat.md)
