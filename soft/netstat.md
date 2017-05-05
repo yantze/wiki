@@ -1,6 +1,13 @@
 netstat
 ---
 
+## Practical case
+```
+netstat -tlun # 查看本机监听的端口，更强的 lsof -itcpp:8080
+netstat -an # 本机所有网络连接
+netstat -rn # 本机路由表
+```
+
 参数
 ```
 -t TCP
@@ -21,8 +28,5 @@ netstat -n | awk '/^tcp/ {++S[$NF]} END {for(a in S) print a, S[a]}'
 netstat -n | awk '/^tcp/ {print $5}'| awk -F: '{print $1}' | sort | uniq -c | sort -rn
 ```
 
-```
-netstat -tlun # 查看本机监听的端口，更强的 lsof -itcpp:8080
-netstat -an # 本机所有网络连接
-netstat -rn # 本机路由表
-```
+## See Also
+- [lsof](/soft/lsof.md)

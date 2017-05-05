@@ -12,4 +12,4 @@ system: linux | darwin
 `yum install psmisc` to install `fuser`
 
 ## See Also
-[lsof](./lsof.md)  list open file
+- [lsof](./lsof.md)  list open file
