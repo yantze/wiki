@@ -58,5 +58,5 @@ inode number in filesystem
 ```
 
 ## See Also
-- [fuser](/soft/fuser.md)
-- [netstat](/soft/netstat.md)
+- [fuser](./fuser.md)
+- [netstat](./netstat.md)
