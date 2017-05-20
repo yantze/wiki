@@ -1,11 +1,23 @@
 ## curl
-```bash
+
+cookie with curl
+```
+# cookie file
+curl -b cookiefile url
+# cookie format: semicoion separated name=value pairs
+curl -b "name=pairs;" url
+
+```
+
+
+post with curl
+```
 curl http://xxx.com
 curl -H 'Host:www.jfz.com' http://192.168.1.251/index.html
 curl -d 'post1=data1' http://xxx.com
 curl -d 'file1=@/data/file1' http://xxx.com/fileupload
 curl -F 'input1=data1' http://xxx.com
-```bash
+```
 
 ### 防 block 程序
 ```bash
@@ -38,3 +50,6 @@ curl -sS http://xxx.xxx/bar.zip
 # -s slient mode
 # -S show error
 ```
+
+## See Also
+- [xargs](./xargs.md)
