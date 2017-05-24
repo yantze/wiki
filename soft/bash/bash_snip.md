@@ -16,6 +16,12 @@ while read line
 do
     echo "$line"
 done < text.txt
+
+# 指定结束符号
+IFS=$'\n'
+while IFS= read -r inc; do
+    echo "$inc"
+done < text.txt
 ```
 
 拷贝文件

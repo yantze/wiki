@@ -108,3 +108,7 @@ sudo scutil --set HostName yourname
 - Whois
 - Finger
 - PortScan
+
+
+## 常见路径
+- /Users/yantze/Library/Mobile Documents/iCloud~com~apple~iBooks

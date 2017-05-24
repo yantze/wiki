@@ -1,8 +1,11 @@
 With less code you get more done.
 ---
 
-内置命令
 ```
+yes | cp -rf xxx yyy # 设置默认的输入值
+\cp # use the non-aliased version 
+
+
 cat << EOF >> output.txt
 heredoc> type what you want append
 heredoc> EOF

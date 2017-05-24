@@ -1,4 +1,22 @@
 # Bash 一些变量的操作
+
+获取最后一个字符
+```
+str='abc'
+
+echo ${str: -1}
+
+# 或者这样
+i=$((${#str}-1))
+echo ${str:$i:1}
+
+echo -n $str | tail -c 1
+```
+
+## See Also
+- [parameter expansion](http://mywiki.wooledge.org/BashFAQ/073)
+
+
 2015-01-16 左耳朵耗子
 
 > 有时候我们需要对变量进行一些操作，比如截取，替换，删除等操作，很多同学会使用awk, sed 或cut等命令来干这事，其实，bash的内置的变量操作就可以干这个事。下面说明一些常用的方法：

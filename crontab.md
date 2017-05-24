@@ -1,5 +1,21 @@
 # Crontab参数详解
 
+
+## 用户获取
+
+```
+crontab -l  # 列 crontab for user
+crontab -e  # 编辑当前用户的 crontab， 也在：/var/spool/cron/
+crontab cronfile.txt # 添加新的 crontab
+crontab -d # [linux only] 删除 当前用户所有 crontab 
+crontab -r # [darwin only] 删除 当前用户所用 crontab
+
+# 在 5-24 05:23:00 执行指定命令
+23 5 24 5 * cd ~/dl/ && cat "hello">a.txt
+
+```
+
+
 > Linux定时任务命令 crontab——操作每个用户的守护程序和该执行的时间表。
 author: 蜂巢  /  yadgen
 

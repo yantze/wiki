@@ -1,11 +1,21 @@
 ## curl
 
+act like wget
+```
+# 指定本地文件名
+curl -o localpath.file http://xxx.com/a.pdf
+# 使用远程的文件名当作本地的文件名
+curl -O http://xxx.com/a.pdf 
+```
+
 cookie with curl
 ```
 # cookie file
 curl -b cookiefile url
 # cookie format: semicoion separated name=value pairs
 curl -b "name=pairs;" url
+# store cookie after complete visit page
+curl -c cookiefile url 
 
 ```
 
@@ -17,6 +27,8 @@ curl -H 'Host:www.jfz.com' http://192.168.1.251/index.html
 curl -d 'post1=data1' http://xxx.com
 curl -d 'file1=@/data/file1' http://xxx.com/fileupload
 curl -F 'input1=data1' http://xxx.com
+curl -X POST -H Content-Type: application/json -d {"value2":"ifttt"} https://maker.ifttt.com/trigger
+
 ```
 
 ### 防 block 程序

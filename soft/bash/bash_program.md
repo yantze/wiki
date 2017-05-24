@@ -239,7 +239,7 @@ $ false; $? =>  1
 
 
 ## Other
-[google shell style](https://google.github.io/styleguide/shell.xml)
-更多的用法在 `man bash`
-[more](http://www.ibm.com/developerworks/cn/linux/shell/bash/bash-2/index.html)
+- [BashGuide](http://mywiki.wooledge.org/BashGuide)
+- [google shell style](https://google.github.io/styleguide/shell.xml)
+- [ibm guide](http://www.ibm.com/developerworks/cn/linux/shell/bash/bash-2/index.html)
 
