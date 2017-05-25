@@ -13,6 +13,8 @@ crontab -r # [darwin only] 删除 当前用户所用 crontab
 # 在 5-24 05:23:00 执行指定命令
 23 5 24 5 * cd ~/dl/ && cat "hello">a.txt
 
+如果有错误什么的，Terminal 会提示 mail ，直接输入 `mail` 命令回车查看
+
 ```
 
 
