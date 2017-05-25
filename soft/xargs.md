@@ -1,5 +1,12 @@
 # xargs
 
+```
+echo 'a.json' | > newfile.txt
+echo 'a.json' | xargs cat
+echo 'a.json' | cat
+```
+
+
 用 xargs 下载多个文件
 ```
 cat file | xargs -I % curl http://example.com/persons/%.tar

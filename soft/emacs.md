@@ -7,9 +7,9 @@
 | C-x C-f     | open a file              |
 | C-x C-s     | save a file              |
 | C-x C-w     | save new file            |
-| ESC ESC ESC | Cancel a command         |
 | C-x k       | close Emacs without save |
 | C-x C-c     | close Emacs              |
+| ESC ESC ESC | cancel a command         |
 > Close Emacs will save a buffer in a subfix '#' file, use `M-x recover-file` to recover
 
 ## Window 相关
@@ -166,11 +166,11 @@ To undo immediately again, twice: C-g C-/ C-/
 Install
 ```
 # centos-like
-#> emacs-nox   # no x window emacs
+#- emacs-nox   # no x window emacs
 sudo yum install emacs-common emacs-filesystem emacs-nox
 
 # darwin
-#> with-cocoa  # gui
+#- with-cocoa  # gui
 brew install emacs --with-cocoa --with-rsvg --with-gnutls --with-imagemagick
 ```
 

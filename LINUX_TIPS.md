@@ -315,12 +315,15 @@ dstat  # yum install dstat, repoforge repo
 linux帮助命令
 ```
 man/page
-whereis
-type -a #这个可以查找所以的命令位置
-whatis #这个可以解释一组命令
-which #查找当前path里面的可执行文件
-type file #如果用whereis找不到可以先看看文件类型
-nm  #查看.o文件中调用了哪些程序
+whereis #  locates the source, binary and manual files for a program, searching a list of standard places.
+type -a # 这个可以查找所以的命令位置
+what # searches a given file for SCCS identification information (Source Code Control System), such as what compiler was used to create it.
+whatis # 这个可以解释一组命令
+which # 查找当前path里面的可执行文件
+type file # 如果用whereis找不到可以先看看文件类型
+whence # 译名「根源」, `whence -v` 几乎等同于 `type`，同样 whence 是 type 的干净输出
+
+nm  # 查看.o文件中调用了哪些程序
 ```
 
 history
@@ -345,11 +348,17 @@ rm !(*.php) // 删除当前目录下不是扩展名php的文件。
 
 
 ```
+env 环境变量
 set 和 typeset 的区别
 set 显示当前系统的环境变量
 typeset 还显示这些系统变量的类型
 typeset -aU path 可以去掉重复的 PATH
 printenv 显示当前 shell 的环境变量
+
+另外 `set -e` 在脚本中表示，`-e  Exit immediately if a command exits with a non-zero status.`
+
+另外 `alias` 输出的列表更具有可读性 :)
+`lang/bash/zsh-lovers.1.txt` 里面业界少了 `alias -g` 的一些运用
 ```
 
 vimdiff
@@ -357,14 +366,9 @@ vimdiff
 vimdiff =(gcc -march=native -Q --help=target) =(gcc -march=core2 -Q --help=target) #比较两个非文件不同
 diff =(typeset) =(set) #也是可以比较的，但是不够vimdiff详细
 sdiff # diff的垂直展示
+meld dir1 dir2
 ```
 
-xargs
-```
-echo 'a.json' | > newfile.txt
-echo 'a.json' | xargs cat
-echo 'a.json' | cat
-```
 
 sshfs
 ```
