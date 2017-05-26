@@ -109,6 +109,15 @@ sudo scutil --set HostName yourname
 - Finger
 - PortScan
 
+## Finder
+
+- Shift + Command + G 
+    打开指定路径
+
+- 把 .sh 扩展名改为 .command 可以在 Finder 中运行
+
+- 使用扩展按钮, https://github.com/yantze/LTFinderButtons
+
 
 ## 常见路径
 - /Users/yantze/Library/Mobile Documents/iCloud~com~apple~iBooks
