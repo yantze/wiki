@@ -202,7 +202,7 @@ test -c /dev/hda ; echo $? # 将打印 1 表示 test 命令的返回值为 1, /d
 
 ## 其它应用
 
-##### 执行文件路径
+### 执行文件路径
 ```bash
 # 当前目录
 CURRENT_SCRIPT_HOME=$(cd `dirname $0`; pwd)
@@ -215,7 +215,7 @@ curpath=`dir $0`
 filename=`basename $curpath`
 ```
 
-##### 参数
+### 参数
 ```bash
 while getopts f:t: opts; do
    case ${opts} in
@@ -225,7 +225,21 @@ while getopts f:t: opts; do
 done
 ```
 
+### `[` vs `[[`
+`[[` is a bash syntactical feature [^1]
+```
+if [ -f "$FILE" ]  
+if [[ -f $FILE ]] # handle whitespace and empty strings
 
+# `[[` handle &&, ||, <, >
+
+# `[[` has =~ operator for doing regular expression matches
+if [ "$ANSWER" = y -o "$ANSWER" = yes ]
+if [[ $ANSWER =~ ^y(es)?$ ]]
+
+# less strict
+if [[ $ANSWER = y* ]]
+```
 
 ### 少见
 退出码, linux 命令行上一个命令的退出码放在了`$?`环境变量中
@@ -242,4 +256,5 @@ $ false; $? =>  1
 - [BashGuide](http://mywiki.wooledge.org/BashGuide)
 - [google shell style](https://google.github.io/styleguide/shell.xml)
 - [ibm guide](http://www.ibm.com/developerworks/cn/linux/shell/bash/bash-2/index.html)
+- [^1]: https://stackoverflow.com/questions/3427872/whats-the-difference-between-and-in-bash
 
