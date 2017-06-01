@@ -3,8 +3,8 @@ netstat
 
 ## Practical case
 ```
+netstat -anv | grep $PORT # [darwin]
 netstat -pntl | grep $PORT # [linux]
-netstat -tlun # 查看本机监听的端口，更强的 lsof -itcpp:8080
 netstat -an # 本机所有网络连接
 netstat -rn # 本机路由表
 ```
@@ -16,7 +16,7 @@ netstat -rn # 本机路由表
 -l 监听
 -n ip和端口
 -r 路由
--p 程序名列（only linux）
+-p 程序名列 [linux]
 ```
 
 查看http的并发请求数及其TCP连接状态

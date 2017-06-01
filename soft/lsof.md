@@ -39,6 +39,12 @@ kill -9 `lsof -t -u tecmint`
 cp /proc/<PID>/fd/<fd> ~/recovery_file
 ```
 
+network
+```
+sudo lsof -PiTCP -sTCP:LISTEN
+lsof -Pn -i4
+```
+
 
 ## Output description
 ```
