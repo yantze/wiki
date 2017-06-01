@@ -21,6 +21,11 @@ echo /usr/local/opt/opencv3/lib/python3.6/site-packages >> /usr/local/lib/python
 mkdir -p /Users/yantze/Library/Python/3.6/lib/python/site-packages
 echo 'import site; site.addsitedir("/usr/local/lib/python3.6/site-packages")' >> /Users/yantze/Library/Python/3.6/lib/python/site-packages/homebrew.pth
 
+# run with python2
+echo /usr/local/opt/opencv3/lib/python2.7/site-packages >> /usr/local/lib/python2.7/site-packages/opencv3.pth
+# /Users/yantze/Library/Python/2.7/lib/python/site-packages may to something wrong with opencv, so use it just run in script
+import site; site.addsitedir("/usr/local/lib/python2.7/site-packages"); import cv2;
+
 ```
 
 

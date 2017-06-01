@@ -3,6 +3,7 @@ netstat
 
 ## Practical case
 ```
+netstat -pntl | grep $PORT # [linux]
 netstat -tlun # 查看本机监听的端口，更强的 lsof -itcpp:8080
 netstat -an # 本机所有网络连接
 netstat -rn # 本机路由表
@@ -30,3 +31,4 @@ netstat -n | awk '/^tcp/ {print $5}'| awk -F: '{print $1}' | sort | uniq -c | so
 
 ## See Also
 - [lsof](/soft/lsof.md)
+- [fuser](/soft/fuser.md)

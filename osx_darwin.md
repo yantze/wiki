@@ -4,7 +4,7 @@
 
 
 ftp server
-```
+```bash
 # start
 sudo -s launchctl load -w /System/Library/LaunchDaemons/ftp.plist
 # stop

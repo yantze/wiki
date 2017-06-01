@@ -18,10 +18,10 @@ sudo lsof -i6                   // List all IPv6 network files
 sudo lsof -i TCP:80             // To find which program is using the port 80:
 sudo lsof -Pnl +M -i4           // To find listening ports
 
+lsof -c abc         // 查看abc进程现在在打开的文件
 lsof /var           // 指定目录/文件
 lsof +D <dirname>   // 看看目录下有那些打开的文件
 lsof -p 12          // 查看进程号为12的打开了什么文件
-lsof -c abc         // 查看abc进程现在在打开的文件
 #extend: lsof -c $processname | egrep 'w.+REG' | awk '{print $9}' | sort | uniq # only list all files
 
 # List all files open for a particular user
