@@ -215,6 +215,7 @@ sudo dd if=/dev/zero of=/swapfile bs=1024 count=262144
 创建一个足够大的文件（此处为256M）
 sudo mkswap /swapfile
 把这个文件变成swap文件
+sudo chmod 600 /swapfile
 sudo swapon /swapfile
 启用这个swap文件
 
@@ -269,5 +270,7 @@ dd if=/dev/sda of=/dev/sda
 当硬盘较长时间（比如1，2年）放置不使用后，磁盘上会产生magnetic flux point。当磁头读到这些区域时会遇到困难，并可能导致I/O错误。当这种情况影响到硬盘的第一个扇区时，可能导致硬盘报废。上边的命令有可能使这些数据起死回生。且这个过程是安全，高效的。
 ```
 
-http://www.linuxso.com/command/dd.html
+
+## Reference
+- http://www.linuxso.com/command/dd.html
 

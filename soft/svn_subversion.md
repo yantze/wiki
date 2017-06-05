@@ -1,13 +1,17 @@
 # SVN
 
-## Start
+## Basic
 ```
 # 下拉数据
 svn checkout repo_url dest_dir
 
-# 更新数据
+# 更新本地数据
 svn update
 svn up
+
+# 提交代码
+svn commit
+svn commit -m "summary"
 
 # 更换远程库
 svn relocate new_repo_url
