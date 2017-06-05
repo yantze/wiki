@@ -131,16 +131,6 @@ git help * # 获取命令的帮助信息
 git status # 获取当前的状态，非常有用，因为git会提示接下来的能做的事情
 ```
 
-参考资料
-- Git参考手册
-- Git简明手册
-- Git Magic
-- Git Community Book 中文版
-- Pro Git
-- 图解Git
-- git-简明指南
-- learnGitBranching
-原文链接 http://yanhaijing.com/git/2014/11/01/my-git-note/
 
 ## submodule
 if display error detach master,use below commands
@@ -227,7 +217,20 @@ git rebase -i HEAD~3
 git push origin --delete branch_name 
 ```
 
-## clients
+
+
+## GUI clients
 - git gui
 - gitup
 - git-fork.com
+
+## Reference
+- Git参考手册
+- Git简明手册
+- Git Magic
+- Git Community Book 中文版
+- git-简明指南
+- Pro Git
+- 图解Git
+- learnGitBranching
+- http://yanhaijing.com/git/2014/11/01/my-git-note/

@@ -200,6 +200,14 @@ test -c /dev/hda ; echo $? # 将打印 1 表示 test 命令的返回值为 1, /d
 
 ```
 
+function
+```
+function func() {
+    echo $@
+}
+```
+> 在 bash 中不能写成一行函数
+
 ## 其它应用
 
 ### 执行文件路径

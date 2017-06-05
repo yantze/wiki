@@ -1,6 +1,8 @@
 # 安装 OpenCV 笔记
 
 ## install on macOS
+
+Method: one
 ```
 # install python3
 brew install python3
@@ -26,6 +28,12 @@ echo /usr/local/opt/opencv3/lib/python2.7/site-packages >> /usr/local/lib/python
 # /Users/yantze/Library/Python/2.7/lib/python/site-packages may to something wrong with opencv, so use it just run in script
 import site; site.addsitedir("/usr/local/lib/python2.7/site-packages"); import cv2;
 
+```
+
+Method: two
+> only run with python
+```
+pip install opencv-python
 ```
 
 

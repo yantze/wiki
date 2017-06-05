@@ -6,6 +6,11 @@ act like wget
 curl -o localpath.file http://xxx.com/a.pdf
 # 使用远程的文件名当作本地的文件名
 curl -O http://xxx.com/a.pdf 
+
+# follow with 302
+curl -L google.com
+
+# Curl cannot follow a meta refresh. wget also.
 ```
 
 cookie with curl
@@ -38,22 +43,24 @@ curl --referer "http://xun.im/" -Lo "b.jpeg" "http://read.html5.qq.com/image?src
 
 ### 刷票程序
 ```bash
-curl -d 'radio_5[]=144' -d 'radio_5[]={$ids[0]}' -d 'radio_5[]=
-{$ids[1]}' -d 'radio_5[]={$ids[2]}' -d 'radio_5[]={$ids[3]}' -d
-'radio_5[]={$ids[4]}' -A '{$ua}' -H 'Content-Type:application/x-
-www-form-urlencoded; charset=UTF-8' -H
-'Origin:http://www.cyzone.cn' -H 'X-Requested-With:XMLHttpRequest'
--H 'Accept:application/json, text/javascript, */*; q=0.01' -e
-'http://www.cyzone.cn/features/2015cyxg/' -H 'X-FORWARDED-FOR:$ip'
--H 'CLIENT-IP:$ip' 'http://www.cyzone.cn/index.php?
-m=vote&c=index&a=post&subjectid=5'
+curl \
+-d 'radio_5[]=144' \
+-d 'radio_5[]={$ids[0]}' \
+-A '{$ua}' \
+-H 'Content-Type:application/x-www-form-urlencoded; charset=UTF-8' \
+-H 'Origin:http://www.cyzone.cn' \
+-H 'X-Requested-With:XMLHttpRequest' \
+-H 'Accept:application/json, text/javascript, */*; q=0.01' \
+-e 'http://www.cyzone.cn/features/2015cyxg/' \
+-H 'X-FORWARDED-FOR:$ip' \
+-H 'CLIENT-IP:$ip' \
+'http://www.cyzone.cn/index.php?m=vote&c=index&a=post&subjectid=5'
 ```
 
 ### 每5分钟上报一次上报最近5分钟的日志
 ```bash
-tail -F access.log > tmp.log */5 * * * * mv tmp.log upload.txt; curl
--d "upload_file=@upload.txt" http://xxx.com/log_upload.php; rm
-upload.txt 
+tail -F access.log > tmp.log
+*/5 * * * * mv tmp.log upload.txt; curl -d "upload_file=@upload.txt" http://xxx.com/log_upload.php; rm upload.txt 
 ```
 
 ### 隐藏下载进度

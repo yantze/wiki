@@ -109,7 +109,7 @@ sudo scutil --set HostName yourname
 - Finger
 - PortScan
 
-## Finder
+## Finder.app
 
 - Shift + Command + G 
     打开指定路径
@@ -118,6 +118,13 @@ sudo scutil --set HostName yourname
 
 - 使用扩展按钮, https://github.com/yantze/LTFinderButtons
 
+## Terminal.app
+
+- Copy text from remote tmux
+  1. In default Terminal application go to View->"Allow mouse reporting" and uncheck it. Thats it.
+
+- 出现整个屏幕被选中，但是取消不了的情况
+  1. Cmd + R， 随便选中一块就行
 
 ## 常见路径
 - /Users/yantze/Library/Mobile Documents/iCloud~com~apple~iBooks

@@ -20,9 +20,9 @@ mysql -uroot -hlocalhost -p
 
 创建用户
 ```
+create user admin@localhost identified by 'admins_password'
 insert into mysql.user(Host,User,Password) values("localhost","phplamp",password("1234"));
-或者 CREATE USER 'yantze'@'%' IDENTIFIED BY 'zxcvbn';
-如果远程访问不了，可能是防火墙的问题
+
 ## 授权phplamp用户拥有phplamp数据库的所有权限
 grant all privileges on yaf.* to yaf@localhost identified by '1234';
 grant all privileges on `yaf`.* to `yaf`@'%' with grant option;
@@ -30,12 +30,19 @@ grant all on *.* to yaf;
 grant all privileges on *.* to 'root'@'%' identified by '1234' with grant option;
 show grants for jfz_data@'%';
 ```
+> tips: 如果远程访问不了，可能是防火墙的问题
+
+
 删除用户
 ```
-DELETE FROM user WHERE User="phplamp" and Host="localhost";
+drop user admin@localhost;
+DELETE FROM mysql.user WHERE User="phplamp" and Host="localhost";
 ```
+
 修改用户密码
 ```
+set password=password('123');
+SET PASSWORD FOR 'root'@'localhost' = PASSWORD('secret_password');
 update mysql.user set password=password('新密码') where User="phplamp" and Host="localhost";
 ```
 
@@ -43,9 +50,10 @@ update mysql.user set password=password('新密码') where User="phplamp" and Ho
 ```
 CREATE DATABASE `dbname` /*!40100 COLLATE 'utf8_general_ci' */
 ```
+
 刷新系统权限表
 ```
-mysql>flush privileges;
+flush privileges;
 ```
 
 改密码另外一个方法：
