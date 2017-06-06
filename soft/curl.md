@@ -34,6 +34,10 @@ curl -d 'file1=@/data/file1' http://xxx.com/fileupload
 curl -F 'input1=data1' http://xxx.com
 curl -X POST -H Content-Type: application/json -d {"value2":"ifttt"} https://maker.ifttt.com/trigger
 
+curl -u "yantze" -d '{"scopes":["public_repo"]}' https://api.github.com/users/yantze\?callback\=haha
+curl -u "yantze" -H "Accept: application/vnd.github.v3.text+json"  https://api.github.com/users/yantze
+curl -i/-I -u "username":"password"
+
 ```
 
 ### 防 block 程序

@@ -210,7 +210,6 @@ cmp file1 file2 //查找当前文件第一个不同的位置
 wc -l //统计行数/ -w 统计单词
 chattr +i file//让文件为只读 /用lsattr 查看
 vmstat 5 //每五秒显示系统的cpu,memory,i/o
-top //shift+p 进程排序 /shift+m 内存排序
 ntpdate cn.pool.ntp.org //更新时间
 hell将正常时间转为unix时间
 date -d "2011-10-18 14:00:00" +%s //转换为unix时间：1318917600。
@@ -245,13 +244,6 @@ bison是GUN版的语法分析器，yacc是Berkeley版的语法分析器，两者
 ```
 
 
-```
-curl
-curl -u "yantze" -d '{"scopes":["public_repo"]}' https://api.github.com/users/yantze\?callback\=haha
-curl -u "yantze" -H "Accept: application/vnd.github.v3.text+json"  https://api.github.com/users/yantze
-curl -i/-I -u "username":"password"
-```
-
 wget
 ```
 1) use –quiet option to surpress download progress indicator
@@ -285,31 +277,6 @@ cat id_rsa.pub>>authorized_keys
 command="$HOME/bin/hello",no-port-forwarding,no-X11-forwarding,no-agent-forwarding,no-pty ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA
 ```
 
-
-glances
-```
-su root
-# rpm -ivh http://fr2.rpmfind.net/linux/epel/6/x86_64/epel-release-6-7.noarch.rpm
-# yum install python-pip python-devel
-# pip-python install glances
-more info:http://www.vpsee.com/2013/07/a-new-system-monitoring-tool-glances-installation-and-usage/
-```
-
-```
-sysstat
-iostat #这个软件中包含了这个软件
-```
-
-日志监控软件
-```
-iostat
-vmstat
-atop #同top,集成了iostat, vmstat, netstat 
-htop / sp htop
-glances #这个很好用,可以监控温度
-goaccess #for apache/nginx/lighttp
-dstat  # yum install dstat, repoforge repo
-```
 
 linux帮助命令
 ```
@@ -437,46 +404,6 @@ gpg file.gpg件解密
 
 有一个命令参考比较齐全，之后再消化一下
 - http://www.pixelbeat.org/cmdline_zh_CN.html
-
-```
-killall
-killall -TERM mysqld #关闭mysql进程
-kill -TERM/15 PID
-kill -KILLL/9 PID
-killadd5
-pkill progress_name
-pgrep progress_name # return the progress pid
-pstree -p 查看当前进程
-ps -ef f  # 显示ascii进程图
-jobs -l(列出id)查看后台运行情况
-fg [%]id 把id拿到前台来
-bg 显示fg要放在前面的,其中一个功能是
-```
-
-top的参数理解
-```
-NI 代表的是niceless, "-19/-20"(highest priority, 耗资源多) and "19/20"(lowest priority)
-use "nice -n 15 command_to_execute" when start
-use "renice 0 PID_to_prioritize" when already executing
-```
-
-
-常见的日志位置
-```
-/var/log/message      – 记录系统日志或当前活动日志。
-/var/log/auth.log     – 身份认证日志。
-/var/log/kern.log     – 内核日志。
-/var/log/cron.log     – Crond 日志 (cron 任务).
-/var/log/maillog      – 邮件服务器日志。
-/var/log/boot.log     – 系统启动日志。
-/var/log/mysqld.log   – MySQL数据库服务器日志。
-/var/log/secure       – 认证日志。
-/var/log/wtmp or wtmp – 登录日志。
-/var/log/yum.log      – Yum 日志。
-
-/usr unix shared resources
-/opt editable text configuration
-```
 
 ```
 phabricator 这个软件没有完成,dirctory定位到/home/yantze/phabricator/phabricator/webboot,打开phabricator系统的ip地址，提示无权限

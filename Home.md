@@ -21,3 +21,6 @@ alias mm='m man'   # search cheat
 - Chrome 添加自定搜索引擎 MyWiki `https://github.com/yantze/wiki/search?q=%s`, 定义快捷名为`mw`
 - Chrome Plugin: [octotee](https://github.com/buunguyen/octotree) - 实现左边侧边栏文件列表
 - Chrome Plugin: [Smart TOC](https://chrome.google.com/webstore/detail/lifgeihcfpkmmlfjbailfpfhbahhibba) - 自动生成网页目录并显示
+
+## License
+["署名-非商业性使用"许可证](https://creativecommons.org/licenses/by-nc/4.0/deed.zh)
