@@ -1,3 +1,10 @@
+---
+author: yantze
+os: linux, darwin
+
+---
+
+
 # find Command
 
 > mac 可以不用斜杠

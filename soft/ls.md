@@ -8,8 +8,9 @@ author: yantze
 
 ```
 ls -t # sort by time
+ls -S # sort by size
 
-ls * # 列出当前目录下子目录的文件
+ls *  # 列出当前目录下子目录的文件
 ls -R # 递归所有文件夹
 
 # list only file
