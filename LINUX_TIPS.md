@@ -49,6 +49,7 @@ groupadd sftpgroup
 useradd username -g sftpgroup -s /bin/bash -d home_dir
 usermod -a -G groupA user //添加用户到用户组
 su www -c 'php xxx.php' //命令下行指定用户组来执行命令
+groupadd, chown, chgrp, chmod // relations
 ```
 
 ```

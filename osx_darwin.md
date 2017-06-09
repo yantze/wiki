@@ -131,5 +131,7 @@ sudo scutil --set HostName yourname
 - Applications: 选择长期未使用的软件
 - Documents: 查看哪些大文件
 
+多屏使用，快速把当前窗口移到另外一个屏幕，可以用 [termilte](https://github.com/apaszke/termtile) 执行 `tsn` 命令即可
+
 ## 常见路径
 - /Users/yantze/Library/Mobile Documents/iCloud~com~apple~iBooks
