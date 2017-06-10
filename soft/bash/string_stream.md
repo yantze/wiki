@@ -1,4 +1,4 @@
-# SED, AWK, TEE, READ, CUT, ECHO, WC 文字处理流
+# SED, AWK, TEE, READ, CUT, TR,  ECHO, WC 文字处理流
 
 ```
 1 dirname $0
@@ -71,7 +71,10 @@
 　　tee是一个把stdin保存到文件的小工具。
  
 8 awk 用法：awk ' pattern {action} ‘
-　　awk的处理文本和数据的方式是这样的，它逐行扫描文件，从第一行到最后一行，寻找匹配的特定模式的行，并在这些行上进行你想要的操作。如果没有指定处理　　　　　　　　动作，则把匹配的行显示到标准输出(屏幕)，如果没有指定模式，则所有被操作所指定的行都被处理。awk分别代表其作者姓氏的第一个字母。因为它的作者是三个人，分别是Alfred Aho、Brian Kernighan、Peter Weinberger。gawk是awk的GNU版本，它提供了Bell实验室和GNU的一些扩展。   
+```
+
+```
+　　awk的处理文本和数据的方式是这样的，它逐行扫描文件，从第一行到最后一行，寻找匹配的特定模式的行，并在这些行上进行你想要的操作。如果没有指定处理动作，则把匹配的行显示到标准输出(屏幕)，如果没有指定模式，则所有被操作所指定的行都被处理。awk分别代表其作者姓氏的第一个字母。因为它的作者是三个人，分别是Alfred Aho、Brian Kernighan、Peter Weinberger。gawk是awk的GNU版本，它提供了Bell实验室和GNU的一些扩展。   
 　　ARGC 命令行变元个数 
 　　ARGV 命令行变元数组 
 　　FILENAME 当前输入文件名 
@@ -83,3 +86,4 @@
 　　OFS 输出域分隔符 
 　　ORS 输出记录分隔符 
 ```
+
