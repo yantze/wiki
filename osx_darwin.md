@@ -127,11 +127,13 @@ sudo scutil --set HostName yourname
   1. Cmd + R， 随便选中一块就行
 
 ## 日常使用
-查看占用空间，「About this Mac」 -> Storage -> Manage 可以打开 「System Infomation」
-- Applications: 选择长期未使用的软件
-- Documents: 查看哪些大文件
+- 查看占用空间，「About this Mac」 -> Storage -> Manage 可以打开 「System Infomation」
+    - Applications: 选择长期未使用的软件
+    - Documents: 查看哪些大文件
 
-多屏使用，快速把当前窗口移到另外一个屏幕，可以用 [termilte](https://github.com/apaszke/termtile) 执行 `tsn` 命令即可
+- 多屏使用，快速把当前窗口移到另外一个屏幕，可以用 [termilte](https://github.com/apaszke/termtile) 执行 `tsn` 命令即可
+
+- 使用 mutt 查看 mbox 中的邮件, 配置在 dotfiles/soft_config/muttrc
 
 ## 常见路径
 - /Users/yantze/Library/Mobile Documents/iCloud~com~apple~iBooks
