@@ -1,7 +1,6 @@
 ---
 author: yantze
 os: linux, darwin
-license: CC-BY-NC-SA 4.0
 
 ---
 
