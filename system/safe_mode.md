@@ -1,6 +1,6 @@
 ---
 author: yantze
-os: window, darwin, linux
+os: windows, darwin, linux
 
 ---
 
