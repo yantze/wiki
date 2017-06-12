@@ -1,5 +1,4 @@
-Low frequency commands
----
+# Low frequency commands
 > 常用的命令在LINUX_TIPS.md文件中
 
 ### 重啓的方法
