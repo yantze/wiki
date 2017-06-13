@@ -28,3 +28,4 @@ ip138.com  # web
 
 ## See Also
 - [darwin](./osx_darwin.md)
+- [nslookup dig mtr](/soft/nslookup_dig_mtr.md)
