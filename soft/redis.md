@@ -1,4 +1,4 @@
-# redis
+# redis - remote dictionary server
 ```
 # 看下面的写着命令的时候，要想一下，在边缘情况下，如何处理
 

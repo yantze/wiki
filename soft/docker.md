@@ -3,18 +3,35 @@
 ```
 docker pull centos:latest
 docker images centos
-docker run -i -t centos /bin/bash //也可以使用docker run -it centos /bin/bash
-docker ps -a //列出所有的使用过的container
-sudo usermod -a -G docker $USER  //添加当前用户到docker用户组中,这样可以用当前用户而不是root操作docker
+
+docker ps -a // 列出所有的使用过的container
+sudo usermod -a -G docker $USER  // 添加当前用户到docker用户组中,这样可以用当前用户而不是root操作docker
+
 docker start container-id
 docker attach container-id // 运行上面这两条命令可以打开之前关闭的docker实例
--t - 分配一个（伪） tty (link is external)
--i - 开发输入(so we can interact with it)
 
-docker run --rm -i -t -p 80:80 nginx  //启动docker/nginx,把内置的80端口映射到本机的80端口
+docker run -it centos /bin/bash
+docker run -it --rm -p 80:80 nginx  //启动docker/nginx,把内置的80端口映射到本机的80端口
+-i - 开发输入(so we can interact with it)
+-t - 分配一个（伪） tty (link is external)
 ```
 
-## docker 进阶
+```
+# delete container
+删除容器: docker rm <Container ID>
+删除所有容器: docker rm $(docker ps -a -q)
+移除镜像: docker rmi <Container ID>
+移除所有镜像: docker rmi $(docker ps -a -q)
+```
+
+
+## As VirtualBox
+
+
+
+## Old Archive
+
+
 docker程序化
 ```
 docker -d run centos:latest /bin/sh -c "while true; do echo hello world; sleep 1; done"
@@ -63,7 +80,6 @@ CID=$(docker run -d -v /var/run fooservice)
 docker run --volumes-from $CID fooservice fooctl restart
 ```
 
-
 ```
 #nsenter
 #It works a bit like chroot
@@ -74,11 +90,3 @@ PID=$(docker inspect --format {{.State.Pid}} <container_name_or_ID>)
 nsenter --target $PID --mount --uts --ipc --net --pid
 ```
 
-
-```
-#delete container
-删除容器r: docker rm <Container ID>
-删除所有容器: docker rm $(docker ps -a -q)
-移除镜像: docker rmi <Container ID>
-移除所有镜像: docker rmi $(docker ps -a -q)
-```

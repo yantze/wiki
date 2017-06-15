@@ -164,8 +164,10 @@ sp mem 查看内存使用，与free一样
 lsmod //查看使用的模块
 iotop //查看磁盘，与top结合
 ss //another utily socket viewer
+
 # 用tcpdump嗅探80端口的访问看看谁最高
 sudo tcpdump -i eth7 -tnn dst port 80 -c 1000 | awk -F "." '{print $1"."$2"."$3"."$4}' | sort | uniq -c | sort-nr |head -20
+sudo tcpdump -i pktap,lo0 port 8080 -n -v
 ```
 
 

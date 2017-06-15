@@ -217,6 +217,11 @@ git rebase -i HEAD~3
 git push origin --delete branch_name 
 ```
 
+## ignore file
+- `git config --global core.excludesfile ~/.gitignore_global`
+- local projects `.gitignore`
+- `.git/info/exclude`
+
 
 
 ## GUI clients

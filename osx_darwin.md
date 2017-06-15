@@ -1,3 +1,10 @@
+---
+author: yantze
+os: darwin
+
+---
+
+
 # OSX Darwin
 
 ### OSX Services
@@ -12,6 +19,25 @@ sudo -s launchctl unload -w /System/Library/LaunchDaemons/ftp.plist
 # manual
 man ftpd
 ```
+
+另外设置 ftp 的用户默认目录(假设 user 是 `yantze`, 如果改不了文件,使用 `sudo su`, 进入 root 用户)
+
+1. 修改 ftpusers , 增加 user, 可以参考 `/usr/share/ftpd/examples/ftpusers`
+```
+# /etc/ftpusers 
+yantze allow myclass
+```
+2. 修改 ftpd.conf , 增加 class , 可以参考 `/usr/share/ftpd/examples/ftpd.conf`
+```
+# /etc/ftpd.conf
+chroot myclass /another/dir
+```
+3. 修改 ftpchroot , 增加 user, 可以参考 `man ftpchrrot`
+```
+# /etc/ftpchroot
+yantze
+```
+说明一下,ftpusers 如果不加 `allow myclass`, 那么这里面的列表是不允许 ftp 登录的. ftpd.conf 的 class 是为了定义一连串的设置. ftpchroot 是允许哪些用户可以自定义登录目录.
 
 
 ### OSX 的用户系统
@@ -137,3 +163,7 @@ sudo scutil --set HostName yourname
 
 ## 常见路径
 - /Users/yantze/Library/Mobile Documents/iCloud~com~apple~iBooks
+
+
+## Reference
+- https://forums.macrumors.com/threads/setting-ftp-chroot-directory.1553071/
