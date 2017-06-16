@@ -28,7 +28,7 @@ ip138.com  # web
 
 ping
 ```
-ttl: time to live, 常见的值有 255(unix), 128(windows), 64(linux, darwin)
+ttl: time to live, 常见的值有 255(unix, linux), 128(windows), 64(linux, darwin)
 比如 `ping amazom.com` icmp 返回 ttl=230, 看起来就像是 unix, 并且 255 - 230 = 25， 从本地路由到 amazon 网关，总共跳了 25 下，经过了 25 个网关
 
 ```
