@@ -7,6 +7,13 @@ os: darwin
 
 # OSX Darwin
 
+## 命令行常用
+> 需要加载 oh-my-zsh 的插件 `osx`, 查看 `oh-my-zsh.md` 文档
+```
+quick-look
+clipcopy, pbcopy, pbpaste
+```
+
 ### OSX Services
 
 
@@ -160,6 +167,10 @@ sudo scutil --set HostName yourname
 - 多屏使用，快速把当前窗口移到另外一个屏幕，可以用 [termilte](https://github.com/apaszke/termtile) 执行 `tsn` 命令即可
 
 - 使用 mutt 查看 mbox 中的邮件, 配置在 dotfiles/soft_config/muttrc
+
+- 使用 help 菜单里面的查找功能，快速找到功能
+
+- 添加 ipynb 文件 [quicklook](https://github.com/tuxu/ipynb-quicklook) 支持
 
 ## 常见路径
 - /Users/yantze/Library/Mobile Documents/iCloud~com~apple~iBooks
