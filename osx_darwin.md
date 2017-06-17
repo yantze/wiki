@@ -172,6 +172,9 @@ sudo scutil --set HostName yourname
 
 - 添加 ipynb 文件 [quicklook](https://github.com/tuxu/ipynb-quicklook) 支持
 
+## 如何不用 xcode
+- 启动ios模拟器 `/Applications/Xcode.app/Contents/Developer/Applications/Simulator.app`
+
 ## 常见路径
 - /Users/yantze/Library/Mobile Documents/iCloud~com~apple~iBooks
 
