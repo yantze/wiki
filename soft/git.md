@@ -225,16 +225,27 @@ git push origin --delete branch_name
 ## 通过单个文件查找以前的代码
 ```
 # more intergration
-git log -p --follow -S remoteActionDispatch -- path/to/file
+git log --follow -S remoteActionDispatch -- path/to/file
 # --follow 追溯 rename、delete 记录
 # -p 打印文件 diff
 # -- 分清参数列表和文件文件列表
+# -S/-G 
 ```
-找到 commit log 后
+找到 commit log 后, 直接浏览这个文件, 也可以用 worktree 分出一个 branch, 对整个项目查找
 ```
 git show commitlog:./path/to/filename
 ```
-也可以用 worktree 分出一个 branch
+
+另一中全局查找
+```
+# Search in any revision, any files:
+git rev-list --all | xargs git grep <regexp>
+
+# Search only in some given files, for example xml files:
+git rev-list --all | xargs -I{} git grep <regexp> {} -- "*.xml"</regexp></regexp>
+
+# https://stackoverflow.com/questions/2928584/how-to-grep-search-committed-code-in-the-git-history
+```
 
 ## worktree 多分支并存
 本地文件已修改，此时需要新建分支，可以用 git stash 或者 git commit
