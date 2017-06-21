@@ -224,18 +224,21 @@ git push origin --delete branch_name
 
 ## 通过单个文件查找以前的代码
 ```
-git log -p --follow -- filename | grep -B 50 keyword | grep commit
-# follow 追溯 rename、delete 记录
-# p 打印文件 diff
+# more intergration
+git log -p --follow -S remoteActionDispatch -- path/to/file
+# --follow 追溯 rename、delete 记录
+# -p 打印文件 diff
+# -- 分清参数列表和文件文件列表
 ```
 找到 commit log 后
 ```
-git show commitlog
+git show commitlog:./path/to/filename
 ```
+也可以用 worktree 分出一个 branch
 
 ## worktree 多分支并存
 本地文件已修改，此时需要新建分支，可以用 git stash 或者 git commit
-但是有可能需要一边测试,一遍正常的运行代码，如果cp 多分，同步有可能有问题
+但是有可能需要一边测试,一遍正常的运行代码，如果 copy 多份，同步可能有问题
 ```
 git worktree add -b hotfix ../hotfix master
 ... 改动 ...
