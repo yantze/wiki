@@ -233,6 +233,18 @@ git log -p --follow -- filename | grep -B 50 keyword | grep commit
 git show commitlog
 ```
 
+本地文件已修改，此时需要新建分支，可以用 git stash 或者 git commit
+但是有可能需要一边测试,一遍正常的运行代码，如果cp 多分，同步有可能有问题
+```
+git worktree add -b hotfix ../hotfix master
+... 改动 ...
+git commit # 自动commit到原来目录的主分支，看 hotfix/.git 是个软链接就知道了
+rm -rf hotfix
+git worktree prune # 清除连接， 可以用 git worktree list 查看
+git branch -d hotfix
+```
+
+
 
 
 ## GUI clients
