@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # update text base file
 
 # update bash-handbook
