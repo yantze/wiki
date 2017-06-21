@@ -45,3 +45,6 @@ function compile() {g++ -ggdb `pkg-config --cflags --libs opencv` $* -o /tmp/tes
 
 ## ref
 https://www.learnopencv.com/install-opencv-3-on-yosemite-osx-10-10-x/
+
+## Resource
+- http://docs.opencv.org/2.4/modules/highgui/doc/user_interface.html

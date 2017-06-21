@@ -222,6 +222,17 @@ git push origin --delete branch_name
 - local projects `.gitignore`
 - `.git/info/exclude`
 
+## 通过单个文件查找以前的代码
+```
+git log -p --follow -- filename | grep -B 50 keyword | grep commit
+# follow 追溯 rename、delete 记录
+# p 打印文件 diff
+```
+找到 commit log 后
+```
+git show commitlog
+```
+
 
 
 ## GUI clients
