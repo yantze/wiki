@@ -233,6 +233,7 @@ git log -p --follow -- filename | grep -B 50 keyword | grep commit
 git show commitlog
 ```
 
+## worktree 多分支并存
 本地文件已修改，此时需要新建分支，可以用 git stash 或者 git commit
 但是有可能需要一边测试,一遍正常的运行代码，如果cp 多分，同步有可能有问题
 ```
