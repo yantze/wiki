@@ -14,7 +14,25 @@ quick-look
 clipcopy, pbcopy, pbpaste
 ```
 
-### OSX Services
+网络设置相关
+```
+# 查找你的路由器地址, 假设命令输出1.2.3.4
+/usr/sbin/networksetup -getinfo Wi-Fi | grep Router
+
+# 恢复网关, 1.2.3.4 换成第一条命令的输出
+sudo /sbin/route change default 1.2.3.4
+
+# 恢复DNS, 1.2.3.4 换成第一条命令的输出
+sudo networksetup -setdnsservers Wi-Fi 1.2.3.4
+
+# 确认网关已恢复
+/usr/sbin/netstat -nr | grep default | awk '{print $2}'
+
+# 确认DNS已恢复
+/usr/sbin/networksetup -getdnsservers Wi-Fi
+```
+
+## OSX Services
 
 
 ftp server
@@ -181,3 +199,4 @@ sudo scutil --set HostName yourname
 
 ## Reference
 - https://forums.macrumors.com/threads/setting-ftp-chroot-directory.1553071/
+- https://github.com/icymind/VRouter

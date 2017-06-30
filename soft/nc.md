@@ -55,6 +55,13 @@ nc -l 3333
 nc 127.0.0.1 3333 -e /bin/bash
 ```
 
+指定代理方式
+>Connect to port 42 of host.example.com via an HTTP proxy at 10.2.3.4, port 8080.  This example could also be used by ssh(1); see the ProxyCommand directive in ssh_config(5) for more information.
+```
+nc -x10.2.3.4:8080 -Xconnect host.example.com 42
+```
+
+
 ## 资料
 - https://www.sans.org/security-resources/sec560/netcat_cheat_sheet_v1.pdf
 - http://www.g-loaded.eu/2006/11/06/netcat-a-couple-of-useful-examples/

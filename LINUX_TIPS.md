@@ -1,5 +1,11 @@
 With less code you get more done.
 ---
+
+```
+tree -I "node_modules|dist" # 生成树形目录
+```
+
+
 ```
 yes | cp -rf xxx yyy # 设置默认的输入值
 \cp # use the non-aliased version 
@@ -165,9 +171,6 @@ lsmod //查看使用的模块
 iotop //查看磁盘，与top结合
 ss //another utily socket viewer
 
-# 用tcpdump嗅探80端口的访问看看谁最高
-sudo tcpdump -i eth7 -tnn dst port 80 -c 1000 | awk -F "." '{print $1"."$2"."$3"."$4}' | sort | uniq -c | sort-nr |head -20
-sudo tcpdump -i pktap,lo0 port 8080 -n -v
 ```
 
 

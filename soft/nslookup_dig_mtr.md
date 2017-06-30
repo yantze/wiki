@@ -1,5 +1,10 @@
 # nslookup dig mtr
 
+使用 tcp 查询 ip 地址
+
+    dig @114.114.114.114 +tcp www.baidu.com
+
+
 查找一个域名的真实ip地址
 ```
 # TXT/spf records
