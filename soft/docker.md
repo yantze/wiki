@@ -1,5 +1,8 @@
 # docker
 
+## Basic
+
+### start new container
 ```
 docker pull centos:latest
 docker images centos
@@ -16,8 +19,8 @@ docker run -it --rm -p 80:80 nginx  //启动docker/nginx,把内置的80端口映
 -t - 分配一个（伪） tty (link is external)
 ```
 
+### delete container
 ```
-# delete container
 删除容器: docker rm <Container ID>
 删除所有容器: docker rm $(docker ps -a -q)
 移除镜像: docker rmi <Container ID>
@@ -29,8 +32,7 @@ docker run -it --rm -p 80:80 nginx  //启动docker/nginx,把内置的80端口映
 
 
 
-## Old Archive
-
+## Old Archive 最初代版本，部分已经不可用，暂时归档
 
 docker程序化
 ```
