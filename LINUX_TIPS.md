@@ -2,6 +2,11 @@ With less code you get more done.
 ---
 
 ```
+w3m -dump https://github.com
+lynx --dump https://github.com # not support unicode
+```
+
+```
 tree -I "node_modules|dist" # 生成树形目录
 ```
 
