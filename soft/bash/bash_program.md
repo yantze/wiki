@@ -210,6 +210,26 @@ function func() {
 
 ## 其它应用
 
+### for advance
+```
+for ((i=1;i<=100;i++)); 
+do 
+   # your-unix-command-here
+   echo $i
+done
+
+for i in $(seq 5)
+do
+  echo "Welcome $i times"
+done
+
+```
+### get string length
+```
+abc='bbbccc'
+echo ${#abc}
+```
+
 ### 执行文件路径
 ```bash
 # 当前目录
