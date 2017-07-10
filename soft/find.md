@@ -9,6 +9,7 @@ os: linux, darwin
 
 > mac 可以不用斜杠
 
+## Basic
 ```
 find . -name "*.log" -mtime +5 -ok rm {} \;
 find . -name "passwd*" -exec grep "root" {} \;
@@ -36,6 +37,12 @@ for  i in `ls|grep glyphicons` ; echo $i
 -mtime -2 修改时间在2天内
 -mtime +3 修改时间在3天前
 ```
+
+Syntax `not`
+```
+find . -not -name 'xxx'
+```
+
 
 ## Reference
 - http://www.cnblogs.com/peida/archive/2012/11/14/2769248.html
