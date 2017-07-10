@@ -1,5 +1,10 @@
 # windows command helpper
 
+type [drive:][path]filename
+```
+Displays the contents of a text file or files.
+```
+
 find a str in all file
 ```
 grep str . -r
