@@ -34,6 +34,7 @@ sudo networksetup -setdnsservers Wi-Fi 1.2.3.4
 
 ## OSX Services
 
+> 建议使用 Setting 中的 File Shairing 功能， ftp server 配置太不方便，建立一个账户即可
 
 ftp server
 ```bash
@@ -63,6 +64,17 @@ chroot myclass /another/dir
 yantze
 ```
 说明一下,ftpusers 如果不加 `allow myclass`, 那么这里面的列表是不允许 ftp 登录的. ftpd.conf 的 class 是为了定义一连串的设置. ftpchroot 是允许哪些用户可以自定义登录目录.
+
+
+使用 File Sharing 共享文件
+- 由于默认的 admin 账户在 samba 客户端中是明文密码保存，所以 admin 默认是不能访问的
+- 在共享的文件夹列表右侧用户列表，选择添加，一个账户，设置好帐号密码
+- 在 Options 里面勾选新的帐号名称，输入密码，（如果输入的密码一直提示不对，在命令行 `passwd newusernae` 重置密码
+- 然后samba 软件客户端就能发现这个服务，然后登录进去
+
+其中有两个问题
+- 在 options 勾选用户后，这个用户能访问所有共享文件夹，不明白为什么会这样
+- 以至于无法区分文件权限，作单独的配置
 
 
 ### OSX 的用户系统
