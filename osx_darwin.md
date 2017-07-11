@@ -50,7 +50,7 @@ man ftpd
 
 1. 修改 ftpusers , 增加 user, 可以参考 `/usr/share/ftpd/examples/ftpusers`
 ```
-# /etc/ftpusers 
+# /etc/ftpusers
 yantze allow myclass
 ```
 2. 修改 ftpd.conf , 增加 class , 可以参考 `/usr/share/ftpd/examples/ftpd.conf`
@@ -103,7 +103,7 @@ brew install caskroom/cask/brew-cask
 
 install coreutils to compatible linux
 ```
-brew install coreutils 
+brew install coreutils
 ```
 
 brew remove special version
@@ -121,7 +121,7 @@ https://github.com/SamRothCA/Today-Scripts
 
 
 ### DNS
-- Install dnsmasq. 
+- Install dnsmasq.
 >    'adress=/local/127.0.01' may not work
     ping aaa.aaa.local, work;
     ping aaa.local, not work;
@@ -174,7 +174,7 @@ sudo scutil --set HostName yourname
 
 ## Finder.app
 
-- Shift + Command + G 
+- Shift + Command + G
     打开指定路径
 
 - 把 .sh 扩展名改为 .command 可以在 Finder 中运行
@@ -202,13 +202,78 @@ sudo scutil --set HostName yourname
 
 - 添加 ipynb 文件 [quicklook](https://github.com/tuxu/ipynb-quicklook) 支持
 
-## 如何不用 xcode
-- 启动ios模拟器 `/Applications/Xcode.app/Contents/Developer/Applications/Simulator.app`
+- mdfind 是 macOS 中 find 程序，由 mds 进程提供索引。
 
 ## 常见路径
 - /Users/yantze/Library/Mobile Documents/iCloud~com~apple~iBooks
 
 
+## 常见命令
+
+### screencapture
+获取桌面截图。编写监控脚本的时候可能用得到。
+
+### launchctl
+
+launchd 是 macOS 中非常重要的程序，相当于 Linux 世界的 systemctl，launchctl 则提供了和 launchd 的交互。
+
+常见用法：
+
+    launchctl list
+    launchctl load /path/to/your/program.plist
+
+Launchd 脚本通常位于以下位置：
+
+    ~/Library/LaunchAgents
+    /Library/LaunchAgents
+    /Library/LaunchDaemons
+    /System/Library/LaunchAgents
+    /System/Library/LaunchDaemons
+
+### Other
+| Command           | Description      |
+|-------------------|------------------|
+| sw_vers           | Mac version      |
+| srm /path/to/file | remove file safe |
+| purge             | purge memory     |
+| vm_state          | memory state     |
+| sips                   | 图片编辑工具                 |
+| diskutil | [disk](/soft/disk.md)                 |
+
+## 其它操作
+
+### 如何不用 xcode 启动ios模拟器
+
+    `/Applications/Xcode.app/Contents/Developer/Applications/Simulator.app`
+
+### 卸载无用的（iOS）模拟器
+    - 先列出来：xcrun simctl list
+    - 卸载无用的模拟器：xcrun simctl delete unavailable
+
+### 显示 wifi 密码
+
+    security find-generic-password -D "AirPort network password" -a "SSID" -gw
+
+### Spotlight 索引
+
+    # 禁止索引某个目录
+    mdutil -i off -d /path/to/volume
+
+    # 启用（默认行为）
+    mdutil -i on /path/to/volume
+
+    # 重建 Spotlight 索引
+    mdutil -E /path/to/volume
+
+    # 使用 Spotlight 进行搜索
+    mdfind -name 'searchterm'
+
+    # 显示 Spotlight 索引元数据
+    mdls /path/to/file
+
+
+
 ## Reference
 - https://forums.macrumors.com/threads/setting-ftp-chroot-directory.1553071/
 - https://github.com/icymind/VRouter
+- https://blog.windrunner.me/apple/utilities.html#mdfind
