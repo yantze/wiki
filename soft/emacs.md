@@ -9,7 +9,7 @@
 | C-x C-w     | save new file            |
 | C-x k       | close Emacs without save |
 | C-x C-c     | close Emacs              |
-| ESC ESC ESC | cancel a command         |
+| ESC ESC ESC / c-g | cancel a command         |
 > Close Emacs will save a buffer in a subfix '#' file, use `M-x recover-file` to recover
 
 ## Window 相关
@@ -21,6 +21,7 @@
 | C-x 2    | 水平分割 Window                        |
 | C-x 3    | 垂直分割 Window                        |
 | C-x o    | 切换到下一个 Window                    |
+| F10      | 打开 Menu                              |
 
 ## Buffer 相关
 
@@ -194,11 +195,26 @@ Alias
 
 alias ec='emacsclient -a ""'        # osx
 alias ec='emacsclient -a "" -c'     # linux
-alias et='emacsclient -t'           # 适合 GUI 时，启动一个新的 frame (-n) 
+alias et='emacsclient -t'           # 适合 GUI 时，启动一个新的 frame (-n)
 alias en='emacsclient -n'           # 适合 终端运行(emacs --daemon) 后
 # alias e='command emacs -nw' # run emacs gui in command line
 
 # shutdown emacs server M-x kill-emacs
+```
+
+## 网络访问不能问题
+```
+(setq configuration-layer--elpa-archives
+    '(("melpa-cn" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
+      ("org-cn"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")
+      ("gnu-cn"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")))
+
+(setq configuration-layer--elpa-archives
+    '(("melpa-cn" . "http://elpa.emacs-china.org/melpa/")
+      ("org-cn"   . "http://elpa.emacs-china.org/org/")
+      ("gnu-cn"   . "http://elpa.emacs-china.org/gnu/")))
+
+from: https://github.com/emacs-china/elpa
 ```
 
 ## 兼容性问题
@@ -208,7 +224,7 @@ alias en='emacsclient -n'           # 适合 终端运行(emacs --daemon) 后
 bind ^a send-keys 'C-a'
 ```
 
-2. Terminal.app 不支持 `Ctrl + /` 撤销，使用 `Ctrl + -` 
+2. Terminal.app 不支持 `Ctrl + /` 撤销，使用 `Ctrl + -`
 
 ## 参考资料
 Config
