@@ -271,6 +271,15 @@ Launchd 脚本通常位于以下位置：
     # 显示 Spotlight 索引元数据
     mdls /path/to/file
 
+### Mac Quick Look Plugin
+> https://github.com/sindresorhus/quick-look-plugins
+
+    brew cask install qlmarkdown
+    brew cask install quicklook-json
+    brew cask install qlimagesize # display size
+    brew cask install webpquicklook # image webp
+    brew cask install qlvideo
+    brew cask install quicklookapk
 
 
 ## Reference
