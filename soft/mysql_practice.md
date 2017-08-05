@@ -2,6 +2,8 @@
 
 [[mysql_base]]
 
+刚安装，可以用 `mysqladmin -u root ` 回车后 初始化密码
+
 进入MySQL管理，用yum mysql mysql-devel
 ```
 mysql -uroot -hlocalhost -p
