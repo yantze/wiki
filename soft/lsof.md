@@ -7,6 +7,12 @@ os: linux, darwin
 # lsof: list open file
 
 ## Practical case
+
+List all listening ports in OS X (tested with Mavericks)
+
+    sudo lsof -i4 -P -n |grep LISTEN
+
+
 ```
 # lsof -i [46][protocol][@hostname|hostaddr][:service|port]
 lsof -i:22 //查看22端口在运行什么程序
