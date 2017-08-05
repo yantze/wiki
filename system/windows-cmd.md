@@ -18,3 +18,6 @@ mklink /J destdir srcdir
 rem Syslinked, can use on command
 mklink /D destdir srcdir
 ```
+
+## Res
+- @henix 提供的版本非常完善 https://blog.henix.info/blog/windows-cmdbasic/_.html
