@@ -12,10 +12,6 @@
 - `m man` 搜索指定命令，用 [cheat](https://github.com/chrisallenlane/cheat) 命令查找
 > 注：m 命令在 [dotfiles](https://github.com/yantze/dotfiles/blob/master/bin/m) 中
 
-## On Web
-- Chrome 添加自定搜索引擎 MyWiki `https://github.com/yantze/wiki/search?q=%s`
-- Chrome Plugin: [octotee](https://github.com/buunguyen/octotree) - 实现左边侧边栏文件列表
-- Chrome Plugin: [Smart TOC](https://chrome.google.com/webstore/detail/lifgeihcfpkmmlfjbailfpfhbahhibba) - 自动生成网页目录并显示
 
 ## License
 ["署名-非商业性使用" 许可证](https://creativecommons.org/licenses/by-nc/4.0/deed.zh)
