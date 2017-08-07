@@ -61,6 +61,12 @@ nc 127.0.0.1 3333 -e /bin/bash
 nc -x10.2.3.4:8080 -Xconnect host.example.com 42
 ```
 
+ssh over socks
+```
+ssh -o ProxyCommand='/usr/bin/nc -x 127.0.0.1:1080 %h %p' -i "xxx.pem" user@host
+```
+
+
 
 ## 资料
 - https://www.sans.org/security-resources/sec560/netcat_cheat_sheet_v1.pdf
