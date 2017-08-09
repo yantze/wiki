@@ -19,6 +19,11 @@ docker run -it --rm -p 80:80 nginx  //启动docker/nginx,把内置的80端口映
 -t - 分配一个（伪） tty (link is external)
 ```
 
+### run docker and mount local dir
+```
+docker run -it --rm -p 8000:8888 -v ./pyannote-data /opt/pyannote-data images/image
+```
+
 ### delete container
 ```
 删除容器: docker rm <Container ID>

@@ -258,7 +258,17 @@ rm -rf hotfix
 git worktree prune # 清除连接， 可以用 git worktree list 查看
 git branch -d hotfix
 ```
+
 后来一想，其实 git clone 本地 repo 也可以，还省去多次命令的麻烦
+```
+git clone path/to/repo path/to/another
+```
+
+
+## 找到一次 log 的 commit id
+```
+git rev-parse HEAD~2
+```
 
 
 
