@@ -17,6 +17,9 @@ docker run -it centos /bin/bash
 docker run -it --rm -p 80:80 nginx  //启动docker/nginx,把内置的80端口映射到本机的80端口
 -i - 开发输入(so we can interact with it)
 -t - 分配一个（伪） tty (link is external)
+-p - 分配 local_port 给 docker_port
+-P - 随机分配端口给 docker_port
+--rm - 停止即删
 ```
 
 ### run docker and mount local dir
