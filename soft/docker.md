@@ -36,6 +36,17 @@ docker run -it --rm -p 8000:8888 -v ./pyannote-data /opt/pyannote-data images/im
 移除所有镜像: docker rmi $(docker ps -a -q)
 ```
 
+### 安装 docker hub 加速器
+```
+cp /lib/systemd/system/docker.service /etc/systemd/system/docker.service
+# 在 `ExecStart` 后面添加 `--registry-mirror=<your accelerate address>`
+ExecStart=/usr/bin/dockerd --registry-mirror=<your accelerate address>
+```
+这些地方有详细的教程和加速地址
+- 阿里云 docker 加速器(可分地区）：https://cr.console.aliyun.com/#/accelerator
+- 腾讯：https://www.qcloud.com/document/product/457/9113
+- DaoCloud: https://www.daocloud.io/mirror#accelerator-doc
+
 
 
 # Res
