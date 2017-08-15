@@ -2,7 +2,7 @@
 
 ## Basic
 
-### start new container
+### Start new container
 ```
 docker pull centos:latest
 docker images centos
@@ -22,12 +22,17 @@ docker run -it --rm -p 80:80 nginx  //启动docker/nginx,把内置的80端口映
 --rm - 停止即删
 ```
 
-### run docker and mount local dir
+### Run docker and mount local dir
 ```
 docker run -it --rm -p 8000:8888 -v ./pyannote-data /opt/pyannote-data images/image
 ```
 
-### delete container
+### Connect to running docker
+```
+docker exec -it some-mariadb bash
+```
+
+### Delete container
 ```
 列出所有容器: docker ps -a
 删除容器: docker rm <Container ID>
