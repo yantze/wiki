@@ -21,7 +21,14 @@ find . -type f -maxdepth 1
 ls file[12] 
 ls file{1, 2}
 
-ls ND # 列出当前文件夹最近修改的 20 个文件
+```
 
+## 只列出最近修改的文件
+```
+ls ND # 列出当前文件夹最近修改的 20 个文件
+alias -g ND=' -pt | egrep -v /$ | head -n 20'
+
+# 另一种方法
+ll | grep -v '^d' | head 
 ```
 
