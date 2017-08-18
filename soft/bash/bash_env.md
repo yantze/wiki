@@ -8,6 +8,11 @@ set show-all-if-ambiguous on
 set completion-ignore-case on
 ```
 
+添加 bash 自动补全
+```
+cp completefile /usr/share/bash-completion/completions/
+```
+
 
 `$*` 和 `$@` 的区别
 ```
