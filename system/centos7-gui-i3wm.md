@@ -9,7 +9,7 @@ Basic Web Server > Backup Client
                    Directory Client
                    Language Support
                    Security Tools
-                   Any preferred languagesyum install epel-release
+                   Any preferred packages
 ```
 
 ### Install Dependent
@@ -20,8 +20,7 @@ yum install -y epel-release
 # yum --enablerepo=epel info softname
 # /etc/yum.repo.d/epel.repo
 
-yum install dnf dnf-plugins-core
-dnf config-manager --add-repo https://copr.fedorainfracloud.org/coprs/admiralnemo/i3wm-el7/repo/epel-7/admiralnemo-i3wm-el7-epel-7.repo
+yum-config-manager --add-repo https://copr.fedorainfracloud.org/coprs/admiralnemo/i3wm-el7/repo/epel-7/admiralnemo-i3wm-el7-epel-7.repo
 yum groupinstall "X Window System" "Desktop" "Desktop Platform"
 yum install lightdm xorg-x11-xinit-session
 
@@ -46,7 +45,16 @@ yum install py3status
 ### feh is used to customize the background for i3wm.
 yum install feh
 
+### add fonts
+yum install wqy-unibit-fonts wqy-zenhei-fonts
+
+### add Chromium-broser
+yum install mesa-libGLES
+
+### Some Proble
+- [old version] i3-sensible-terminal, so add `export TERMINAL=lilyterm` to `.bashrc`, or `yum install xterm` with support term list in `man i3-sensible-terminal`
 
 ## Res & Ref
 - http://sobo.red/CentOS-7-i3wm-Quickstart/
 - https://wiki.archlinux.org/index.php/i3
+- https://www.centos.org/docs/5/html/5.2/Deployment_Guide/s3-x-fonts-fontconfig-add.html
