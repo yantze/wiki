@@ -38,6 +38,11 @@ for  i in `ls|grep glyphicons` ; echo $i
 -mtime +3 修改时间在3天前
 ```
 
+大文件
+```
+find . -type f -size +100M
+```
+
 Syntax `not`
 ```
 find . -not -name 'xxx'

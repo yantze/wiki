@@ -85,3 +85,24 @@ See all alias just run `alias`.
 | `tab`         | Open the current directory in a new tab        |
 | `quick-look`  | Quick-Look a specified file                    |
 | `man-preview` | Open a specified man page in Preview app       |
+
+## Basic
+```
+/etc/zshenv
+Always run for every zsh.
+~/.zshenv
+Usually run for every zsh (see below).
+/etc/zprofile
+Run for login shells.
+~/.zprofile
+Run for login shells.
+/etc/zshrc
+Run for interactive shells.
+~/.zshrc
+Run for interactive shells.
+/etc/zlogin
+Run for login shells.
+~/.zlogin
+Run for login shells.
+```
+http://zsh.sourceforge.net/Guide/zshguide02.html

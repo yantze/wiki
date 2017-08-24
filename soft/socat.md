@@ -14,6 +14,10 @@ socat tcp-listen:8001,reuseaddr,fork tcp:localhost:8000
 
 ## SeeAlso
 - [memcached](./memcached.md)
+- [nc](./nc.md)
+
+## Res
+- 观察 HTTP/STMP/DNS 等包 http://www.volkerschatz.com/net/socatproc.html
 
 ## Ref
 - https://unix.stackexchange.com/questions/10428/simple-way-to-create-a-tunnel-from-one-local-port-to-another 

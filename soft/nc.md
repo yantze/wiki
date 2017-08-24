@@ -56,9 +56,9 @@ nc 127.0.0.1 3333 -e /bin/bash
 ```
 
 指定代理方式
-> 以 http 的方式把 host.example.com:42 映射到 10.2.3.4:8080
+> 以 http 的方式把 host.example.com:42 映射到 192.168.0.2:8080
 ```
-nc -x10.2.3.4:8080 -Xconnect host.example.com 42
+nc -x192.168.0.2:8080 -Xconnect host.example.com 42
 ```
 
 SSH over Socks
@@ -70,8 +70,8 @@ nc over pipe ( port forwarding )
 ```
 mkfifo a
 mkfifo b
-nc 127.0.0.1 8000 < b > a &
-nc -l 8001 < a > b &
+nc 127.0.0.1 8000 <b >a &
+nc -l 8001 <a >b &
 ```
 
 ssh 版本端口转发(远程转发，访问 host:8080 就相当于访问 localhost:80)

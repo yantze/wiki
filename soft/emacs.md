@@ -5,11 +5,12 @@
 | Shortcut    | Action                   |
 | ---         | ---                      |
 | C-x C-f     | open a file              |
-| C-x C-s     | save a file              |
+| C-x C-s     | save current buffer      |
 | C-x C-w     | save new file            |
 | C-x k       | close Emacs without save |
 | C-x C-c     | close Emacs              |
-| ESC ESC ESC / c-g | cancel a command         |
+| ESC ESC ESC | cancel a command         |
+| C-g         | abort key                |
 > Close Emacs will save a buffer in a subfix '#' file, use `M-x recover-file` to recover
 
 ## Window 相关
@@ -21,7 +22,7 @@
 | C-x 2    | 水平分割 Window                        |
 | C-x 3    | 垂直分割 Window                        |
 | C-x o    | 切换到下一个 Window                    |
-| F10      | 打开 Menu                              |
+| F10      | 打开 Menu (在终端使用很方便)           |
 
 ## Buffer 相关
 
@@ -101,7 +102,9 @@
 |                    |                                                        |
 | C-h t              | 调出Emacs Tutorial                                     |
 | C-h r              | 调出Emacs Manual                                       |
-| C-h k (command)    | 调出对应command的帮助，比如C-h k C-n 就是查看C-n的帮助 |
+| C-h k              | 寻找快捷键的帮助信息，比如C-h k C-n 就是查看C-n的帮助 |
+| C-h v              | 寻找变量的帮助信息 |
+| C-h f              | 寻找函数的帮助信息 |
 |                    |                                                        |
 | C-u 5 C-x 2  | Split screen vertically with 5 row height              |
 | C-u 24 C-x 3 | Split screen horizontally with 24 column width         |
