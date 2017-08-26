@@ -30,7 +30,10 @@ yum install wqy-microhei-fonts wqy-unibit-fonts wqy-zenhei-fonts
 ## Poplur Fonts
 ### English
 - Heimit
+- Monaco
+- Consolas
 
 ### [SC] Simplified Chinese
 - PingFang [backup](https://github.com/ctrngk/backup)
 - WenQuanYi [wqy](https://github.com/layerssss/wqy)
+- YaHei Consolas Powerline [Consolas](https://github.com/liangfeng/consolas-font-for-airline)
