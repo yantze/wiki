@@ -38,10 +38,10 @@ sudo networksetup -setdnsservers Wi-Fi 1.2.3.4
 
 ftp server
 ```bash
-# stop
-sudo -s launchctl unload -w /System/Library/LaunchDaemons/ftp.plist
 # start
 sudo -s launchctl load -w /System/Library/LaunchDaemons/ftp.plist
+# stop
+sudo -s launchctl unload -w /System/Library/LaunchDaemons/ftp.plist
 # manual
 man ftpd
 ```
