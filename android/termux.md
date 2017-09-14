@@ -3,7 +3,9 @@
 ## Basic
 - 打开扩展键盘
 
-    打开方式：按音量上键+键盘的Q
+    打开方式：音量上键+键盘的Q
+    方向键：音量上键 + A W S D
+    Ctrl: 音量下键
 
 - 模拟根目录
     ```
@@ -22,6 +24,9 @@
     ```
     # 安装
     apt install openssh
+    sshd # start ssh server
+    # sshd -d # debug
+    # pkill sshd # stop ssh server
     ssh-keygen
     cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
     chmod 600 ~/.ssh/authorized_keys
@@ -37,6 +42,12 @@
     ```
     curl -O http://android_lan_ip:8000/id_rsa
     ssh android_lan_ip -p 8022 -i /path/to/id_rsa
+    ```
+
+- 访问手机 storage
+    ```
+    termux-setup-storage
+    ls storage
     ```
 
 ## Termux-Fedora
@@ -56,3 +67,4 @@ sh termux-fedora.sh f26_arm64
 - https://pondof.fish/d/28
 - https://nmilosev.svbtle.com/termuxfedora-install-fedora-on-your-phone-with-termux
 - https://github.com/breathiness/learn-termux
+- http://www.arthurtoday.com/2017/03/install-ubuntu-linux-in-a-android-phone-termux.html

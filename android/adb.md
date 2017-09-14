@@ -8,6 +8,7 @@ adb connect 192.168.xxx.xxx
 adb install xxx.apk
 adb uninstall com.android.tv
 adb shell pm clear com.android.tv # dst /data/data/包名/
+adb disconnect
 ```
 
 push a file
