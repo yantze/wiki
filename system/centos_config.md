@@ -30,7 +30,7 @@
 # 系统版本
 /etc/redhat-release
 /etc/centos-release
-rpm -q centose-release
+rpm -q centos-release
 ```
 
 ```

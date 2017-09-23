@@ -4,6 +4,11 @@
 
     dig @114.114.114.114 +tcp www.baidu.com
 
+使用dns server 的其它端口
+
+    ```
+    dig @114.114.114.114 -p 5353 xxx.com
+    ```
 
 查找一个域名的真实ip地址
 ```

@@ -13,13 +13,13 @@ echo ${str:$i:1}
 echo -n $str | tail -c 1
 ```
 
-## See Also
-- [parameter expansion](http://mywiki.wooledge.org/BashFAQ/073)
+删除最后一个字符
+```
+echo ${str: : -1} # only zsh
+echo ${str%?}
+```
 
 
-2015-01-16 左耳朵耗子
-
-> 有时候我们需要对变量进行一些操作，比如截取，替换，删除等操作，很多同学会使用awk, sed 或cut等命令来干这事，其实，bash的内置的变量操作就可以干这个事。下面说明一些常用的方法：
 
 这些操作需要使用 ${var} 这种变量的写法（用花括号）。
 
@@ -35,7 +35,7 @@ ${var:pos:len} 你可以理解为变量的切片操作。如：
 23
 > echo ${var:2:3}
 234
-> echo ${var::1}
+> echo ${var::1} # zsh 不支持
 0
 > echo ${var::-2}
 01234567
@@ -68,3 +68,8 @@ var=ababcdcd
 0101cdcd
 ```
 
+## See Also
+- [parameter expansion](http://mywiki.wooledge.org/BashFAQ/073)
+
+## Ref
+- 左耳多耗子《Bash 一些变量的操作》(原文失效)

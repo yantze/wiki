@@ -1,3 +1,11 @@
+在 Terminal 类似编辑文件一样编辑命令
+```
+export VISUAL=vim
+Ctrl+x e
+# or
+export EDITOR=vim
+fc
+```
 
 通过上下键来搜索
 ```
@@ -47,7 +55,7 @@ $$	当前Shell进程ID。对于 Shell 脚本，就是这些脚本所在的进程
 ```
 
 去掉重复的 PATH
-`typeset -aU path` 
+`typeset -aU path`
 
 记录root登录的次数
 `last | grep root | cut -d “ “ -f 1 | wc -l`

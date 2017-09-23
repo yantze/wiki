@@ -281,6 +281,11 @@ Launchd 脚本通常位于以下位置：
     brew cask install qlvideo
     brew cask install quicklookapk
 
+### Mac extend file permission
+```
+rwx+ 
+rwx@ 
+```
 
 ## Reference
 - https://forums.macrumors.com/threads/setting-ftp-chroot-directory.1553071/
