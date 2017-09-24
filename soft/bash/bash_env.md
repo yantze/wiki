@@ -6,6 +6,8 @@ Ctrl+x e
 export EDITOR=vim
 fc
 ```
+> VISUAL 和 EDITOR 环境变量的区别是，在现代 Terminal 中可以使用全屏编辑器，优先使用 VISUAL ，如果未设置，才获取 EDITOR 变量。EDITOR 其实是兼容以前只有一行编辑窗口的 Terminal。
+
 
 通过上下键来搜索
 ```
