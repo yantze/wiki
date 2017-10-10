@@ -69,6 +69,8 @@
 7 tee命令
 
 　　tee是一个把stdin保存到文件的小工具。
+
+
  
 8 awk 用法：awk ' pattern {action} ‘
 ```
@@ -87,3 +89,22 @@
 　　ORS 输出记录分隔符 
 ```
 
+
+## 常见应用
+
+### 添加多行文本
+```
+# possibility 1:
+echo "line 1" >> greetings.txt
+echo "line 2" >> greetings.txt
+
+# possibility 2:
+echo "line 1
+line 2" >> greetings.txt
+
+# possibility 3:
+cat <<EOT >> greetings.txt
+line 1
+line 2
+EOT
+```
