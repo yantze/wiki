@@ -58,8 +58,17 @@ ExecStart=/usr/bin/dockerd --registry-mirror=<your accelerate address>
     docker inspect <container ID>
     ```
 - 没有 `ifconfig` ，需要 apt/yum/dnf install net-tools
+- 需要 管理员权限
+```
+# 添加 ${USER} 到 docker 组
+usermod -aG docker ${USER}
+# 查看是否在 docker 组中
+groups ${USERS}
+# 取掉 127.0.0.1 地址
+unset $DOCKER_HOST
+```
 
 
 # Res
 - [Docker — 从入门到实践](https://github.com/yeasy/docker_practice)
-- [GitBook 版本](https://www.gitbook.io/book/yeasy/docker_practice)
+- [上链的 GitBook 版本](https://www.gitbook.io/book/yeasy/docker_practice)
