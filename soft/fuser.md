@@ -5,7 +5,7 @@ license: CC-BY-NC-SA 4.0
 
 ---
 
-# file user 
+# file user
 list current dir being using pid
 ```
 fuser -u .
