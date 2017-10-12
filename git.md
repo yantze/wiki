@@ -270,6 +270,11 @@ git clone path/to/repo path/to/another
 git rev-parse HEAD~2
 ```
 
+## 显示 git 相关账户的密码
+```
+echo "protocol=https\nhost=github.com\n" | git credential-osxkeychain get
+```
+
 
 
 
