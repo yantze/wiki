@@ -24,33 +24,39 @@ mysql -uroot -hlocalhost -p
 ```
 create user admin@localhost identified by 'admins_password'
 insert into mysql.user(Host,User,Password) values("localhost","phplamp",password("1234"));
-
-## 授权phplamp用户拥有phplamp数据库的所有权限
-grant all privileges on yaf.* to yaf@localhost identified by '1234';
-grant all privileges on `yaf`.* to `yaf`@'%' with grant option;
-grant all on *.* to yaf;
-grant all privileges on *.* to 'root'@'%' identified by '1234' with grant option;
-show grants for jfz_data@'%';
 ```
-> tips: 如果远程访问不了，可能是防火墙的问题
-
-
 删除用户
 ```
 drop user admin@localhost;
 DELETE FROM mysql.user WHERE User="phplamp" and Host="localhost";
 ```
 
+授权数据库
+```
+## 授权phplamp用户拥有phplamp数据库的所有权限
+grant all on *.* to yaf;
+grant all privileges on yaf.* to yaf@localhost identified by '1234';
+grant all privileges on `yaf`.* to `yaf`@'%' with grant option;
+grant all privileges on *.* to 'root'@'%' identified by '1234' with grant option;
+show grants for user@'%';
+```
+> tips: 如果远程访问不了，可能是防火墙的问题
+
+取消授权数据库
+```
+# 显示指定用户权限
+show grants for user@localhost;
+
+revoke all on dbname.* from user@localhost;
+```
+
+
+
 修改用户密码
 ```
 set password=password('123');
 SET PASSWORD FOR 'root'@'localhost' = PASSWORD('secret_password');
 update mysql.user set password=password('新密码') where User="phplamp" and Host="localhost";
-```
-
-创建数据库：
-```
-CREATE DATABASE `dbname` /*!40100 COLLATE 'utf8_general_ci' */
 ```
 
 刷新系统权限表
@@ -81,6 +87,11 @@ kill `cat /mysql-data-directory/hostname.pid`
 用 mysql -h hostname mysql连接 mysqld服务器并且用一条 GRANT命令改变口令 。
 你也可以用 mysqladmin -h hostname -u user password 'new password'进行。
 用 mysqladmin -h hostname flush-privileges 或用 SQL 命令 FLUSH PRIVILEGES 来装载权限表.
+
+创建数据库：
+```
+CREATE DATABASE `dbname` /*!40100 COLLATE 'utf8_general_ci' */
+```
 
 ```
 service mysqld stop
