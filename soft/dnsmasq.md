@@ -1,5 +1,5 @@
 # dnsmasq
-dnsmasq 在本地建立 DNS 服务器的作用是，缓存 DNS 结果，自定义 DNS 解析值，是 /etc/resolv.conf 和 /etc/hosts 的增强版
+dnsmasq 在本地建立 DNS 服务器的作用是，缓存 DNS 结果，自定义 DNS 解析值，是 `/etc/resolv.conf` 和 `/etc/hosts` 的增强版
 
 ## 配置文件
 默认在 `/etc/dnsmasq.conf` 或者在 `/usr/local/etc/dnsmasq.conf` 或者通过 `ps -ef | grep dnsmasq` 查找
@@ -23,6 +23,9 @@ server=
 cache-size=
 # 缓存解析结果
 # 例如 cache-size=1000
+
+local-ttl=
+# 缓存时间(秒)
 ```
 
 
