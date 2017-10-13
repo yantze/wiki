@@ -77,3 +77,7 @@ curl -sS http://xxx.xxx/bar.zip
 
 ## See Also
 - [xargs](./xargs.md)
+
+## RES
+- [Everything curl](https://curl.haxx.se/docs/)
+    > 还挺全的
