@@ -140,6 +140,10 @@ git push
 git checkout master
 git pull
 ```
+delte submodule
+```
+git rm submodule/path
+```
 
 ## move master to origin/master
 ```
