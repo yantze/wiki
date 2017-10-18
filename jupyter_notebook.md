@@ -20,6 +20,13 @@ mkdir $HOME/nbs
 docker run -d -p 18888:8888 -v $HOME/nbs:/home/jovyan/work jupyter/base-notebook
 ```
 
+## 优秀的 Notebook Docker 镜像
+```
+https://hub.docker.com/r/dash00/datascience-notebook-opencv/
+https://github.com/trafferty/ipython-opencv-notebooks
+https://github.com/trafferty/docker-ipython-opencv
+docker run -it --rm -p 8001:8888 -v /home/yantze/dl/notebook:/opt/notebook crhan/conda-pyannote
+```
 
 ## Ref
 - [^1]: https://blog.windrunner.me/programming/jupyter-docker.html

@@ -11,6 +11,9 @@ os: linux, darwin
 
 ## Basic
 ```
+# 删除 vim 的 un~
+find . -type f -name "*.un~" -exec rm {} \;
+
 find . -name "*.log" -mtime +5 -ok rm {} \;
 find . -name "passwd*" -exec grep "root" {} \;
 find . -name "*.log" -exec mv {} .. \;
