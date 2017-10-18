@@ -1,6 +1,11 @@
 Syslog
 ---
 
+## Linux
+- Red Hat family distributions (including CentOS and Fedora) use /var/log/messages and /var/log/secure
+- Debian-family distributions use /var/log/syslog and /var/log/auth.log.
+- 使用了 `systemd`，日志保存在了二进制文件格式中，可能需要 `journalctl` 查看
+
 ## macOS
 - command
     ```
