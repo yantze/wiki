@@ -59,6 +59,15 @@ $$	当前Shell进程ID。对于 Shell 脚本，就是这些脚本所在的进程
 去掉重复的 PATH
 `typeset -aU path`
 
+出现重复 PATH 的原因
+```
+常见是在 tmux，原因是不管是 login shell 还是在 Interacitvie shell ，都会运行 `/etc/zshenv`、`~/.zshenv` ，而之后运行的 `/etc/zprofile` 只在 login shell 运行，里面有个命令 zsh_helper ，所以导致zshenv 里面运行的 PATH 会被重复声明。
+
+解决方法：
+在 tmux.conf 中添加，让 tmux 不用 login shell 方式进入，就不会读取 zprofile
+set -g default-command $SHELL
+```
+
 记录root登录的次数
 `last | grep root | cut -d “ “ -f 1 | wc -l`
 
@@ -67,4 +76,4 @@ $$	当前Shell进程ID。对于 Shell 脚本，就是这些脚本所在的进程
 
 ## Reference
 - [ref](http://c.biancheng.net/cpp/view/2739.html)
-
+- [duplicate PATH](http://chenyufei.info/blog/2014-03-04/zsh-tmux-osx-set-correct-path/)
