@@ -1,4 +1,4 @@
-# SED, AWK, TEE, READ, CUT, TR,  ECHO, WC 文字处理流
+# SED, AWK, TEE, READ, CUT, TR,  ECHO, WC 文字处理流, od, read
 
 ```
 1 dirname $0
