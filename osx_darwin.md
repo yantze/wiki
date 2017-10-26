@@ -32,6 +32,13 @@ sudo networksetup -setdnsservers Wi-Fi 1.2.3.4
 /usr/sbin/networksetup -getdnsservers Wi-Fi
 ```
 
+## OSX 命令介绍
+```
+# unload specific kernel extensions
+kextunload -b com.apple.filesystems.smbfs
+# launchctl: 启动服务设置
+```
+
 ## OSX Services
 
 > 建议使用 Setting 中的 File Shairing 功能， ftp server 配置太不方便，建立一个账户即可
