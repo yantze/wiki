@@ -20,6 +20,11 @@ cat file | awk '! /something/'
 awk -F ':' '{print "filename:" FILENAME ",linenumber:" NR ",columns:" NF ",linecontent:"$0}' /etc/passwd
 ```
 
+- last col
+```
+echo -e 'one two three\nfour five six\nseven eight nine' | awk '{print $NF}'
+```
+
 ## Res
 - http://www.isjian.com/linux/awk-format-print/
 
