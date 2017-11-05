@@ -279,6 +279,11 @@ $ false; $? =>  1
 如果这个命令是一串管道符连接和多个命令，怎么知道每个命令的退出码？
 你可以使用 PIPESTATUS环境变量。比如这个测试：`true | false | true; echo "${PIPESTATUS[@]}"`
 
+### 语法检查
+使用 `shellcheck` 检查 bash 语法，vim 插件 `Syntastic` 可自动检测 `shellcheck`，常见语法问题：
+- 把 ``(反引号) 改成 $()
+常见不好的代码可参考这里：[Gallery of bad code](https://github.com/koalaman/shellcheck#gallery-of-bad-code)
+
 
 ## Other
 - [BashGuide](http://mywiki.wooledge.org/BashGuide)
