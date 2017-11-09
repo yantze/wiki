@@ -294,6 +294,12 @@ rwx+
 rwx@ 
 ```
 
+### CodeSign
+按链接操作，https://sourceware.org/gdb/wiki/BuildingOnDarwin
+```
+codesign -s gdb-cert /usr/local/bin/gdb
+```
+
 ## Reference
 - https://forums.macrumors.com/threads/setting-ftp-chroot-directory.1553071/
 - https://github.com/icymind/VRouter
