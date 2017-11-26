@@ -284,6 +284,10 @@ $ false; $? =>  1
 - 把 ``(反引号) 改成 $()
 常见不好的代码可参考这里：[Gallery of bad code](https://github.com/koalaman/shellcheck#gallery-of-bad-code)
 
+### 脚本头部参数
+加上 set -eu
+- '-e' 表示一有错误，立刻中断脚本执行。
+- '-u'表示用到不存在的环境变量，就报错。
 
 ## Other
 - [BashGuide](http://mywiki.wooledge.org/BashGuide)
