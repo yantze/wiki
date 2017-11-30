@@ -7,6 +7,14 @@ os: darwin
 
 # OSX Darwin
 
+## 安装 Command line Tools for `xcrun`
+```
+xcode-select --install
+```
+
+## 设置 Finder
+在 Finder 的 Preferences 中设置一下，包括扩展名、左侧列表、新建窗口行为
+
 ## 命令行常用
 > 需要加载 oh-my-zsh 的插件 `osx`, 查看 `oh-my-zsh.md` 文档
 ```

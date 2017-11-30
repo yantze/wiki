@@ -21,6 +21,28 @@ git help config # 获取帮助信息
 git config --global core.autocrlf input  # 提交到git是自动将换行符转换为lf
 ```
 
+插入 alias
+```
+git config --global alias.co checkout
+```
+~/.gitconfig
+```
+[alias]
+co = checkout
+cm = !git add -A && git commit -m
+ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+ec = config --global -e
+up = !git pull --rebase --prune $@ && git submodule update --init --recursive
+cob = checkout -b
+save = !git add -A && git commit -m 'SAVEPOINT'
+wip = !git add -u && git commit -m "WIP"
+undo = reset HEAD~1 --mixed
+amend = commit -a --amend
+wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
+bclean = "!f() { git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs git branch -d; }; f"
+bdone = "!f() { git checkout ${1-master} && git up && git bclean ${1-master}; }; f"
+```
+
 配置密钥
 ```
 ssh-keygen -t rsa -C yanhaijing@yeah.net  # 生成密钥
@@ -222,9 +244,18 @@ git push origin --delete branch_name
 ```
 
 ## ignore file
-- `git config --global core.excludesfile ~/.gitignore_global`
-- local projects `.gitignore`
-- `.git/info/exclude`
+Add ignore to global
+```
+git config --global core.excludesfile ~/.gitignore_global
+```
+Add to project ignore
+```
+`.gitignore`
+```
+Add to exclude in .git folder
+```
+.git/info/exclude
+```
 
 ## 通过单个文件查找以前的代码
 ```
@@ -275,9 +306,16 @@ git rev-parse HEAD~2
 ```
 
 ## 显示 git 相关账户的密码
+macOS:
 ```
 echo "protocol=https\nhost=github.com\n" | git credential-osxkeychain get
 ```
+
+## 概念
+** upstream & downstream **
+upstream 会在你本地建立分支时，后台更新分支到 remote
+downstream 与上相反
+
 
 
 
