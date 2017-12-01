@@ -1,5 +1,17 @@
 # About SSH
 
+## 常见配置
+保持 ssh 长时间链接有两种方法，一种是在本地的 ssh client 配置：
+```
+# /etc/ssh/ssh_config
+ServerAliveInterval 60
+```
+另外一种在 服务器端设置：
+```
+# /etc/ssh/sshd_config (注意文件名不同)
+ClientAliveInterval 60
+```
+
 ### ssh登陆
 我使用远程的方法：
 ```
@@ -147,3 +159,5 @@ change the login message motd(message of today)
 ```
 ssh remote tail -f /var/log/apache2/access.log 
 ```
+## Ref
+- http://linux-wiki.cn/wiki/zh-hans/%E9%81%BF%E5%85%8DSSH%E8%BF%9E%E6%8E%A5%E5%9B%A0%E8%B6%85%E6%97%B6%E9%97%B2%E7%BD%AE%E6%96%AD%E5%BC%80
