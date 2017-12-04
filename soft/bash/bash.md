@@ -10,6 +10,7 @@ echo set completion-ignore-case on | sudo tee -a /etc/inputrc
 对于 Ctrl+w 反向删除一个词
 ```
 # ~/.bashrc
-bind '\C-f:unix-filename-rubout'
+bind '"\C-w":backward-kill-word'
 ```
 或者直接 `Alt+BackSpace`，相同的功能
+
