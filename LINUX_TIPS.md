@@ -339,7 +339,19 @@ dev
 二进制 text2bin test2hex
 //有格式的解释二进制文件: [ [iteration_count]/byte_count ] "format"
 hexdump -e '1/1 "%i " 1/2 "%i " 2/4 "%i "  "\n"' data2bin
+
+hexdump -n 32 -C tmux-client-25880.log
+# -n 解析字节数
+# -C 左边数值右边 ascii
+hexdump -n 12 -x tmux-client-25880.log
+# -x 显示十六进制
+# -b 显示二进制
+# -d 显示十进制
+
 xxd
+xxd -r
+
+od -c text2bin
 ```
 
 
