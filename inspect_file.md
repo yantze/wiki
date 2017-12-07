@@ -46,3 +46,9 @@ tail -n 2 unknownfile
 od -c unknownfile
 ```
 
+# Res
+- [hexdump for VSCode](https://marketplace.visualstudio.com/items?itemName=slevesque.vscode-hexdump)
+- vim `%!xxd` and `%!xxd -r`
+
+# Ref
+- http://www.sanfoundry.com/10-practical-hexdump-command-usage-examples-in-linux/
