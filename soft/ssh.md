@@ -15,7 +15,8 @@ ClientAliveInterval 60
 ### ssh登陆
 我使用远程的方法：
 ```
-ssh-gen
+ssh-keygen -t rsa -b 4096
+# ssh-add ~/.ssh/id_rsa_github
 ssh-copy-id -i ~/.ssh/id_rsa.pub user@localhost
 # 取出private key,然后用 puttygen转换成 putty的 private key，登陆的时候导入
 ```
