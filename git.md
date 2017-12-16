@@ -45,7 +45,8 @@ bdone = "!f() { git checkout ${1-master} && git up && git bclean ${1-master}; };
 
 配置密钥
 ```
-ssh-keygen -t rsa -C yanhaijing@yeah.net  # 生成密钥
+ssh-keygen -t rsa -b 4096 -C yanhaijing@yeah.net  # 生成密钥
+# ssh-add ~/.ssh/id_rsa
 ssh -T git@github.com  # 测试是否成功
 ```
 

@@ -335,13 +335,6 @@ dev
 /dev/zero
 ```
 
-```
-二进制 text2bin test2hex
-//有格式的解释二进制文件: [ [iteration_count]/byte_count ] "format"
-hexdump -e '1/1 "%i " 1/2 "%i " 2/4 "%i "  "\n"' data2bin
-xxd
-```
-
 
 
 ```
