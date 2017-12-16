@@ -41,6 +41,13 @@ curl -i/-I -u "username":"password"
 
 ```
 
+### 代理
+```
+-x, --proxy <[protocol://][user:password@]proxyhost[:port]>
+protocol can `socks5h://` equal to --socks-hostname
+`socks5://` equal to --socks
+```
+
 ### 防 block 程序
 ```bash
 curl --referer "http://xun.im/" -Lo "b.jpeg" "http://read.html5.qq.com/image?src=forum&q=5&r=0&imgflag=7&imageUrl=http://mmbiz.qpic.cn/mmbiz/4SzSI83cwBUnBJoBy4Hjp2cYfdE6uBJHicw0d4178n3nvDjx6syBZYBEZLOuPxd75sJpLk3ib5ngXA8334UDUhvA/0?wx_fmt=jpeg"
