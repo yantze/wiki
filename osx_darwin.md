@@ -104,6 +104,10 @@ yantze
 ```
 sudo /Volumes/MacX/Install OS X El Capitan.app/Contents/Resources/createinstallmedia --volume /Volumes/Untitled --applicationpath /Volumes/MacX/Install OS X El Capitan.app --nointeraction
 ```
+更多信息在：https://support.apple.com/en-us/HT201372
+
+
+苹果这种推荐的命令行方式并没有那么全能，Install
 
 
 ### 查看负载均衡
