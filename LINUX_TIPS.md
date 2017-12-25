@@ -388,4 +388,8 @@ setsebool httpd_enable_homedirs on
 重启可正常
 ```
 
+## log
+usermod 问题
+nginx /usr/share/nginx/index.html
+
 ####### vim: set expandtab:
