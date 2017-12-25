@@ -184,6 +184,10 @@ file1 ­nt file2 file1 比 file2 新时返回真，修改时间更新
 file1 ­ot file2 file1 比 file2 旧时返回真，修改时间更旧
 ```
 
+条件语句取反
+```
+[[ ! -d /xxx ]]
+```
 
 example
 ```
