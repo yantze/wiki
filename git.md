@@ -318,7 +318,45 @@ upstream 会在你本地建立分支时，后台更新分支到 remote
 downstream 与上相反
 
 
+## 比较两个 commit 的文件变动
+一半是 直接 git reset --hard 到终点，git reset 到起点，其中的变化就是文件的变化
 
+## 合并多个 commit
+合并多个 commit 可以使用 CherryPick
+
+
+## stash 流
+```
+git stash
+git stash list
+git stash pop
+```
+出现 stash pop 冲突，两种方法解决
+```
+git stash pop; git stash drop
+# 冲突显示在文件里面,然后 drop 掉最近的这次记录
+```
+删除冲突文件，不过要用 git 内部的方法
+```
+git rm 冲突的文件，然后再次 git stash pop
+```
+
+
+## 实现文件修改的部分提交
+比如一个文件有三处地方有修改，可以通过 GUI 软件提交，常用的是 `Github Desktop` 相关的内容
+
+## Proxy
+> 不方便注明出处的摘选
+HTTP/HTTPS 协议，比如 `git clone https://github.com/github/hub.git`，使用下面的命令为 github.com 域名配置代理
+```
+git config --global http.https://github.com.proxy http://127.0.0.1:110
+```
+
+对于 SSH 协议，比如 `git clone git@github.com:github/hub.git`，需要在文件 ~/.ssh/config 中添加
+```
+host github.com
+    ProxyCommand /usr/bin/nc -X connect -x 127.0.0.1:110 %h %p
+```
 
 
 ## GUI clients
