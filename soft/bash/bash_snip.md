@@ -1,5 +1,15 @@
 # Bash 常见snip
 http://type.so/linux/bash-tips-2.html
+
+获取文件绝对路径
+```
+get_abs_filename() {
+  # $1 : relative filename
+  echo "$(\cd "$(\dirname "$1")" && \pwd)/$(\basename "$1")"
+}
+```
+
+
 取出文件列表
 ```
 # 防止WordSplitting，避免使用$(ls *.txt)
