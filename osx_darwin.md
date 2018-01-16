@@ -103,6 +103,9 @@ yantze
 制作OSX移动u盘
 ```
 sudo /Volumes/MacX/Install OS X El Capitan.app/Contents/Resources/createinstallmedia --volume /Volumes/Untitled --applicationpath /Volumes/MacX/Install OS X El Capitan.app --nointeraction
+# OR
+APP=/Volumes/DISK/Install\ macOS\ High\ Sierra.app
+sudo $APP/Contents/Resources/createinstallmedia --volume /Volumes/SIX --applicationpath $APP --nointeraction
 ```
 更多信息在：https://support.apple.com/en-us/HT201372
 
