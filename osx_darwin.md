@@ -110,7 +110,22 @@ sudo $APP/Contents/Resources/createinstallmedia --volume /Volumes/SIX --applicat
 更多信息在：https://support.apple.com/en-us/HT201372
 
 
-苹果这种推荐的命令行方式并没有那么全能，Install
+制作 ISO 镜像优盘
+1. 使用 dd 刻录 iso 到优盘
+BSD dd
+```
+gdd if=xx of=xx
+给进程发 SIGINFO 信号看进度（ kill -SIGINFO <pid>）</pid>
+https://www.v2ex.com/t/419794#reply18
+```
+
+GNU dd
+```
+brew install coreutils
+gdd if=xx of=xx status=progress
+```
+
+2. 使用 `brew cask install etcher` UI 软件刻录 iso 到优盘
 
 
 ### 查看负载均衡

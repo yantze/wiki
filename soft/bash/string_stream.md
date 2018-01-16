@@ -108,3 +108,10 @@ line 1
 line 2
 EOT
 ```
+
+### 从 func 中读取 stdin
+```
+cat -
+read
+< 文件重定向也可以
+```

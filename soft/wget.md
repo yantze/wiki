@@ -32,5 +32,10 @@ wget -r -np -nd --accept=iso http://example.com/centos-5/i386/
 wget --recursive --page-requisites --html-extension --convert-links --no-parent --level=0 -e robots=off --user-agent='mozilla' --random-wait --adjust-extension --tries=3 --restrict-file-names=windows --domains wordpress.org codex.wordpress.org
 ```
 
+## 文件列表
+```
+wget -i file.txt
+```
+
 ## REF
 - https://linuxtoy.org/archives/wget-tips.html
