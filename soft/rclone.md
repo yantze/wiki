@@ -17,3 +17,8 @@ umount ~/b2
 ```
 rclone sync ./document b3:yantze
 ```
+
+## ls dir
+```
+rclone ls b2_code:bucket-name
+```
