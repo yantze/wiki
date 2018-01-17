@@ -4,7 +4,7 @@
 # Flush all current rules from iptables
  iptables -F
 
-#限定apache每秒钟连接数为1,峰值为3
+# 限定apache每秒钟连接数为1,峰值为3
 iptables -A INPUT -d 172.16.100.1 -p tcp –dport 80 -m limit –limit 1/second –limit-burst 3 -j ACCEPT
 c 代表请求的网页数目,越大越准
 n 代表并发2000
@@ -25,7 +25,7 @@ n 代表并发2000
 # Accept packets from trusted IP addresses
  iptables -A INPUT -s 192.168.0.4 -m mac --mac-source 00:50:8D:FD:E6:32 -j ACCEPT
 
-#Interface
+# Interface
 iptables -A INPUT -i lo -j ACCEPT
 iptables -A INPUT -i eth0 -j ACCEPT
 
