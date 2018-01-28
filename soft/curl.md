@@ -80,7 +80,15 @@ tail -F access.log > tmp.log
 curl -sS http://xxx.xxx/bar.zip
 # -s slient mode
 # -S show error
+
 ```
+urlencode
+CURL 想要做 urlencode，需要搭配 --data-urlencode 的參數(--data-urlencode 需要另外搭配 -G)，另外不需要 encode 的，一樣可以帶在網址後面即可。
+
+直接看範例比較容易懂，下述範例要傳送三個參數：msg、text、channel，channel 不需要 urlencode，先直接帶在後面即可。
+
+curl -X GET -G --data-urlencode "msg=abcs" --data-urlencode "text=中文" "http://example.com/?channel=blog"
+http://feedproxy.google.com/~r/tsungblog/~3/pz1PILepFbk/
 
 ## See Also
 - [xargs](./xargs.md)
