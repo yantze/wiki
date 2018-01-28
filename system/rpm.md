@@ -13,3 +13,8 @@ pip show -f <package>
 ```
 rpm -qi <package>
 ```
+
+## Remove package
+```
+rpm -evv <package>
+```
