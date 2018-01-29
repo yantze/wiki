@@ -65,7 +65,7 @@ usermod -aG docker ${USER}
 # 查看是否在 docker 组中
 groups ${USERS}
 # 取掉 127.0.0.1 地址
-unset $DOCKER_HOST
+unset DOCKER_HOST
 ```
 
 
