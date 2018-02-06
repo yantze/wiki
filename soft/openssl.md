@@ -45,6 +45,11 @@ openssl req \
 openssl req -newkey rsa:2048 -nodes -keyout key.pem -x509 -days 365 -out cert.pem -subj "/C=CN/ST=Utah/L=Provo/O=Vastiny Inc/CN=127.0.0.1"
 ```
 
+添加到 `Keychain Access.app` 中，
+```
+sudo security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain .ssl/ihower.crt
+```
+
 
 ## 设置 nginx 监听 443 端口
 ```

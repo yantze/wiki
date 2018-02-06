@@ -322,7 +322,10 @@ downstream 与上相反
 一半是 直接 git reset --hard 到终点，git reset 到起点，其中的变化就是文件的变化
 
 ## 合并多个 commit
-合并多个 commit 可以使用 CherryPick
+合并多个 commit 可以使用 CherryPick, 把已经提交的 commit, 从一个分支放到另外一个分支
+```
+git cherry-pick <commit id>
+```
 
 
 ## stash 流
