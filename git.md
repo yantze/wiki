@@ -163,6 +163,11 @@ git push
 git checkout master
 git pull
 ```
+add submodule
+```
+git submodule add <repo path> ./path/to/sub-directory
+```
+
 delte submodule
 ```
 git rm submodule/path
