@@ -38,7 +38,6 @@ curl -X POST -H Content-Type: application/json -d {"value2":"ifttt"} https://mak
 curl -u "yantze" -d '{"scopes":["public_repo"]}' https://api.github.com/users/yantze\?callback\=haha
 curl -u "yantze" -H "Accept: application/vnd.github.v3.text+json"  https://api.github.com/users/yantze
 curl -i/-I -u "username":"password"
-
 ```
 
 ### 代理

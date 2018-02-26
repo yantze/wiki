@@ -67,6 +67,22 @@ groups ${USERS}
 # 取掉 127.0.0.1 地址
 unset DOCKER_HOST
 ```
+### docker build 和 docker-compose 的代理
+在 `docker-compose.yaml` 中添加 args
+```
+version: '2'
+
+services:
+  node-server:
+    build:
+      context: ./node-server
+      dockerfile: Dockerfile
+      args:
+        - http_proxy
+        - https_proxy
+```
+
+在外部 `http_proxy=http://docker.for.mac.localhost:6152 https_proxy=http://docker.for.mac.localhost:6152 docker-compose up` 就可以使用代理运行容器中的`git` 和 `npm`，如果是 windows `docker.for.mac.localhost` 就是 `localhost`
 
 
 # Res
