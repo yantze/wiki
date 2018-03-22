@@ -27,6 +27,8 @@ array=(
 "bbb"
 "ddd"
 )
+
+for i in {1..5}; do echo $i; done
 ```
 
 比较
@@ -76,6 +78,16 @@ do
     commands
 done
 ```
+生成序列
+```
+for i in {1..5}; do echo $i; done
+
+END=10
+for i in `seq 1 $END`; do echo $i; done
+
+for ((i=0;i<$END;i++)) do echo $i; done
+```
+
 while 语句
 ```
 while test_condition_is_true
