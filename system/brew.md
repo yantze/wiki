@@ -10,3 +10,6 @@
     ```
     brew services restart dnsmasq
     ```
+
+## 设置镜像源
+- https://mirrors.ustc.edu.cn/help/brew.git.html
