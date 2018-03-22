@@ -357,6 +357,12 @@ git rm 冲突的文件，然后再次 git stash pop
 > 不方便注明出处的摘选
 HTTP/HTTPS 协议，比如 `git clone https://github.com/github/hub.git`，使用下面的命令为 github.com 域名配置代理
 ```
+# http 代理
+git config --global http.proxy http://127.0.0.1:110
+# socks5 代理
+git config --global http.proxy socks5://127.0.0.1:1080
+
+# 只为一个网站配置代理
 git config --global http.https://github.com.proxy http://127.0.0.1:110
 ```
 
@@ -366,6 +372,19 @@ host github.com
     ProxyCommand /usr/bin/nc -X connect -x 127.0.0.1:110 %h %p
 ```
 
+## 查看文件历史
+文件 commit log
+```
+git log -- filename
+```
+文件 详细的修改
+```
+git log -p -- filename
+```
+使用 gitk 查看
+```
+gitk filename
+```
 
 ## GUI clients
 - git gui
