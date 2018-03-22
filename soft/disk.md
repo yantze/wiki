@@ -66,6 +66,11 @@ df -hl
 ```
 https://bbs.aliyun.com/read/240088.html
 
+### 修复磁盘
+```
+fsck
+```
+
 
 
 ## more
