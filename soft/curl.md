@@ -20,8 +20,7 @@ curl -b cookiefile url
 # cookie format: semicoion separated name=value pairs
 curl -b "name=pairs;" url
 # store cookie after complete visit page
-curl -c cookiefile url 
-
+curl -c cookiefile url
 ```
 
 
@@ -39,6 +38,14 @@ curl -u "yantze" -d '{"scopes":["public_repo"]}' https://api.github.com/users/ya
 curl -u "yantze" -H "Accept: application/vnd.github.v3.text+json"  https://api.github.com/users/yantze
 curl -i/-I -u "username":"password"
 ```
+
+### Express 的参数
+```
+-d "xxx=bbbb"  express 接受的是 req.body
+url?xxx=bbbb express 接收的是 req.query
+/user/idxxx express 接收的是 req.params
+```
+
 
 ### 代理
 ```
