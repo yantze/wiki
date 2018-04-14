@@ -172,6 +172,7 @@ delte submodule
 ```
 git rm submodule/path
 ```
+more: https://segmentfault.com/a/1190000003076028
 
 ## move master to origin/master
 ```
