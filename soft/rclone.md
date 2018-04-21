@@ -8,6 +8,7 @@
 ```
 
 ## rclone mount
+如果是 mac 需要先安装 FUSE
 ```
 rclone mount b2:dir ~/b2
 umount ~/b2
