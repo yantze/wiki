@@ -1,5 +1,10 @@
 # windows command helpper
 
+## alias
+```
+DOSKEY n=npm run $*
+```
+
 ## type [drive:][path]filename
 ```
 Displays the contents of a text file or files.
