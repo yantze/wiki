@@ -56,11 +56,6 @@ ps -ef
 # c column means the cpu utilization, please RTFM
 ```
 
-linux 找出两个文件中相同的行(diff相反)
-```
-grep -f file.a file.b
-```
-
 extundelete 文件恢复工具
 ```
 yum install e2fsprogs-devel e2fsprogs-static
