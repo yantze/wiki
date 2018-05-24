@@ -4,9 +4,11 @@ os: linux, darwin
 
 ---
 
-# lsof: list open file
+lsof: list open file
+====================
 
-## Practical case
+Practical case
+--------------
 
 List all listening ports in OS X (tested with Mavericks)
 
@@ -35,10 +37,15 @@ lsof -u <username> # lsof -u^root 非 root 用户
 # Kill all Activity of Particular User
 kill -9 `lsof -t -u tecmint`
 
-# See this primer: http://www.danielmiessler.com/study/lsof/
+# check process port (red hat)
+netstat –nltp | grep pid
+
+# check process port (ubuntu)
+netstat -anp | grep pid
 ```
 
-## Other
+Other
+-----
 [linux only] file was deleted  when the file was opened by other pid. lsof will display the fd with `(deleted)` flag. this can recovery.
 ```
 cp /proc/<PID>/fd/<fd> ~/recovery_file
@@ -51,7 +58,8 @@ lsof -Pn -i4
 ```
 
 
-## Output description
+Output description
+------------------
 ```
 FD - File Descriptor
 lsof 输出有 FD 列，由两部分组成。
@@ -68,6 +76,11 @@ NODE
 inode number in filesystem
 ```
 
-## See Also
-- [fuser](./fuser.md)
-- [netstat](./netstat.md)
+Ref
+---
+* http://www.danielmiessler.com/study/lsof/
+
+See Also
+--------
+* [fuser](./fuser.md)
+* [netstat](./netstat.md)
