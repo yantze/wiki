@@ -12,6 +12,13 @@ os: darwin
 xcode-select --install
 ```
 
+## 日志
+系统日志
+- `/private/var/db/diagnostics/shutdown.log`
+
+应用日志
+- `/Users/yantze/Library/Logs/Adobe`
+
 ## 设置 Finder
 在 Finder 的 Preferences 中设置一下，包括扩展名、左侧列表、新建窗口行为
 
@@ -40,11 +47,31 @@ sudo networksetup -setdnsservers Wi-Fi 1.2.3.4
 /usr/sbin/networksetup -getdnsservers Wi-Fi
 ```
 
-## OSX 命令介绍
+## OSX 设置命令介绍
+Launchctl:
 ```
 # unload specific kernel extensions
 kextunload -b com.apple.filesystems.smbfs
 # launchctl: 启动服务设置
+
+```
+Tccutil:
+```
+# 重置麦克风所有隐私权限
+tccutil reset Microphone
+
+# brew install tccutil 扩展版
+# `~/Library/Application\ Support/com.apple.TCC/TCC.db`
+```
+Defaults:
+```
+defaults find com.apple.com
+```
+PlistBuddy:
+```
+man PlistBuddy
+
+/usr/libexec/PlistBuddy /var/db/SystemPolicyConfiguration/Default.plist
 ```
 
 ## OSX Services
@@ -329,6 +356,12 @@ rwx@
 ```
 codesign -s gdb-cert /usr/local/bin/gdb
 ```
+
+### plist 文件
+有些 Mac OS 里面是 xml 结尾的乱码文件，其实是 plist, 改名后，预览就能看到内容.
+其实读内容用 `/usr/libexec/PlistBuddy`
+导出内容用 `plutil`
+
 
 ## Reference
 - https://forums.macrumors.com/threads/setting-ftp-chroot-directory.1553071/
