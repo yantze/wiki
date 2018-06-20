@@ -228,7 +228,7 @@ function func() {
 
 ### for advance
 ```
-for ((i=1;i<=100;i++)); 
+for ((i=1;i<=100;i++));
 do 
    # your-unix-command-here
    echo $i
