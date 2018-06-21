@@ -13,12 +13,11 @@ Practical case
 List all listening ports in OS X (tested with Mavericks)
 
     sudo lsof -i4 -P -n |grep LISTEN
-
+    sudo lsof -i -n -P | grep TCP | grep process_id  // 查看监听的端口
 
 ```
 # lsof -i [46][protocol][@hostname|hostaddr][:service|port]
 lsof -i:22 //查看22端口在运行什么程序
-lsof -i -n -P // 查看监听的端口
 
 sudo lsof -i 4@127.0.0.1:80=8888   // List all IPv4 network files with port ranges
 sudo lsof -i6                   // List all IPv6 network files
