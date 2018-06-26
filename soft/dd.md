@@ -211,8 +211,8 @@ Please submit a full bug report,
 主要原因大体上是因为内存不足,有点坑 临时使用交换分区来解决吧
  
 ```
-sudo dd if=/dev/zero of=/swapfile bs=1024 count=524288
-创建一个足够大的文件（此处为256M）
+sudo dd if=/dev/zero of=/swapfile bs=1024 count=1048576
+创建一个足够大的文件（此处为256M）, 或者 512M count=524288
 sudo mkswap /swapfile
 把这个文件变成swap文件
 sudo chmod 600 /swapfile
