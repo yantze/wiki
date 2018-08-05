@@ -6,6 +6,11 @@ echo 'a.json' | xargs cat
 echo 'a.json' | cat
 ```
 
+重命名
+```
+
+```
+
 
 用 xargs 下载多个文件
 ```

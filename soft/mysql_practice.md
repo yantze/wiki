@@ -541,6 +541,22 @@ begin
   end $$
 ```
 
+## Shell 执行 MySql 问题
+通过脚本执行代码
+```bash
+mysql -hlocalhost -uroot -p$mysqlpass <<EOF
+USE mysql;
+DELETE FROM user WHERE User!='root' OR (User = 'root' AND Host != 'localhost');
+UPDATE user set password=password('password') WHERE User='root';
+DELETE FROM mysql.user WHERE user = '';
+insert into user(Host,User,Password) values("localhost","radius",password("$radiuspass"));
+insert into user(Host,User,Password) values("%","radius",password("$radiuspass"));
+GRANT ALL PRIVILEGES ON radius.* TO 'radius'@'localhost' IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON radius.* TO 'radius'@'%' IDENTIFIED BY 'password';
+FLUSH PRIVILEGES;
+EOF
+```
+
 
 ## 参考
 

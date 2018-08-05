@@ -18,7 +18,7 @@ find . -name "*.log" -mtime +5 -ok rm {} \;
 find . -name "passwd*" -exec grep "root" {} \;
 find . -name "*.log" -exec mv {} .. \;
 find . -name "*.log" -exec cp {} test3 \;
-find . -name "*.log" print0 | xargs -0 cat | wc -l
+find . -name "*.log" -print0 | xargs -0 cat | wc -l
 find . -name '*.JPG' -exec rename "s/.JPG/.jpg/g" \{\} \; //修改文件扩展名
 
 find . -type f -exec ls -l {} \;

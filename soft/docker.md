@@ -31,6 +31,10 @@ docker run -it --rm -p 8000:8888 -v ./pyannote-data /opt/pyannote-data images/im
 ```
 docker exec -it some-mariadb bash
 ```
+获取容器进程列表
+```
+docker top <container-id>
+```
 
 ### Delete container
 ```
