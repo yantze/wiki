@@ -387,6 +387,32 @@ git log -p -- filename
 gitk filename
 ```
 
+## Git Merge
+All
+```
+# keep remote files
+git merge --strategy-option theirs
+# keep local files
+git merge --strategy-option ours
+```
+
+Single File
+```
+// keep the remote file
+git checkout --theirs /path/to/file
+
+// keep local file
+git checkout --ours /path/to/file
+```
+
+Pull
+```
+// keep remote files
+git pull -Xtheirs
+// keep local files
+git pull -Xours
+```
+
 ## GUI clients
 - git gui
 - gitup
@@ -402,3 +428,4 @@ gitk filename
 - 图解Git
 - learnGitBranching
 - http://yanhaijing.com/git/2014/11/01/my-git-note/
+- https://stackoverflow.com/questions/6650215/how-to-keep-the-local-file-or-the-remote-file-during-merge-using-git-and-the-com
