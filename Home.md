@@ -11,6 +11,10 @@
 - `m man` 搜索指定命令，用 [cheat](https://github.com/chrisallenlane/cheat) 命令查找
 > 注：m 命令在 [dotfiles](https://github.com/yantze/dotfiles/blob/master/bin/m) 中
 
+## Other
+- 分析当前命令参数的作用: http://explainshell.com/
+- 获取当前命令的 cheat list: `curl cheat.sh/unzip`
+
 
 ## License
 ["署名-非商业性使用" 许可证](https://creativecommons.org/licenses/by-nc/4.0/deed.zh)
