@@ -8,7 +8,6 @@
 ```
 
 ## rclone mount
-如果是 mac 需要先安装 FUSE
 ```
 rclone mount b2:dir ~/b2
 umount ~/b2
@@ -19,7 +18,11 @@ umount ~/b2
 rclone sync ./document b3:yantze
 ```
 
-## ls dir
+## Basic
+列出当前目录
 ```
-rclone ls b2_code:bucket-name
+rclone lsd custom-name: --max-depth 1
 ```
+
+## Ref
+https://rclone.org/docs/

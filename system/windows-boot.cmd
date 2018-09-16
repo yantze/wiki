@@ -12,7 +12,10 @@ boot loader 和 kernel 是可以不同分区的，主要 boot loader 是主逻�
 bootrec /fixboot bootrec /rebuildbcd
 ```
 
-
+## 制作ISO 优盘
+- https://rufus.akeo.ie/
+- https://github.com/pbatard/rufus/wiki/FAQ
+- https://github.com/pbatard/rufus
 
 ## Ref
 - https://twitter.com/Blankwonder/status/902585030127390720 
