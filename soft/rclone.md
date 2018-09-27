@@ -19,7 +19,12 @@ rclone sync ./document b3:yantze
 ```
 
 ## Basic
-列出当前目录
+列出当前目录，会遍历所有文件，变得很长
+```
+ls dir
+```
+
+可以用 lsd ，不会遍历, 类似的还有 lsf, lsjson
 ```
 rclone lsd custom-name: --max-depth 1
 ```

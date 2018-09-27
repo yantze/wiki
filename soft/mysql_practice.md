@@ -23,6 +23,7 @@ mysql -uroot -hlocalhost -p
 创建用户
 ```
 create user admin@localhost identified by 'admins_password'
+create user 'admin'@'%' identified by 'admins_password';
 insert into mysql.user(Host,User,Password) values("localhost","phplamp",password("1234"));
 ```
 删除用户
