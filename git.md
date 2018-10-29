@@ -55,6 +55,7 @@ ssh -T git@github.com  # 测试是否成功
 git init # 初始化
 git status # 获取状态
 git add file # .或*代表全部添加
+git add -p # 可以让你挑选改动提交
 git commit -m "message" # 此处注意乱码
 git remote add origin git@github.com:yanhaijing/test.git # 添加源
 git push -u origin master # push同事设置默认跟踪分支

@@ -21,7 +21,7 @@ RedHat 系 `/var/log` 日志分析
     ```
 - GUI app: console
     ```
-    open /Applications/Utilities/Console.app
+    open /Applications/Utilities/Console.app --args arg1 arg2
     ```
 - Activity Monitor [GUI]
 
