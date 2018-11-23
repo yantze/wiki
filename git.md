@@ -287,7 +287,14 @@ git rev-list --all | xargs git grep <regexp>
 # Search only in some given files, for example xml files:
 git rev-list --all | xargs -I{} git grep <regexp> {} -- "*.xml"</regexp></regexp>
 
+
+
 # https://stackoverflow.com/questions/2928584/how-to-grep-search-committed-code-in-the-git-history
+```
+
+内置查找
+```
+git grep $regexp $(git rev-list --all)
 ```
 
 ## worktree 多分支并存
@@ -413,6 +420,27 @@ git pull -Xtheirs
 // keep local files
 git pull -Xours
 ```
+
+## 按本地最新的分支排序
+```
+git for-each-ref --sort=-committerdate refs/heads/
+
+# or using git branch (since version 2.7.0)
+git branch --sort=-committerdate  # DESC
+git branch --sort=committerdate  # ASC
+```
+
+Pretty print:
+```
+# ~/.gitconfig
+
+[alias]
+    br = "for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'"
+```
+
+[ref](https://stackoverflow.com/questions/5188320/how-can-i-get-a-list-of-git-branches-ordered-by-most-recent-commit)
+
+
 
 ## GUI clients
 - git gui
