@@ -23,6 +23,15 @@ curl -b "name=pairs;" url
 curl -c cookiefile url
 ```
 
+api json with curl
+```
+curl -i https://xxx.cn/api \
+  -d '{"id":"AA8","name":"xxx"}' \
+  -H 'Token: bbjdkfjdkfjdk' \
+  -H 'Content-Type: application/json; charset=utf-8'
+```
+> 表单提交可以参考下面的刷票记录
+
 
 post with curl
 ```
