@@ -55,6 +55,7 @@ revoke all on dbname.* from user@localhost;
 
 修改用户密码
 ```
+ALTER USER USER() IDENTIFIED BY 'abc';
 set password=password('123');
 SET PASSWORD FOR 'root'@'localhost' = PASSWORD('secret_password');
 update mysql.user set password=password('新密码') where User="phplamp" and Host="localhost";
@@ -84,34 +85,44 @@ set password=password('123');
 ```
 kill `cat /mysql-data-directory/hostname.pid`
 ```
->使用--skip-grant-tables 选项重启 mysqld
+>使用 mysqld_safe --skip-grant-tables 选项重启 mysqld
 用 mysql -h hostname mysql连接 mysqld服务器并且用一条 GRANT命令改变口令 。
 你也可以用 mysqladmin -h hostname -u user password 'new password'进行。
 用 mysqladmin -h hostname flush-privileges 或用 SQL 命令 FLUSH PRIVILEGES 来装载权限表.
 
-创建数据库：
-```
-CREATE DATABASE `dbname` /*!40100 COLLATE 'utf8_general_ci' */
-```
-
 ```
 service mysqld stop
 
-mysqld_safe --skip-grant-tables --user=mysql &
+mysqld_safe --skip-grant-tables --user=root &
 
-跳过授权表 mysql.uer mysql.db
 mysql -uroot
 
 set password=password("wei");
 // 用这条语句报错，就是因为加了--skip-grant-tables
 
 update user set password=password("wei") where user='root' and host='localhost'
-
 set password for root@localhost=password("wei");
-set password=password("wei"); 
 ```
 
+Mysql 8.0+ 后 mysql.user 没有 password 字段了，改名叫 auth_string, 要使用新的方法：
 
+直接执行第二行命令是不行的，因为会报错： `ERROR 1290 (HY000): The MySQL server is running with the --skip-grant-tables option so it cannot execute this statement`, 所以要用 `flush privileges;` 去装载权限表
+```
+mysql> flush privileges;
+mysql> ALTER USER 'root'@'localhost' IDENTIFIED BY 'password';
+mysql> flush privileges;
+```
+
+mysql 网站提供的语法应该都可以使用了：
+https://dev.mysql.com/doc/refman/8.0/en/set-password.html
+https://dev.mysql.com/doc/refman/8.0/en/linux-installation-yum-repo.html
+
+
+初始化 data 数据
+```
+# 先看看帮助命令 mysqld --help --verbose
+bin/mysqld --initialize --user=mysql
+```
 
 
 
