@@ -11,3 +11,7 @@ MongoDB
 db.table.find({"title": "testtitle"})
 db.table.remove({"title": "testtitle"})
 ```
+
+创建一个 collection
+-------------------
+

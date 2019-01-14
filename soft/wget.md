@@ -30,6 +30,9 @@ wget -r -np -nd --accept=iso http://example.com/centos-5/i386/
 
 
 wget --recursive --page-requisites --html-extension --convert-links --no-parent --level=0 -e robots=off --user-agent='mozilla' --random-wait --adjust-extension --tries=3 --restrict-file-names=windows --domains wordpress.org codex.wordpress.org
+
+# simple
+wget --recursive --level=0 --tries=3 --accept=gz --domains github.com https://github.com/xxx/xxx/releases/tag/v0.9.1
 ```
 
 ## 文件列表
