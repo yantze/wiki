@@ -1,5 +1,11 @@
 # windows command helpper
 
+## Command Setting
+设置活动页，也就是设置当前内容的编码, 如果是中文系统，就是 936，如果想正常显示其它字体，就可以用 65001 应该是 unicode 的代码
+```
+chcp 65001
+```
+
 ## alias
 ```
 DOSKEY n=npm run $*
