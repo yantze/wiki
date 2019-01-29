@@ -271,6 +271,33 @@ dd if=/dev/sda of=/dev/sda
 ```
 
 
+## The Cult of DD
+
+```
+# Obscure dd version
+dd if=image.iso of=/dev/sdb bs=4M
+
+# Equivalent cat version
+cat image.iso >/dev/sdb
+
+# 4M is buffer size while copying, let cat automatically figure out.
+
+# Cat version with progress meter
+cat image.iso | pv >/dev/sdb
+```
+
+Create a fixed size file
+```
+# Obscure dd version
+dd if=/dev/zero of=image.iso bs=4MB count=25
+
+# Regular head version
+head -c 100MB /dev/zero >image.iso
+```
+
+
+
+
 ## Reference
 - http://www.linuxso.com/command/dd.html
-
+- https://eklitzke.org/the-cult-of-dd
