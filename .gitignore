@@ -2,3 +2,5 @@
 _book
 .Archive
 cover.html
+.markeditor
+.sync
