@@ -4,7 +4,7 @@
 Matplotlib 和 Notebook 笔记在 pynb_study.ipynb 中.
 
 
-## In Docker [^1]
+## [In Docker][^1]
 
 - avalible container
     base-notebook、minimal-notebook、all-spark-notebook、pyspark-notebook、scipy-notebook、datascience-notebook、tensorflow-notebook 以及 r-notebook
@@ -28,9 +28,6 @@ https://github.com/trafferty/docker-ipython-opencv
 docker run -it --rm -p 8001:8888 -v /home/yantze/dl/notebook:/opt/notebook crhan/conda-pyannote
 ```
 
-## Ref
-- [^1]: https://blog.windrunner.me/programming/jupyter-docker.html
-
 ## Resources
 - http://github.com/jupyter/jupyter/wiki/A-gallery-of-interesting-Jupyter-Notebooks
 - http://jupyter.readthedocs.io/en/latest/
@@ -40,3 +37,5 @@ docker run -it --rm -p 8001:8888 -v /home/yantze/dl/notebook:/opt/notebook crhan
 
 - http://www.scipy-lectures.org/advanced/image_processing/#statistical-information
 - http://www.scipy-lectures.org/index.html
+
+[^1]: https://blog.windrunner.me/programming/jupyter-docker.html 'In Docker'
