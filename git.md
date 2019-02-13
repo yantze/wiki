@@ -440,6 +440,14 @@ Pretty print:
 
 [ref](https://stackoverflow.com/questions/5188320/how-can-i-get-a-list-of-git-branches-ordered-by-most-recent-commit)
 
+## git diff
+忽略指定的文件和文件夹
+```
+git diff 993eb26 eadf8f5 -- . ':!package-lock.json'
+```
+https://stackoverflow.com/questions/4380945/exclude-a-directory-from-git-diff
+
+
 
 
 ## GUI clients
