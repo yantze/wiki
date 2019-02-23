@@ -10,6 +10,10 @@
     ```
     brew services restart dnsmasq
     ```
+- 获取指定软件的目录
+```
+brew --prefix git
+```
 
 ## 设置镜像源
 - https://mirrors.ustc.edu.cn/help/brew.git.html
