@@ -100,6 +100,22 @@ awk 用法：awk ' pattern {action} ‘
 　　ORS 输出记录分隔符 
 ```
 
+tr 命令
+-------
+
+解码:对百分号解码的一种方法
+
+```
+echo -n %e8%a7%a3%e7%a0%81 | tr -d % | xxd -r -p
+```
+`xxd`的 `-r` 是让 `hexdump` 格式转为正常的二进制格式， `-p` 是告诉 `xxd` 要转换的内容没有多余的 `ascii` 内容
+
+
+针对有些百分号编码的是 GBK 或者 GB2312 等字符集，可以在后面加上 `iconv -f gb2312 -t utf8`
+
+```
+echo -n %bd%e2%c2%eb | tr -d % | xxd -r -p | iconv -f gb2312 -t utf8
+```
 
 ## 常见应用
 
@@ -126,3 +142,5 @@ cat -
 read
 < 文件重定向也可以
 ```
+
+
