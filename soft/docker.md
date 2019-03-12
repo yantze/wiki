@@ -88,6 +88,9 @@ services:
 
 在外部 `http_proxy=http://docker.for.mac.localhost:6152 https_proxy=http://docker.for.mac.localhost:6152 docker-compose up` 就可以使用代理运行容器中的`git` 和 `npm`，如果是 windows `docker.for.mac.localhost` 就是 `localhost`
 
+### Clean
+docker system prune -fa --volumes will do the trick without prompting for confirmation.
+Remove -f if you want to be prompted for confirmation
 
 # Res
 - [Docker — 从入门到实践](https://github.com/yeasy/docker_practice)
