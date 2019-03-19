@@ -29,5 +29,11 @@ ls dir
 rclone lsd custom-name: --max-depth 1
 ```
 
+## Others
+使用 b2 上传只写权限的命令（ rclone 还不支持只写，所以权益用这个了）
+```
+b2 upload-file ./bin b2:/bucket_name/folder/bin
+```
+
 ## Ref
 https://rclone.org/docs/
