@@ -445,7 +445,15 @@ Pretty print:
 ```
 git diff 993eb26 eadf8f5 -- . ':!package-lock.json'
 ```
-https://stackoverflow.com/questions/4380945/exclude-a-directory-from-git-diff
+> https://stackoverflow.com/questions/4380945/exclude-a-directory-from-git-diff
+
+查看 993eb26 的这个 commit 的变化，并且放到 patch 中
+```
+git diff 993eb26~1 993eb26 app/index.vue  > diff.patch
+
+# 如果想让 patch revert 到最新的分支中
+patch app/index.vue diff.patch
+```
 
 
 
