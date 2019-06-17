@@ -160,3 +160,29 @@ nohup php myprog.php > log.txt &
 // 单独 php myprog.php， ctrl + c 会中断程序执行，并终止子进程
 // php myprog.php &，这样执行程序虽然也是转为后台运行，实际上是依赖终端的，当用户退出终端时进程就会被杀掉。
 ```
+
+输出脚本到本地 [Caiyun api](https://fanyi.caiyunapp.com/#/api)
+```bash
+#!/bin/bash
+tee xiaoyi.sh << END
+# such as zh2en en2zh ja2zh ja2en
+DIRECTION=\$1
+SOURCE=\$2
+
+if test -f \$HOME/.xiaoyi ; then
+  . \$HOME/.xiaoyi
+else
+  echo "Please input your token: "
+  read TOKEN
+  echo "TOKEN=\$TOKEN" > \$HOME/.xiaoyi
+fi
+
+BODY='{"source": ["'\$SOURCE'"], "trans_type": "'\$DIRECTION'", "replaced": true, "media": "text", "request_id": "demo" }'
+
+export PYTHONIOENCODING=utf8
+curl -s -X POST http://api.interpreter.caiyunai.com/v1/translator\
+      -H 'Content-Type: application/json'\
+      -H "X-Authorization: token \$TOKEN"\
+      -d "\$BODY" | python -c "import sys, json; print json.load(sys.stdin)['target']"
+END
+```
