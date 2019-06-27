@@ -1,5 +1,14 @@
 # windows command helpper
 
+## 设置环境变量
+```
+# PowserShell
+$env:ENABLE_TOOL="true"
+
+# cmd
+set ENABLE_FLUTTER_DESKTOP=true
+```
+
 ## Command Setting
 设置活动页，也就是设置当前内容的编码, 如果是中文系统，就是 936，如果想正常显示其它字体，就可以用 65001 应该是 unicode 的代码
 ```
