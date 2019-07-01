@@ -248,7 +248,7 @@ git rebase -i HEAD~3
 
 ## 删除远程分支
 ```
-git push origin --delete branch_name 
+git push origin --delete branch_name
 ```
 
 ## ignore file

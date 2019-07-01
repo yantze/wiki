@@ -143,6 +143,7 @@ Ctrl+Y
 
 ```
 ldd exefile //查找这个程序需要的动态链接库
+otool -L out.gn/x64.release/d8 // 类似 ldd ，用于 mac 中
 ldconfig //刷新当前系统的动态链接库
 pkg-config // 查看当前系统中lib的编译选项
 ```
