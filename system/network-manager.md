@@ -4,7 +4,26 @@ author: yantze
 
 ---
 
-Network Manager
+# Network Manager
+
+## Connect to wifi from a terminal
+Ensure network manager is start:
+```
+sudo service NetworkManager start
+```
+
+View all network connection info:
+```
+nmcli
+```
+
+Change SSID to your network name, and change PASSWORD to your password or passphrase:
+```
+sudo nmcli device wifi connect 'SSID' password 'PASSWORD'
+```
+
+## Traffic control
+
 
 linux: `tc` --- show / manipulate traffic control settings
 ```
