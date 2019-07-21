@@ -1,5 +1,8 @@
 # AWK
 
+awk 格式化输出 http://coolshell.cn/articles/9070.html
+
+
 ## SYNOPSIS
 ```
 awk [-F 分隔符] ‘commands’ input-file(s)

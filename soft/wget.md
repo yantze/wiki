@@ -40,5 +40,24 @@ wget --recursive --level=0 --tries=3 --accept=gz --domains github.com https://gi
 wget -i file.txt
 ```
 
+## 批量下载
+```
+1) use –quiet option to surpress download progress indicator
+wget --quiet http://host_name_of_the_server/path/to/afile.doc
+
+2) use -N to get file only when timestamp or size of the file downloaded has changed
+wget -N http://host_name_of_the_server/path/to/somefile.dat
+
+3) when running wget under bash, one can take advantage of Bash curl braces expansion and do something like this
+wget http://host_name_of_the_server/path/to/{file1.txt,file2.txt,file3.txt}
+wget http://host_name_of_the_server/path/to/{file1,file2,file3}.txt
+wget http://host_name_of_the_server/path/to/file{1,2,3}.txt
+
+Each of the above commands is equivalent to the following
+wget http://host_name_of_the_server/path/to/file1.txt
+wget http://host_name_of_the_server/path/to/file2.txt
+wget http://host_name_of_the_server/path/to/file3.txt
+```
+
 ## REF
 - https://linuxtoy.org/archives/wget-tips.html
