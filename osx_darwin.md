@@ -361,6 +361,7 @@ codesign -s gdb-cert /usr/local/bin/gdb
 有些 Mac OS 里面是 xml 结尾的乱码文件，其实是 plist, 改名后，预览就能看到内容.
 其实读内容用 `/usr/libexec/PlistBuddy`
 导出内容用 `plutil`
+可以通过 `plutil -convert xml1 file.plist` 把 plist 文件转换为 xml 文件
 
 
 ## Reference

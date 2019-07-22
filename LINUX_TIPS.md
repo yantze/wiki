@@ -149,11 +149,6 @@ pkg-config // 查看当前系统中lib的编译选项
 ```
 
 ```
-awk  //格式化输出 http://coolshell.cn/articles/9070.html
-sed  //
-```
-
-```
 watch command //实时监视命令结果变动，可以调节更新频率
 ```
 
@@ -218,28 +213,6 @@ bison是GUN版的语法分析器，yacc是Berkeley版的语法分析器，两者
 ```
 
 
-wget
-```
-1) use –quiet option to surpress download progress indicator
-wget --quiet http://host_name_of_the_server/path/to/afile.doc
-
-2) use -N to get file only when timestamp or size of the file downloaded has changed
-wget -N http://host_name_of_the_server/path/to/somefile.dat
-
-3) when running wget under bash, one can take advantage of Bash curl braces expansion and do something like this
-wget http://host_name_of_the_server/path/to/{file1.txt,file2.txt,file3.txt}
-wget http://host_name_of_the_server/path/to/{file1,file2,file3}.txt
-wget http://host_name_of_the_server/path/to/file{1,2,3}.txt
-
-Each of the above commands is equivalent to the following
-wget http://host_name_of_the_server/path/to/file1.txt
-wget http://host_name_of_the_server/path/to/file2.txt
-wget http://host_name_of_the_server/path/to/file3.txt
-```
-
-
-
-
 ssh使用技巧
 ```
 ssh-keygen 生成id_rsa,id_rsa.pub
@@ -266,12 +239,8 @@ whence # 译名「根源」, `whence -v` 几乎等同于 `type`，同样 whence 
 nm  # 查看.o文件中调用了哪些程序
 ```
 
-history
+最常用的10个命令
 ```
-HISTFILE stores the path to the history file
-HISTSIZE stores the maximum number of events to save in the internal history
-SAVEHIST stores the maximum number of events to save in the history file
-# 最常用的10个命令
 history | awk '{a[$2]++}END{for(i in a){print a[i] " " i}}' | sort -n | tail
 ```
 
@@ -390,7 +359,4 @@ setsebool httpd_enable_homedirs on
 ```
 
 ## log
-usermod 问题
-nginx /usr/share/nginx/index.html
-
-####### vim: set expandtab:
+- usermod 问题
