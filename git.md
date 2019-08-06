@@ -455,6 +455,11 @@ git diff 993eb26~1 993eb26 app/index.vue  > diff.patch
 patch app/index.vue diff.patch
 ```
 
+## git custom command
+```bash
+cd $(git --exec-path)
+```
+https://coderwall.com/p/bt93ia/extend-git-with-custom-commands
 
 
 
