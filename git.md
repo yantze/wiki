@@ -461,6 +461,11 @@ cd $(git --exec-path)
 ```
 https://coderwall.com/p/bt93ia/extend-git-with-custom-commands
 
+## 取消暂时没有推到远程分支的 commit
+```bash
+git reset HEAD~1
+```
+和本文前面的 `git undo` 类似
 
 
 ## GUI clients

@@ -49,7 +49,6 @@ echo $'\x41'  //输出A
 echo "`ls -l`" || echo `ls -l` //shell用IFS定义的分隔符来分隔字符串，包括、n，所以再传给echo就是，"line 1" "line 2"
 nl || cat -n || cat -d //给文件加行号，中间的会给空行加行号，其它的不会
 nl等同于cat -b
-dmesg //查看软硬件配置
 uptime //查看计算机登陆信息，负载均衡等
 od -c file / od file //显示文件内容，如果没有c显示其它进制
 fc //这个是可以在命令行输入文字到vim中编辑的内置命令
