@@ -211,24 +211,21 @@ Please submit a full bug report,
 主要原因大体上是因为内存不足,有点坑 临时使用交换分区来解决吧
  
 ```
-sudo dd if=/dev/zero of=/swapfile bs=1024 count=1048576
-创建一个足够大的文件（此处为256M）, 或者 512M count=524288
-sudo mkswap /swapfile
-把这个文件变成swap文件
-sudo chmod 600 /swapfile
-sudo swapon /swapfile
-启用这个swap文件
+sudo dd if=/dev/zero of=/var/swapfile bs=1024 count=1048576
+# 创建一个足够大的文件（此处为256M）, 或者 512M count=524288
+# 或者： sudo fallocate -l 4G /var/swapfile
+sudo mkswap /var/swapfile
+# 把这个文件变成swap文件
+sudo chmod 600 /var/swapfile
+sudo swapon /var/swapfile
+# 启用这个swap文件
 
-After compiling, you may wish to
+# After compiling, you may wish to
+sudo swapoff /var/swapfile
+sudo rm /var/swapfile
 
-Code:
-sudo swapoff /swapfile
-sudo rm /swapfile
-
-
-And:
-/swapfile swap swap defaults 0 0
-在每次开机的时候自动加载swap文件, 需要在 /etc/fstab 文件中增加一行
+# 在每次开机的时候自动加载swap文件, 需要在 /etc/fstab 文件中增加一行
+sudo bash -c 'echo "/var/swapfile swap swap defaults 0 0" >> /etc/fstab'
 ```
 
  
