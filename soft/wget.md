@@ -1,5 +1,12 @@
 # Wget
 
+## 文件下载器
+```
+wget http://example.com/a.zip -O ~/Downloads/aa.zip
+```
+
+
+## 网站下载器
 ```
 wget -r -np -nd --accept=iso http://example.com/centos-5/i386/
 -np 的作用是不遍历父目录
