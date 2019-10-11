@@ -92,6 +92,12 @@ services:
 docker system prune -fa --volumes will do the trick without prompting for confirmation.
 Remove -f if you want to be prompted for confirmation
 
+### Auto Start container
+```
+docker update --restart {no,on-failure,unless-stopped,always} container_name
+```
+https://askubuntu.com/questions/620930/how-do-i-autostart-docker-container-at-system-reboot
+
 # Res
 - [Docker — 从入门到实践](https://github.com/yeasy/docker_practice)
 - [上链的 GitBook 版本](https://www.gitbook.io/book/yeasy/docker_practice)
