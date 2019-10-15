@@ -3,6 +3,21 @@
 dpkg -s ibus-rime 
 ```
 
+### proxy
+`/etc/apt/apt.conf`
+```
+Acquire::http::Proxy "http://172.20.10.4:1134";
+Acquire::https::Proxy "http://172.20.10.4:1134";
+```
+在网络设置中设置代理的时候，会让这里重新生成。
+
+### dig package info
+获取包文件安装的路径
+```
+apt show PACKAGE_NAME
+dpkg -S PACKAGE_NAME | sort
+```
+
 ### build essential
 ```
 apt-get update && apt-get install -y libncurses5-dev build-essential cmake
