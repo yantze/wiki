@@ -6,6 +6,16 @@ fc-cache
 
 fc-match
 
+## fc-scan 扫描获取指定目录的信息
+```
+fc-scan --brief
+```
+会返回当前的字体的属性列表，如果多个字体会不简洁，可以用 format 格式化输出
+```
+fc-scan -f "Family: %{family}\nFullname: %{fullname}\nStyle: %{style}\n\n" .
+```
+里面的 family fullname 等变量都可以通过 `fc-scan --bried` 获取
+
 ## Practice
 ```
 fc-list :lang=zh | awk -F ':'  '{ print $1 }' | sort | uniq
