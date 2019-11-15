@@ -1,11 +1,13 @@
 # Grep & ag & rg
 
-写成类似 `rg` 的命令：
+类似 rg 的命令，不找二进制文件，也可以在我的 [.dotfiles](https://github.com/yantze/dotfiles/blob/master/zshrc/zsh_func) 中找到
 ```bash
 function rg() {
+    # 这里可以使用正则，类似 egrep 预发，也可以查找多个字符串 httpd\|vsftpd
     search_string="$1"
+    # 如果没有第二个参数，就在当前文件夹查找
     search_path=`[[ $2 == "" ]] && echo "." || echo "$2"`
-    grep -RI --byte-offset --exclude-dir=dist --exclude-dir=node_modules -E $search_string $search_path
+    grep -RI --byte-offset --exclude-dir={dist,node_modules,.bzr,CVS,.git,.hg,.svn} -E $search_string $search_path
 }
 # example: -E "^lsof.*abc.{1,20}"
 ```
