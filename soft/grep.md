@@ -7,9 +7,15 @@ function rg() {
     search_string="$1"
     # 如果没有第二个参数，就在当前文件夹查找
     search_path=`[[ $2 == "" ]] && echo "." || echo "$2"`
-    grep -RI --byte-offset --exclude-dir={dist,node_modules,.bzr,CVS,.git,.hg,.svn} -E $search_string $search_path
+    grep -RIi --byte-offset --exclude-dir={dist,node_modules,.bzr,CVS,.git,.hg,.svn} -E $search_string $search_path $3 $4
+    # -R 递归查找，相比 -r 可以查找软链
+    # -I 忽略二进制文件
+    # -i 忽略大小写
+    # -b, --byte-offset 显示文件中的字符偏移量
+    # -E 支持扩展正则, (supporting `?`, `+`, `{}`, `()` and `|`)
 }
 # example: -E "^lsof.*abc.{1,20}"
+# 这里的 {1,20} 不能有空格
 ```
 
 
