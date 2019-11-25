@@ -51,6 +51,11 @@ Syntax `not`
 find . -not -name 'xxx'
 ```
 
+Pretty list
+```
+find . -path "*/\.*" -prune -o -type f -print -o -type l -print | sed s/^..//
+```
+
 
 ## Reference
 - http://www.cnblogs.com/peida/archive/2012/11/14/2769248.html
