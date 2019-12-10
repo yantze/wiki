@@ -19,14 +19,19 @@ find . -type f -name "*.un~" -exec rm {} \;
 ```
 WIKIHOME="/Users/yantze/wiki"
 keyword="*progra*"
-filepath=$(find "$WIKIHOME" -type f \( -iname "$keyword" -not -iname "*.js" \) -not -path "$WIKIHOME/node_modules/*" | grep -v "un~" | grep -v "\.git/" | head -n 1)
+filepath=$(find "$WIKIHOME" -type f \
+    \( -iname "$keyword" -not -iname "*.js" \) \
+    -not -path "$WIKIHOME/node_modules/*" | \
+    grep -v "un~" | \
+    grep -v "\.git/" | \
+    head -n 1)
 ```
 - 这里是搜索 "*progra*" 的文件名，但不包括 .js 结尾的文件
-- 
+- `grep -v` 不要显示 grep 查找的内容
 
 了解一点这个命令的基本知识：
-| Tables | A      |
-| ------ | ------ |
+| expr | desc      |
+|:-:|---|
 | ( expr )      | Force precedence. True if expr is true      |
 | expr -not expr 或者 ! expr     | True if expr is false. In some shells, it is necessary to protect the ‘!’ from shell interpretation by quoting it.      |
 | expr1 -and expr2      | expr2 is not evaluated if expr1 is false.      |
