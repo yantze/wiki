@@ -10,10 +10,31 @@ os: linux, darwin
 > mac 可以不用斜杠
 
 ## Basic
+删除 vim 的 un~
 ```
-# 删除 vim 的 un~
 find . -type f -name "*.un~" -exec rm {} \;
+```
 
+搜索和过滤一部分结果，看一个 wiki 搜索例子：
+```
+WIKIHOME="/Users/yantze/wiki"
+keyword="*progra*"
+filepath=$(find "$WIKIHOME" -type f \( -iname "$keyword" -not -iname "*.js" \) -not -path "$WIKIHOME/node_modules/*" | grep -v "un~" | grep -v "\.git/" | head -n 1)
+```
+- 这里是搜索 "*progra*" 的文件名，但不包括 .js 结尾的文件
+- 
+
+了解一点这个命令的基本知识：
+| Tables | A      |
+| ------ | ------ |
+| ( expr )      | Force precedence. True if expr is true      |
+| expr -not expr 或者 ! expr     | True if expr is false. In some shells, it is necessary to protect the ‘!’ from shell interpretation by quoting it.      |
+| expr1 -and expr2      | expr2 is not evaluated if expr1 is false.      |
+| expr1 -or expr2      | expr2 is not evaluated if expr1 is true.      |
+
+
+## Advance
+```
 find . -name "*.log" -mtime +5 -ok rm {} \;
 find . -name "passwd*" -exec grep "root" {} \;
 find . -name "*.log" -exec mv {} .. \;
@@ -60,3 +81,4 @@ find . -path "*/\.*" -prune -o -type f -print -o -type l -print | sed s/^..//
 ## Reference
 - http://www.cnblogs.com/peida/archive/2012/11/14/2769248.html
 - https://stackoverflow.com/questions/4793892/recursively-rename-files-using-find-and-sed
+- https://www.cyberciti.biz/faq/find-command-exclude-ignore-files/
