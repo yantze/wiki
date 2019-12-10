@@ -34,7 +34,7 @@ filepath=$(find "$WIKIHOME" -type f \
 | expr | desc      |
 |---|---|
 | ( expr )      | Force precedence. True if expr is true      |
-| expr -not expr 或者 ! expr     | True if expr is false. In some shells, it is necessary to protect the ‘!’ from shell interpretation by quoting it.      |
+| expr -not expr <br>或者 ! expr     | True if expr is false. In some shells, it is necessary to protect the ‘!’ from shell interpretation by quoting it.      |
 | expr1 -and expr2      | expr2 is not evaluated if expr1 is false.      |
 | expr1 -or expr2      | expr2 is not evaluated if expr1 is true.      |
 
