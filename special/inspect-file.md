@@ -1,5 +1,12 @@
 # Inspect file
 
+
+## Example 1 (Mac)
+查看到 `lsof -i4` 中有一个 rapportd 的进程。通过 `ps aux | grep -i rapportd` 找到进程地址。
+- 发现用 `man rapportd` 找到说明手册
+- `codesign -vvvv -R="anchor apple" /usr/libexec/rapportd` 检测是否文件签名
+- `otool -L /usr/libexec/rapportd` 查看动态连接库的文件
+
 ## 显示指定范围的十六进制字符
 显示开始的 32 个字符
 ```
