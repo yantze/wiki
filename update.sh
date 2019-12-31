@@ -15,4 +15,4 @@ wget -O devops/program_debug.rst https://raw.githubusercontent.com/me115/linuxto
 wget -O devops/program_analysis.rst https://github.com/me115/linuxtools_rst/raw/master/advance/03_optimization.rst
 
 # command strace
-wget -O command/strace.md https://github.com/me115/linuxtools_rst/raw/master/tool/strace.rst
+wget -O soft/strace.rst https://github.com/me115/linuxtools_rst/raw/master/tool/strace.rst
