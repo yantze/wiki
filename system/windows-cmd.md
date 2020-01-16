@@ -53,4 +53,4 @@ echo | clip # 清空
 
 
 ## Res
-- @henix 提供的版本非常完善 https://blog.henix.info/blog/windows-cmdbasic/_.html
+- @henix 提供的版本非常完善 https://blog.henix.info/blog/windows-cmdbasic/
