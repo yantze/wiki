@@ -7,6 +7,12 @@ os: darwin
 
 # OSX Darwin
 
+## 重启网络服务 Networking
+```
+sudo ifconfig en0 down
+sudo ifconfig en0 up
+```
+
 ## 安装 Command line Tools for `xcrun`
 ```
 xcode-select --install
