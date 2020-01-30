@@ -71,6 +71,7 @@ Start with web
 ```
 
 ## RES
+- https://gist.github.com/Pulimet/5013acf2cd5b28e55036c82c91bd56d8
 - https://github.com/maldroid/adb_cheatsheet/blob/master/cheatsheet.pdf
 
 ## REF
