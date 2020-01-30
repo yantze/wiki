@@ -16,6 +16,7 @@ function rg() {
 }
 # example: -E "^lsof.*abc.{1,20}"
 # 这里的 {1,20} 不能有空格
+# 搜索特定文件类型，可以 `rg str ./**/*.js`
 ```
 
 
