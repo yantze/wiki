@@ -17,9 +17,8 @@ diskutil umount [disk1] # `unmountDisk` all volumes, `eject` a disk
 ## Linux 分区、格式化和挂载磁盘
 
 ### 分区
-`fdisk -l` 查看是否有新的无分区磁盘，并且拿到未分区的磁盘路径 `/dev/sdb`
 ```
-fdisk -l # disk info
+fdisk -l 查看是否有新的无分区磁盘，并且拿到未分区的磁盘路径 `/dev/sdb`
 df -T # check filesystem type
 
 # 使用一个磁盘一个分区
