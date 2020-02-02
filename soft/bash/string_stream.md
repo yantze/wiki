@@ -117,6 +117,10 @@ echo -n %e8%a7%a3%e7%a0%81 | tr -d % | xxd -r -p
 echo -n %bd%e2%c2%eb | tr -d % | xxd -r -p | iconv -f gb2312 -t utf8
 ```
 
+tac 命令
+-------
+tac 能让一个列表倒置，如果 mac 没有，可以用 tail -r 代替
+
 ## 常见应用
 
 ### 添加多行文本
@@ -154,3 +158,4 @@ COMMAND "$(echo input)string"
 
 ## Reference
 - [bash - How to concatenate stdin and a string? - Stack Overflow](https://stackoverflow.com/questions/13884108/how-to-concatenate-stdin-and-a-string)
+- [bash - Reverse output of a command - Super User](https://superuser.com/questions/865548/reverse-output-of-a-command)
