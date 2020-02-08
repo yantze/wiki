@@ -83,6 +83,8 @@ Pretty list
 find . -path "*/\.*" -prune -o -type f -print -o -type l -print | sed s/^..//
 ```
 
+## 参数说明
+`-prune` 阻止 find 命令深入到文件夹中，比如 在当前目录发现了一个 abc, 那么就不要再深入下去找另外一个 abc 了。如果用 `-d` 参数，那么这个命令失效。
 
 ## Reference
 - http://www.cnblogs.com/peida/archive/2012/11/14/2769248.html

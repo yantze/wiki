@@ -1,7 +1,4 @@
-# ffmpeg
-
-## Document
-- [Official Document](http://ffmpeg.org/documentation.html)
+# FFmpeg
 
 ## Normal
 ```
@@ -24,3 +21,8 @@ ffmpeg -f concat -safe 0 -i ./21-30.txt -c copy -fflags +genpts 21-30.flv
 # ffmpeg -f concat -i textfile -fflags +genpts merged.mp4
 # https://superuser.com/questions/1039678/merge-multiple-video-with-ffmpeg-single-command-line-in-specific-time-without-cu
 ```
+
+## Document
+- [Official Document](http://ffmpeg.org/documentation.html)
+- [FFmpeg 视频处理入门教程 - 阮一峰的网络日志](http://www.ruanyifeng.com/blog/2020/01/ffmpeg.html)
+
