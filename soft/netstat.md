@@ -32,3 +32,5 @@ netstat -n | awk '/^tcp/ {print $5}'| awk -F: '{print $1}' | sort | uniq -c | so
 ## See Also
 - [lsof](./lsof.md)
 - [fuser](./fuser.md)
+- [ss](./ss.md)
+- [ip](./ip.md)

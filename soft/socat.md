@@ -15,6 +15,7 @@ socat tcp-listen:8001,reuseaddr,fork tcp:localhost:8000
 ## SeeAlso
 - [memcached](./memcached.md)
 - [nc](./nc.md)
+- [string-stream](./string_stream.md)
 
 ## Res
 - 观察 HTTP/STMP/DNS 等包 http://www.volkerschatz.com/net/socatproc.html
