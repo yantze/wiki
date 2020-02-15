@@ -1,14 +1,25 @@
 # xargs
 
 ```
-echo 'a.json' | > newfile.txt
+echo 'a.json' | > a.json
 echo 'a.json' | xargs cat
 echo 'a.json' | cat
 ```
 
-重命名
+允许并行多少个命令同时执行 -L，这里有一个简单的自动播放器例子
+```
+find . -name "*.mid" | xargs -I{} -L 1 timidity {}
 ```
 
+-n 是允许最大的同时输入量, 原本应该是每行多个数据，但经过 `xargs -n 1` 后，就会变成每行一个。也可以用这种方法变成每行一对。
+```
+ls | xargs -n 1
+```
+
+
+替换字符串
+```
+find . -name "*.md" | xargs -I{} echo {} abc
 ```
 
 
