@@ -17,3 +17,9 @@ For things named <something>.service, you can actually just use <something>, as 
 journalctl -u service-name
 ```
 But for other sorts of units (sockets, targets, timers, etc), you need to be explicit.
+
+
+## Service path
+```
+/lib/systemd/system
+```

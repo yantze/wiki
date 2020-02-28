@@ -14,3 +14,18 @@
 - 创建文件夹 `/etc/systemd/system/xxx.service.d`
 - 拷贝 `/lib/systemd/system/xxx.service` to `/etc/systemd/system/xxx.service.d/override.conf`
 - override.conf 只需要需要改的值
+
+### 日志
+一般可以通过status 查看
+```
+systemctl status xxx.service
+```
+
+但碰到一些看不到错误的地方，可以通过查看对应的日志
+```
+journalctl -u xxx
+```
+最后实在找不到原因，可以通过 [syslog](./syslog.md) 实现问题的查找
+
+## See Also
+- [syslog](./syslog.md)
