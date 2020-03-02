@@ -25,5 +25,14 @@ function getLogger(info) {
 ```
 
 ```js
+const deasync = require('deasync')
+const unPromisify = fn => {
+    return (...args) => {
+        if (args.length<1) throw new Error('unPromisify arguments length must at least 2.')
+        const cb = args.pop()
+        fn(...args).then(data => cb(null, data)).catch(err => cb(err, null))
+    }
+}
+const mainSync = deasync(unPromisify(main))
 
 ```
