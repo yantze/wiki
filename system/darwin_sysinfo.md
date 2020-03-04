@@ -20,5 +20,9 @@ ioreg -p IOUSB -l -w 0
 sysctl -n machdep.cpu.brand_string
 ```
 
+## 查看系统信息
+- `system_profiler SPUSBDataType`
+- 如果使用 nodejs，可以通过包 [systeminformation](https://github.com/sebhildebrandt/systeminformation/) 获取系统信息
+
 ## Ref
 - https://apple.stackexchange.com/questions/271252/disconnect-connect-usb-device-from-command-line
