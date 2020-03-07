@@ -53,4 +53,5 @@ echo | clip # 清空
 
 
 ## Res
-- @henix 提供的版本非常完善 https://blog.henix.info/blog/windows-cmdbasic/
+- @henix Windows 命令行基础 https://blog.henix.info/blog/windows-cmdbasic/
+- [BAT脚本编写教程](https://blog.csdn.net/u013517637/article/details/70598019)
