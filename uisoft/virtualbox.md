@@ -1,13 +1,20 @@
 # Virtual Box
 
 ## Control by Terminal
-不启动画面
+系统控制
 ```
-VBoxManage startvm "Ubuntu Server" --type headless
+# 不启动画面
+VBoxManage startvm "Win10D" --type headless
+
+# 暂停
+VBoxManage controlvm "Win10D" pause
+
+# 继续
+VBoxManage controlvm "Win10D" resume
+
+# Poweroff
+VBoxManage controlvm "Win10D" poweroff
 ```
-暂停系统
-```
-VBoxManage controlvm "Ubuntu Server" pause --type headless
-```
+
 ## 其它特性
 - 可以不用启动虚拟机就复制里面的文件
