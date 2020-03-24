@@ -16,5 +16,10 @@ VBoxManage controlvm "Win10D" resume
 VBoxManage controlvm "Win10D" poweroff
 ```
 
+Snatshot 控制
+```
+VBoxManage snapshot "Win10D" restorecurrent
+```
+
 ## 其它特性
 - 可以不用启动虚拟机就复制里面的文件
