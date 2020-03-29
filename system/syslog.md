@@ -13,6 +13,18 @@ Red Hat family distributions (including CentOS and Fedora) `/var/log` 日志分�
 - `dmesg -HL` 系统监视器弹出的那些启动内容,也有插入 usb 会有热插拔的信息, 也可以用 `vim /var/log/dmesg`
 - `vim /var/log/secure` 比如用 `sudo command` 执行命令，就会在这里面记录详细的命令，或者外部登录 sshd 也会有记录
 - `/var/log/messages` 里面说是，Log anything (except mail) of level info or higher. Global system messages.
+- `/var/log/boot.log` 系统启动日志。
+- `/var/log/kern.log`     – 内核日志。
+- `/var/log/yum.log` Yum 日志。
+
+软件日志位置
+```
+/var/log/auth.log     – 身份认证日志。
+/var/log/cron.log     – Crond 日志 (cron 任务).
+/var/log/maillog      – 邮件服务器日志。
+/var/log/mysqld.log   – MySQL数据库服务器日志。
+/var/log/yum.log      – Yum 日志。
+```
 
 > 日志文件名是在 `/etc/rsyslog.conf` 文件里面配置的。
 
