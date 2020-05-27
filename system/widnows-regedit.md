@@ -2,6 +2,8 @@
 
 [HKEY_CLASSES_ROOTCLSID{不同的PROG ID对应不同的GUID}ProgID]
 
+{APP_GUID} 是一个 GUID 标准的字符串，其实是根据 appId 自动生成的。比如 'net.xxx.product' 就会根据这个字符串生成唯一的 APP_GUID。
+
 ## 组成
 - HKEY_CLASSES_ROOT  定义了系统中所有文件类型标识和基本操作标识
 
@@ -18,6 +20,9 @@
 - HKEY_USER 所有用户的信息，该子键下保存了改用户的桌面设置、背景位图、应用程序快捷键、字体等信息。 而这些信息都可以通过控制面板等工具设定。应用程序也不直接访问该主键，而是通过HKEY_CURRENT_USER主键进行访问。
 
 - HKEY_CURRENT_CONFIG 本地计算机启动时的配置的相关信息。如环境信息、桌面主题、背景色之类，也只是HKEY_LOCAL_MACHINE\CONFIG结构中的一个映射。
+
+## Resourse Id
+Resourse id 是一个应用程序中有一个 segment 是 resource，可以在 Windows 中通过 'main.exe, 1' 获取对应的文字和图片资源。
 
 ## Reference
 - https://blog.csdn.net/z702143700/article/details/46770813p

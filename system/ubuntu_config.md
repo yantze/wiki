@@ -1,6 +1,14 @@
 Ubuntu Config
 =============
 
+
+命令行打开文件资源管理器
+-----------------------
+```
+nautilus /path/to/that/folder
+xdg-open /path/to/the/folder
+```
+
 一些快捷鍵
 ---------
 ```

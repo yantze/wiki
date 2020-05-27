@@ -14,7 +14,7 @@ diskutil umount [disk1] # `unmountDisk` all volumes, `eject` a disk
 
 ```
 
-## Linux 分区、格式化和挂载磁盘
+## Linux 分区、格式化和挂载磁盘 format make fs
 
 ### 分区
 ```
@@ -35,6 +35,7 @@ fdisk -l # disk info
 ### 格式化并设置文件系统
 ```
 mkfs.ext3 /dev/sdb1
+mkfs.ext4 /dev/sdb1
 
 # 让 Windows 和 Mac 共享写入读取，使用 vfat 系统：
 mkfs.vfat

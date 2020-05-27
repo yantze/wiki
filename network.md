@@ -7,6 +7,11 @@ os: darwin, linux
 
 # Network
 
+## 网络信息
+Linux 通过 `ifconfig` 获取 RX/TX 网络throughput 信息。也可以通过 `cat /proc/net/dev` 查看。
+
+## DNS
+
 > 影响系统解析 DNS 的路径
 
 - `/etc/hosts`
