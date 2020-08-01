@@ -467,6 +467,9 @@ git reset HEAD~1
 ```
 和本文前面的 `git undo` 类似
 
+## clone 来自 boilerplate 的项目，清除 commit log
+https://electron-react-boilerplate.js.org/docs/tool-tips#how-to-keep-commit-history-clean
+
 
 ## GUI clients
 - git gui

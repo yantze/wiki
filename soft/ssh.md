@@ -160,5 +160,12 @@ change the login message motd(message of today)
 ```
 ssh remote tail -f /var/log/apache2/access.log 
 ```
+## ssh 跳板后链接
+```
+ssh -o ProxyCommand="ssh hostb nc %h %p" hosta
+```
+更多内容可以去这里看看：https://github.com/moul/assh
+
+
 ## Ref
 - http://linux-wiki.cn/wiki/zh-hans/%E9%81%BF%E5%85%8DSSH%E8%BF%9E%E6%8E%A5%E5%9B%A0%E8%B6%85%E6%97%B6%E9%97%B2%E7%BD%AE%E6%96%AD%E5%BC%80

@@ -14,8 +14,9 @@ Practical case
 
 List all listening ports in OS X (tested with Mavericks)
 
-    sudo lsof -i4 -P -n |grep LISTEN
-    sudo lsof -i -n -P | grep TCP | grep process_id  // 查看监听的端口
+```
+sudo lsof -i4 -n -P | grep LISTEN | grep TCP | grep process_id/process_name  // 查看监听的端口
+```
 
 ```
 # lsof -i [46][protocol][@hostname|hostaddr][:service|port]

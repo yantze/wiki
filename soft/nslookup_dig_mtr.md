@@ -1,14 +1,19 @@
 # nslookup dig mtr
 
 使用 tcp 查询 ip 地址
-
-    dig @114.114.114.114 +tcp www.baidu.com
+```
+dig @114.114.114.114 +tcp www.baidu.com
+```
 
 使用dns server 的其它端口
+```
+dig @114.114.114.114 -p 5353 xxx.com
+```
 
-    ```
-    dig @114.114.114.114 -p 5353 xxx.com
-    ```
+dig 有个很高级的功能 trace，即可以追踪输出每一级查询的具体信息，而不是只给一个最终结果
+```
+dig +trace xx.com
+```
 
 查找一个域名的真实ip地址
 ```

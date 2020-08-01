@@ -10,6 +10,10 @@ osascript -e 'id of app "Google Chrome"'
 /usr/libexec/PlistBuddy -c 'Print CFBundleIdentifier' /Applications/Safari.app/Contents/Info.plist
 ```
 
+设置软件属性：
+`~/Library/Preferences`
+通过 `/usr/libexec/PlistBuddy filename` 执行 `print`, `set propertyName false` 修改查看设置
+
 ## 查找当前系统的软件信息
 方法一：（这种更详细，但至少有 10MB 左右
 ```
