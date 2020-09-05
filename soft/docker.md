@@ -14,7 +14,7 @@ docker start container-id
 docker attach container-id // 运行上面这两条命令可以打开之前关闭的docker实例
 
 docker run -it centos /bin/bash
-docker run -it --rm -p 80:80 nginx  //启动docker/nginx,把内置的80端口映射到本机的80端口
+docker run -it --rm -p 8000:80 nginx  //启动docker/nginx,把内置的80端口映射到本机的8000端口
 -i - 开发输入(so we can interact with it)
 -t - 分配一个（伪） tty (link is external)
 -p - 分配 local_port 给 docker_port
