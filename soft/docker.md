@@ -2,6 +2,19 @@
 
 ## Basic
 
+### 安装 docker ubuntu
+1. 从官网安装最新的包
+2. 配置 lan 可以通过 tcp 访问，并且设置镜像 repo
+```
+# /etc/docker/daemon.json
+{
+   "registry-mirrors": [ "https://your_self_id.mirror.aliyuncs.com"],
+   "hosts":            ["fd://", "tcp://0.0.0.0:4243"]
+}
+```
+3. 这个时候启动不起来，需要按照这个去配置 https://stackoverflow.com/a/44053219/5333284
+
+
 ### Start new container
 ```
 docker pull centos:latest

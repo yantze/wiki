@@ -35,7 +35,8 @@ curl -i https://xxx.cn/api \
 
 post with curl
 ```
-curl http://xxx.com
+curl 'http://localhost:8000/api/compose/_testDaily' -H 'Content-Type: application/json' --data-binary '{"args":[11]}'
+
 curl -H 'Host:www.jfz.com' http://192.168.1.251/index.html
 curl -d 'post1=data1' http://xxx.com
 curl -d 'file1=@/data/file1' http://xxx.com/fileupload
