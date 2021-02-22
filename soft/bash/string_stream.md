@@ -147,6 +147,8 @@ read
 < 文件重定向也可以
 ```
 
+VIM 的 :sort 和 sort 命令类似
+
 
 ## 经验
 让其中一个参数来自 pipe 转换，也许想到了可以用 `echo abc | cat -` 来用，或者用 `echo abc | echo $(cat -)concatstring` 来组合字符串。其实可以把运行转换，成为一个命令的一部分：

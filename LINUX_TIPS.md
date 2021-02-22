@@ -6,10 +6,6 @@ w3m -dump https://github.com
 lynx --dump https://github.com # not support unicode
 ```
 
-```
-tree -I "node_modules|dist" # 生成树形目录
-tree -L 2 # 生成前面两级目录
-```
 
 
 ```
