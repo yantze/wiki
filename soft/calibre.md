@@ -42,6 +42,10 @@ h1, h2, h3, h4, h5, h6 {
 
 tipc: 替换使用 VSCode 会马上看到差别， Vim 写的正则有点不直观。
 
+或者用结构检测：
+```
+//*[re:test(., "^\s*[第卷][0123456789一二三四五六七八九十零〇百千两]*[章回部节集卷].*", "i")]
+```
 
 ## DRM
 Remove DRM tool: https://github.com/apprenticeharper/DeDRM_tools

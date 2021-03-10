@@ -35,5 +35,10 @@ rclone lsd custom-name: --max-depth 1
 b2 upload-file ./bin b2:/bucket_name/folder/bin
 ```
 
+## 备份实践
+1. 长期完整的增量备份
+2. 单个文件夹，一次或则多次备份
+3. 临时备份一个文件夹
+
 ## Ref
 https://rclone.org/docs/
