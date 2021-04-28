@@ -12,12 +12,13 @@ lsof: list open file
 Practical case
 --------------
 
-List all listening ports in OS X (tested with Mavericks)
-
+显示 pid/process_name 开的端口(darwin)
 ```
-sudo lsof -i4 -n -P | grep LISTEN | grep TCP | grep process_id/process_name  // 查看监听的端口
+sudo lsof -i4 | grep LISTEN | grep TCP | grep process_id/process_name  // 查看监听的端口
+# 不需要 -n -P 都只是让 lsof 运行得快一些
 ```
 
+显示指定端口运行的 pid(darwin)
 ```
 # lsof -i [46][protocol][@hostname|hostaddr][:service|port]
 lsof -i:22 //查看22端口在运行什么程序
