@@ -79,6 +79,10 @@ NODE
 inode number in filesystem
 ```
 
+扩展链接
+-------
+* https://blog.csdn.net/GGxiaobai/article/details/53992137
+
 Ref
 ---
 * http://www.danielmiessler.com/study/lsof/
