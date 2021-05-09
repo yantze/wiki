@@ -67,6 +67,10 @@ dtrace: error on enabled probe ID 1930 (ID 832: syscall::proc_info:return): inva
 ### 关于 xctrace
 这个是用来替换 instruments 的，用法先看看 man xctrace 吧，功能跟 instruments 类似。
 
+## strace、dtrace 和 dtruss 的介绍
+- strace(Linux) - trace system calls and signals
+- dtrace(macOS) - dynamic tracing compiler and tracing utility
+- dtruss(macOS) - process syscall details. Uses DTrace.
 
 
 ## Ref
