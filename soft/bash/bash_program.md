@@ -196,6 +196,12 @@ file1 ­nt file2 file1 比 file2 新时返回真，修改时间更新
 file1 ­ot file2 file1 比 file2 旧时返回真，修改时间更旧
 ```
 
+例子：,下面的两种方式在 zsh 中都是可行的
+```bash
+[[ -s "$HOME/.zshrc_local" ]] && . ~/.zshrc_local
+test -e "$HOME/.zshrc_local" && . ~/.zshrc_local
+```
+
 条件语句取反
 ```
 [[ ! -d /xxx ]]
@@ -285,6 +291,29 @@ if [[ $ANSWER =~ ^y(es)?$ ]]
 if [[ $ANSWER = y* ]]
 ```
 
+### trap
+trap COMMAND SIGNALS
+
+```bash
+function cleanup()
+{
+    # ...
+}
+
+trap cleanup EXIT
+trap "echo hello" EXIT # 最后一个声明才有效
+```
+Ctrl-C 限制
+```bash
+# 运行重要内容, Ctrl-C 无效
+trap "" SIGINT
+important_command
+
+# 取消 Ctrl-C 限制
+trap - SIGINT
+not_so_important_command
+```
+
 ### 少见
 退出码, linux 命令行上一个命令的退出码放在了`$?`环境变量中
 ```
@@ -310,4 +339,4 @@ $ false; $? =>  1
 - [google shell style](https://google.github.io/styleguide/shell.xml)
 - [ibm guide](http://www.ibm.com/developerworks/cn/linux/shell/bash/bash-2/index.html)
 - [^1]: https://stackoverflow.com/questions/3427872/whats-the-difference-between-and-in-bash
-
+- [trap](https://www.linuxjournal.com/content/bash-trap-command)
