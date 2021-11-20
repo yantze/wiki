@@ -166,6 +166,24 @@ ssh -o ProxyCommand="ssh hostb nc %h %p" hosta
 ```
 更多内容可以去这里看看：https://github.com/moul/assh
 
+## sshd debug
+只能用密码登录，不能用私钥
+```shell
+sudo /usr/sbin/sshd -d -p 2222
+
+ssh -vvv localhost
+```
+看看报错是什么
+
+1. 用 sudo 后还是提示找不到 /etc/ssh/host_key 这类的
+- https://blog.csdn.net/A156348933/article/details/86553048
+
+2. 详细错误里面提示，authorized_keys 不存在，查找 authorized_keys2
+```shell
+
+cat id_rsa.pub > authorized_keys
+chmod 600 authorized_keys
+```
 
 ## Ref
 - http://linux-wiki.cn/wiki/zh-hans/%E9%81%BF%E5%85%8DSSH%E8%BF%9E%E6%8E%A5%E5%9B%A0%E8%B6%85%E6%97%B6%E9%97%B2%E7%BD%AE%E6%96%AD%E5%BC%80

@@ -1,17 +1,33 @@
 # FFmpeg
 
 ## Normal
+
+使用 crf 进行压缩优化
+```shell
+ffmpeg -i "./鲸歌 杨迪雅_resample.mp4" -c:v libx264 -preset veryslow -crf 26 -c:a copy "鲸歌 杨迪雅_resample_crf.mp4"
+# veryslow 和下一个级别相差 1%，这个相对最优
 ```
-# 剪裁
+
+长度剪裁
+```shell
 ffmpeg -i "S1.Ep2.mkv"  -ss 00:09:32.20 -t 00:00:07.05 -c copy out.mkv
+```
 
-# Change size (also with jpg, gif)
+画面剪裁
+```shell
 ffmpeg -i IMG_0010.MOV -vf scale=540:-1 output.m4v
+# scale=w=iw/2:h=ih/2
+# (also with jpg, gif)
+# (也可以指定一屏的 pixels，长宽比指定) ^4
+```
 
-# Seperate voice from video, check voice format from error info
+# 分离视频(可以从错误信息中确认音频格式)
+```shell
 ffmpeg -i IMG_2229.MOV -vn -acodec copy output-audio.acc
 # -vn : video none
+```
 
+```shell
 # Voice
 ffmpeg -y  -i input.mp4  -acodec pcm_s16le -f s16le -ac 1 -ar 16000 output.pcm
 # -f s16le … PCM signed 16-bit little-endian samples
@@ -63,4 +79,5 @@ ffmpeg -formats
 - `man ffmpeg` 更详细
 - [Official Document](http://ffmpeg.org/documentation.html)
 - [FFmpeg 视频处理入门教程 - 阮一峰的网络日志](http://www.ruanyifeng.com/blog/2020/01/ffmpeg.html)
-
+- https://www.thewindowsclub.com/how-to-resize-a-video-using-command-line-in-windows-10-with-ffmpeg
+- [FFmpeg视频转码技巧之-crf参数（H.264篇）_呦呦鹿鸣-CSDN博客](https://blog.csdn.net/happydeer/article/details/52610060)
