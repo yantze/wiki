@@ -455,6 +455,22 @@ git diff 993eb26~1 993eb26 app/index.vue  > diff.patch
 patch app/index.vue diff.patch
 ```
 
+## git format-patch
+创建 diff 或者 patch
+```
+# HEAD 之前的多少个 commit
+git format-patch HEAD -1
+git format-patch 【commit sha1 id】-n
+git format-patch 【commit sha1 id】..【commit sha1 id】
+```
+应用 apply
+```
+git apply 【path/to/xxx.patch】
+# apply 之后自动添加 commit, 全名 Apply a series of patches from a mailbox
+git am 【path/to/xxx.patch】
+```
+
+
 ## git custom command
 ```bash
 cd $(git --exec-path)
@@ -487,3 +503,4 @@ https://electron-react-boilerplate.js.org/docs/tool-tips#how-to-keep-commit-hist
 - learnGitBranching
 - http://yanhaijing.com/git/2014/11/01/my-git-note/
 - https://stackoverflow.com/questions/6650215/how-to-keep-the-local-file-or-the-remote-file-during-merge-using-git-and-the-com
+- [git patch](https://segmentfault.com/a/1190000039800190)

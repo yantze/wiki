@@ -106,6 +106,14 @@ CURL 想要做 urlencode，需要搭配 --data-urlencode 的參數(--data-urlenc
 curl -X GET -G --data-urlencode "msg=abcs" --data-urlencode "text=中文" "http://example.com/?channel=blog"
 http://feedproxy.google.com/~r/tsungblog/~3/pz1PILepFbk/
 
+## curl 参数介绍
+```
+-f, --fail (HTTP) Fail silently (no output at all) on server errors.
+-s silent
+-S silent with -s but also show error
+-L follow redirect
+```
+
 ## See Also
 - [xargs](./xargs.md)
 

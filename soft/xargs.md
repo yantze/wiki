@@ -1,5 +1,7 @@
 # xargs
 
+macOS（BSD） 和 Linux 的版本不一样，注意区别
+
 ```
 echo 'a.json' | > a.json
 echo 'a.json' | xargs cat
@@ -44,3 +46,5 @@ ref: https://unix.stackexchange.com/questions/3593/using-xargs-with-input-from-a
 ## See Also
 - [curl](./curl.md)
 
+## Ref
+- Best Practice: https://www.oilshell.org/blog/2021/08/xargs.html

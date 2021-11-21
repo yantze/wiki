@@ -292,12 +292,17 @@ if [[ $ANSWER = y* ]]
 ```
 
 ### trap
+> trap 不要放到最后，这样是捕获不到的...
 trap COMMAND SIGNALS
 
 ```bash
 function cleanup()
 {
     # ...
+    # 通过判断 $? 获取调用 trap 导致的异常是什么类型的
+    if [[ $? -eq 0 ]]; then
+        echo "正常退出"
+    fi
 }
 
 trap cleanup EXIT
@@ -306,11 +311,11 @@ trap "echo hello" EXIT # 最后一个声明才有效
 Ctrl-C 限制
 ```bash
 # 运行重要内容, Ctrl-C 无效
-trap "" SIGINT
+trap "" INT
 important_command
 
 # 取消 Ctrl-C 限制
-trap - SIGINT
+trap - INT
 not_so_important_command
 ```
 
