@@ -1,5 +1,12 @@
 # Systemctl
 
+## enable / disable
+service / target 开机启动和禁止启动
+
+## mask / unmask
+会直接禁用整个服务，手动启用都不行的
+
+
 ### 在 Ubuntu 中修改配置
 ```
 /lib/systemd/system

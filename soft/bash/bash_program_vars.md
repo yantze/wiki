@@ -1,5 +1,14 @@
 # Bash 一些变量的操作
 
+fallback 字符
+```shell
+# 使用默认字符串
+echo ${VAR1:=defaultVar}
+# 如果没有设置，就设置 defaultVar
+: ${VAR1:=defaultVar}
+
+```
+
 获取最后一个字符
 ```
 str='abc'
