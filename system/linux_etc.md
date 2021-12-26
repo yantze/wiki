@@ -481,13 +481,23 @@ macOS 中的钥匙串，用于自动登录或者 gpg 以及应用程序的密码
 - /etc/skel/*
 似乎是软件的默认配置脚手架和默认配置
 
-## /boot
+## /boot 目录
 这里是启动相关的文件介绍
 
-## 考古
+## 知道就好的功能
+
+### rmt
 - /etc/rmt
 Linux rmt 命令通过进程间通信远程控制磁带机。
 通过rmt指令，用户可通过IPC连线，远端操控磁带机的倾倒和还原操作。
 
+### brltty
+- /etc/brltty
+
+refreshable braille display driver for Linux/Unix，简单来说，就是一个盲文显示驱动应用。用于保证屏幕阅读器的边语用户的可访问性。
+
+Red Hat 有一篇具体讲这块的配置和使用：[配置桌面环境以进行访问](https://access.redhat.com/documentation/zh-cn/red_hat_enterprise_linux/8/html/using_the_desktop_environment_in_rhel_8/configuring-desktop-environment-for-accessibility_using-the-desktop-environment-in-rhel-8)
+
+### ModemManager
 - /etc/systemd/system/multi-user.target.wants/ModemManager.service
 调制解调器
