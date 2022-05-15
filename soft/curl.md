@@ -42,7 +42,7 @@ curl -d 'post1=data1' http://xxx.com
 curl -d 'file1=@/data/file1' http://xxx.com/fileupload
 curl -F 'input1=data1' http://xxx.com
 curl -F file=@a.jpg http://xxx.com
-curl -X POST -H Content-Type: application/json -d {"value2":"ifttt"} https://maker.ifttt.com/trigger
+curl -H "Content-Type: application/json" -X POST -d '{"user":"bob","pass":"123"}' http://example.com
 
 curl -u "yantze" -d '{"scopes":["public_repo"]}' https://api.github.com/users/yantze\?callback\=haha
 curl -u "yantze" -H "Accept: application/vnd.github.v3.text+json"  https://api.github.com/users/yantze
