@@ -35,6 +35,11 @@ journalctl -u service-name
 ```
 But for other sorts of units (sockets, targets, timers, etc), you need to be explicit.
 
+更新日志跟随(follow)
+```
+journalctl -u xxx -f
+```
+
 
 ## Service path
 ```
